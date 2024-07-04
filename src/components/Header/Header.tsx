@@ -1,9 +1,10 @@
 export default function Header() {
   return (
-    <header className="pb-3 mb-4 border-bottom">
+    <header className="pb-3 my-4 border-bottom">
       <a
         href="/"
-        className="align-items-center text-body-emphasis text-decoration-none d-inline"
+        className="align-items-center text-body-emphasis text-decoration-none d-inline inline-block"
+        title="Elevate Your Tech Business with the Power of AI Tech [Go to Home Page]"
       >
         <svg
           width="40px"

@@ -1,4 +1,3 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -32,7 +31,7 @@ export default function RootLayout({
         <meta name="generator" content="Hugo 0.112.5" />
         <base href="//getbootstrap.com/" target="_blank" />
 
-        <title>JYTech - Boot your future in AI</title>
+        <title>JYTech - Elevate Your Tech Business with the Power of AI Tech</title>
         <link
           rel="canonical"
           href="//getbootstrap.com/docs/5.3/examples/jumbotron/"
@@ -71,7 +70,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#712cf9" />
       </Head>
       <body>
-        <div className="container py-4">
+        <div className="container mx-auto h-full flex flex-col h-screen justify-between">
           <Header />
           {children}
           <Footer />

@@ -1,5 +1,6 @@
 "use client";
 
+import { Link } from "@nextui-org/react";
 import Image from "next/image";
 import Script from "next/script";
 import { useEffect } from "react";
@@ -9,7 +10,7 @@ export default function Home() {
     window.lemonSqueezyAffiliateConfig = { store: "jytech-media" };
   }, []);
   return (
-    <main>
+    <main className="flex-1 px-6">
       <svg xmlns="http://www.w3.org/2000/svg" style={{ display: "none" }}>
         <symbol id="check2" viewBox="0 0 16 16">
           <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
@@ -26,7 +27,7 @@ export default function Home() {
         </symbol>
       </svg>
 
-      <div className="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <div className="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle hidden">
         <button
           className="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center d-none"
           id="bd-theme"
@@ -108,12 +109,11 @@ export default function Home() {
           </li>
         </ul>
       </div>
-
-      <main>
-        <div className="p-5 mb-4 text-bg-dark rounded-3">
-          <div className="container-fluid py-5">
-            <h1 className="display-5 fw-bold">JY Tech</h1>
-            <p className="col-md-8 fs-4">
+      <section className="main">
+        <div className="p-12 md:p-24 mb-4 text-white bg-black rounded-lg">
+          <div className="container-fluid">
+            <h1 className="fw-bold text-5xl mb-1">JY Tech</h1>
+            <p className="col-md-8 text-lg md:text-2xl">
               our mission is to revolutionize the intersection of technology and
               commerce, delivering seamless digital experiences that drive
               growth, enhance consumer engagement, and streamline financial
@@ -123,44 +123,55 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="row align-items-md-stretch">
-          <div className="col-md-4">
-            <a href="https://dotku.us/marketing/" target="_blank">
-              <div className="h-100 p-5 bg-body-tertiary border rounded-3">
-                <h2>Media Service</h2>
+        <div className="md:grid md:grid-cols-4 gap-6">
+          <div className="mb-2">
+            <Link isExternal href="https://dotku.us/marketing/" className="h-full">
+              <div className="h-full p-12 bg-body-tertiary border rounded">
+                <h2 className="text-2xl">Media Service</h2>
                 <p>
                   Leveraging advanced analytics and creative strategies, we help
                   brands tell their stories effectively, ensuring maximum reach
                   and engagement across various digital platforms.
                 </p>
               </div>
-            </a>
+            </Link>
           </div>
-          <div className="col-md-4">
-            <a href="https://dotku.us/tech/" target="_blank">
-              <div className="h-100 p-5 bg-body-tertiary border rounded-3">
-                <h2>Tech Service</h2>
+          <div className="mb-2">
+            <Link isExternal href="https://dotku.us/tech/" className="h-full">
+              <div className="h-full p-12 bg-body-tertiary border rounded">
+                <h2 className="text-2xl">Tech Service</h2>
                 <p>
                   We provide tech solution to covers interanational business
                   including AI, IoT, FinTech, EdTech and ect.
                 </p>
               </div>
-            </a>
+            </Link>
           </div>
-          <div className="col-md-4">
-            <a href="https://dkwholesale.us/" target="_blank">
-              <div className="h-100 p-5 bg-body-tertiary border rounded-3">
-                <h2>E-commerce</h2>
+          <div className="mb-2">
+            <Link isExternal href="https://dkwholesale.us/" className="h-full">
+              <div className="h-full p-12 bg-body-tertiary border rounded">
+                <h2 className="text-2xl">E-commerce</h2>
                 <p>
                   We provide robust, user-friendly e-commerce solutions that
                   streamline the buying process, enhance user experience, and
                   boost online sales.
                 </p>
               </div>
-            </a>
+            </Link>
+          </div>
+          <div className="mb-2">
+            <Link href="investors" className="h-full">
+              <div className="h-full p-12 bg-body-tertiary border rounded">
+                <h2 className="text-2xl">Investments</h2>
+                <p>
+                We connect global investors with innovative entrepreneurs,
+                offering financial resources and support.
+                </p>
+              </div>
+            </Link>
           </div>
         </div>
-      </main>
+      </section>
       <Script
         src="//getbootstrap.com/docs/5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
