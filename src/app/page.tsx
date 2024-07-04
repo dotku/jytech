@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 export default function Home() {
   useEffect(() => {
-    window?.lemonSqueezyAffiliateConfig = { store: "jytech-media" };
+    window.lemonSqueezyAffiliateConfig = { store: "jytech-media" };
   }, []);
   return (
     <main>
