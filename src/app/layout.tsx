@@ -69,12 +69,6 @@ export default function RootLayout({
         />
         <script src="https://lmsqueezy.com/affiliate.js" defer></script>
         <meta name="theme-color" content="#712cf9" />
-        <link
-          rel="stylesheet"
-          href="//getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css"
-          integrity="sha384-whatever-integrity-checksum"
-          crossOrigin="anonymous"
-        />
       </Head>
       <body>
         <div className="container py-4">
