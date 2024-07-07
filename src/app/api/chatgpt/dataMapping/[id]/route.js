@@ -12,7 +12,7 @@ export async function GET(_request, { params }) {
   let json;
 
   try {
-    json = await fetch(`http://localhost:3000/api/chatgpt/share/${id}`).then(
+    json = await fetch(`https://jytech.us/api/chatgpt/share/${id}`).then(
       (rsp) => rsp.json()
     );
   } catch (error) {
