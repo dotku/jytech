@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
-import { JSDOM } from "jsdom";
+import { getDomain } from "@/utils/getDomain";
 
 export async function GET(_request, { params }) {
+  const domain = getDomain();
   const { id } = params;
 
   // Check if the ID is the placeholder and handle accordingly
@@ -12,8 +13,8 @@ export async function GET(_request, { params }) {
   let json;
 
   try {
-    json = await fetch(`https://jytech.us/api/chatgpt/share/${id}`).then(
-      (rsp) => rsp.json()
+    json = await fetch(`${domain}/api/chatgpt/share/${id}`).then((rsp) =>
+      rsp.json()
     );
   } catch (error) {
     console.error("Error fetching data:", error);
