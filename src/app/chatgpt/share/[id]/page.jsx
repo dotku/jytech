@@ -1,19 +1,21 @@
 "use client";
 
+import { getDomain } from "@/utils/getDomain";
 import { Card, CardBody, Spinner } from "@nextui-org/react";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Markdown from "react-markdown";
 
 export default function SharePage({ params }) {
+  const domain = getDomain();
   const [data, setData] = useState(null);
   const [ifLoading, setIfLoading] = useState(true);
   const [error, setError] = useState(null);
 
   const genShare = useCallback(async () => {
     try {
-      const rsp = await fetch(`/api/chatgpt/dataMapping/${params.id}`).then(
-        (rsp) => rsp.json()
-      );
+      const rsp = await fetch(
+        `${domain}/api/chatgpt/dataMapping/${params.id}`
+      ).then((rsp) => rsp.json());
       setData(rsp);
     } catch (e) {
       setError(e.message);
