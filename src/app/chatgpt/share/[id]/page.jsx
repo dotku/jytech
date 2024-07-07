@@ -36,8 +36,6 @@ export default function SharePage({ params }) {
   if (ifLoading) return <Spinner />;
   if (error) return <div className="text-danger">{error}</div>;
 
-  console.log("list", list);
-
   return (
     <>
       <div>
