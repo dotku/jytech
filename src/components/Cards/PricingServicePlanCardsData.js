@@ -3,7 +3,7 @@ const rows = [
     key: 1,
     name: "Software Development",
     price: "$500+",
-    description: `customized building websites or applications according to your needs:
+    description: `Customized building websites or applications according to your needs:
 
 - Web, Mobile, Desktop Application Development
 - E-commerce Solutions
@@ -18,7 +18,7 @@ const rows = [
   {
     key: 2,
     name: "SEO",
-    description: `monthly anlayse and improve the content of your assets, including social media channels, websites and mobile contents:
+    description: `Monthly anlayse and improve the content of your assets, including social media channels, websites and mobile contents:
 
 - On-page and off-page SEO
 - Analytics and Reporting
@@ -31,7 +31,7 @@ const rows = [
     key: 3,
     name: "Advertizing",
     price: "$100/mo or 15%",
-    description: `either fixed or percentage of advertizing cost, whichever larger:
+    description: `Either fixed or percentage of advertizing cost, whichever larger:
 
 - Influencer Marketing
 - Affiliate Marketing
@@ -42,7 +42,7 @@ const rows = [
     key: 3,
     name: "Inspection Verfication Service",
     price: "$800~$2500",
-    description: `either fixed or percentage of advertizing cost, whichever larger:
+    description: `Either fixed or percentage of advertizing cost, whichever larger:
 
 - Pre-Shipment Inspections
 - During Production Inspections
