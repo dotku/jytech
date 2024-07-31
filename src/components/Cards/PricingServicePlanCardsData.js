@@ -5,7 +5,7 @@ const rows = [
     price: "$500+",
     description: `customized building websites or applications according to your needs:
 
-- Web Application Development
+- Web, Mobile, Desktop Application Development
 - E-commerce Solutions
 - Content Management Systems (CMS)
 - Customers Relationship Management (CRM)
