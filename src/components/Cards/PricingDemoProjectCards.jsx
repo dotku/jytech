@@ -26,6 +26,14 @@ const projectDataRows = [
     url: "https://qixing-au-pair.mailchimpsites.com/",
   },
   {
+    key: 5,
+    name: "Carku iOS App",
+    description:
+      "Mobile shared power: mobile phone scan code can borrow the battery to charge the phone, simple and quick.Don't be afraid to run out of battery when you go out. Mobile shared power: When your mobile phone is low in power when you are out and about, you can borrow the battery from any nearby station and return it to any nearby station after charging the mobile phone.",
+    cost: "$50,000",
+    url: "https://apps.apple.com/us/app/carku/id1584274040",
+  },
+  {
     key: 2,
     name: "Next Appointment App",
     description:
