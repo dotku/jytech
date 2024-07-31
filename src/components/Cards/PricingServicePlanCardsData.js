@@ -1,7 +1,7 @@
 const rows = [
   {
     key: 1,
-    name: "Website",
+    name: "Software Development",
     price: "$500+",
     description: `customized building websites or applications according to your needs:
 
