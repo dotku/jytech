@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <header className="pb-3 my-4 border-bottom">
+    <header className="pb-3 p-5 border-bottom">
       <a
         href="/"
         className="align-items-center text-body-emphasis text-decoration-none d-inline inline-block"
