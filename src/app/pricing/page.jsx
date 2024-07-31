@@ -9,6 +9,7 @@ import {
   TableRow,
 } from "@nextui-org/react";
 import PricingDemoProjectCards from "../../components/Cards/PricingDemoProjectCards";
+import PricingServicePlanCards from "../../components/Cards/PricingServicePlanCards";
 
 export default function PricingPage() {
   const columns = [
@@ -35,28 +36,14 @@ export default function PricingPage() {
     },
     {
       key: 3,
-      name: "Facebook Advertizing",
-      price: "$100+",
+      name: "Advertizing",
+      price: "$100/mo or 15% of advertizing cost, whichever larger",
     },
   ];
 
   return (
     <>
-      <h2 className="text-xl py-5">Pricing</h2>
-      <Table aria-label="Service Pricing Table" className="max-w-96">
-        <TableHeader>
-          {columns.map((column) => (
-            <TableColumn key={column.key}>{column.label}</TableColumn>
-          ))}
-        </TableHeader>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.key}>
-              {(columnKey) => <TableCell>{row[columnKey]}</TableCell>}
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+      <PricingServicePlanCards />
       <PricingDemoProjectCards />
     </>
   );

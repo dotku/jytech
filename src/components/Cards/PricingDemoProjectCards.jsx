@@ -44,7 +44,6 @@ const projectDataRows = [
 ];
 
 export default function PricingDemoProjects() {
-  console.log("projectDataRows", projectDataRows);
   return (
     <>
       <h3 className="text-xl py-5">Demo Projects</h3>
