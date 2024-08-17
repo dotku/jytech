@@ -20,7 +20,7 @@ export default function InvesstorPage() {
           <Card>
             <div className="flex justify-center py-6">
               <Image
-                src="/assets/images/ken_wang.png"
+                src="/assets/images/ken_wang_art.png"
                 alt="ken wang"
                 className="max-h-[320px] max-w-[320px] rounded-full h-[320px]"
               />
