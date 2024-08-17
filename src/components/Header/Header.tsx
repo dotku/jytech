@@ -4,7 +4,7 @@ export default function Header() {
       <a
         href="/"
         className="align-items-center text-body-emphasis text-decoration-none d-inline inline-block"
-        title="Elevate Your Tech Business with the Power of AI Tech [Go to Home Page]"
+        title="Elevate Your Tech Business with the power of media and technologies"
       >
         <svg
           width="40px"
