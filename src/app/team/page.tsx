@@ -10,9 +10,6 @@ import {
   Link,
   Spinner,
 } from "@nextui-org/react";
-import useFetch from "../../hooks/useFetch";
-import { useMemo, useState } from "react";
-import CEOImage from "./8031723872470_.pic.jpg";
 
 export default function InvesstorPage() {
   return (
@@ -23,15 +20,15 @@ export default function InvesstorPage() {
           <Card>
             <div className="flex justify-center py-6">
               <Image
-                src="/assets/images/8031723872470_.pic.jpg"
+                src="/assets/images/ken_wang.png"
                 alt="ken wang"
                 className="max-h-[320px] max-w-[320px] rounded-full h-[320px]"
               />
             </div>
-            <CardHeader className="text-xl text-center pb-0">
+            <CardHeader className="text-xl text-center pb-0 px-6">
               Ken Wang, CEO
             </CardHeader>
-            <CardBody>
+            <CardBody className="p-6 pt-2">
               Previous known as the founder of AngelVC (Tianfeng Search), a
               visionary entrepreneur known for his pioneering work in venture
               capital.
@@ -45,10 +42,10 @@ export default function InvesstorPage() {
                 className="rounded-full max-h-[320px] max-w-[320px] h-[320px]"
               />
             </div>
-            <CardHeader className="text-xl text-center pb-0">
+            <CardHeader className="text-xl text-center pb-0 px-6">
               Jay Lin, CTO
             </CardHeader>
-            <CardBody>
+            <CardBody className="p-6 pt-2">
               Jay Lin is a highly experienced software engineering leader with
               over years of experience across various industries, including
               e-commerce, finance, media, and robotics, by delivering
@@ -63,10 +60,10 @@ export default function InvesstorPage() {
                 className="rounded-full max-h-[320px] max-w-[320px] h-[320px]"
               />
             </div>
-            <CardHeader className="text-xl text-center pb-0">
+            <CardHeader className="text-xl text-center pb-0 px-6">
               Peter Yau, CBDO
             </CardHeader>
-            <CardBody>
+            <CardBody className="p-6 pt-2">
               Peter Yau is the Chief Business Development Officer (CBDO)
               overseeing global operations across key markets, including China,
               the US, Canada, and Brazil with a strategic focus on driving
