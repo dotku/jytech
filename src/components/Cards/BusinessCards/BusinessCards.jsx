@@ -24,6 +24,7 @@ export default function BusinessCards() {
             <img
               src="https://themediaonline.co.za/wp-content/uploads/2023/11/Kantar-MTP-24-hero-square-1.png"
               alt="media"
+              className="min-h-[150px]"
             />
           </div>
         </Link>

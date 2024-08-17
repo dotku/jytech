@@ -69,7 +69,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#712cf9" />
       </Head>
       <body>
-        <div className="container mx-auto h-full flex flex-col h-screen justify-between">
+        <div className="container mx-auto min-h-full flex flex-col justify-between">
           <Header />
           {children}
           <Footer />

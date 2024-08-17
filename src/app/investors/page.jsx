@@ -39,11 +39,11 @@ export default function InvesstorPage() {
                 <strong>{data.length}</strong> investors, each bringing unique
                 expertise, insights, and funding opportunities.
               </p>
-              <p className="text-xl">
+              <p className="text-xl hidden sm:block">
                 Our goal is to empower startups by providing access to valuable
                 information that can help them grow and succeed.{" "}
               </p>
-              <p className="text-xl">
+              <p className="text-xl hidden md:block">
                 Whether you&apos;re seeking seed funding, venture capital, or
                 strategic partnerships, our directory offers a comprehensive
                 overview of potential investors who can support your
