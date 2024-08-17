@@ -24,18 +24,35 @@ export default function InvesstorPage() {
   return Array.isArray(data) && data.length ? (
     <main className="px-6">
       <div className="mb-5">
-        <p>
-          Welcome to our Investor Directory, your go-to resource for connecting
-          with top investors in the startup ecosystem. We have meticulously
-          curated a list of <strong>{data.length}</strong> investors, each
-          bringing unique expertise, insights, and funding opportunities. Our
-          goal is to empower startups by providing access to valuable
-          information that can help them grow and succeed. Whether you&apos;re
-          seeking seed funding, venture capital, or strategic partnerships, our
-          directory offers a comprehensive overview of potential investors who
-          can support your entrepreneurial journey. Explore, connect, and take
-          your startup to the next level with our investor directory.
-        </p>
+        <Card>
+          <CardBody className="p-12">
+            <h2 className="text-3xl mb-3">
+              Welcome to our Investor Directory!
+            </h2>
+            <div className="text-gray-600">
+              <p className="text-xl">
+                Your go-to resource for connecting with top investors in the
+                startup ecosystem.
+              </p>
+              <p className="text-xl">
+                We have meticulously curated a list of{" "}
+                <strong>{data.length}</strong> investors, each bringing unique
+                expertise, insights, and funding opportunities.
+              </p>
+              <p className="text-xl">
+                Our goal is to empower startups by providing access to valuable
+                information that can help them grow and succeed.{" "}
+              </p>
+              <p className="text-xl">
+                Whether you&apos;re seeking seed funding, venture capital, or
+                strategic partnerships, our directory offers a comprehensive
+                overview of potential investors who can support your
+                entrepreneurial journey. Explore, connect, and take your startup
+                to the next level with our investor directory.
+              </p>
+            </div>
+          </CardBody>
+        </Card>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {data.map((item, idx) => (
