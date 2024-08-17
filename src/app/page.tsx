@@ -1,6 +1,6 @@
 "use client";
 
-import { Link } from "@nextui-org/react";
+import { Card, CardBody, CardHeader, Divider, Link } from "@nextui-org/react";
 import Image from "next/image";
 import Script from "next/script";
 import { useEffect } from "react";
@@ -110,66 +110,113 @@ export default function Home() {
         </ul>
       </div>
       <section className="main">
-        <div className="p-12 md:p-24 mb-4 text-white bg-black rounded-lg">
-          <div className="container-fluid">
-            <h1 className="fw-bold text-5xl mb-1">JY Tech</h1>
+        <div
+          className="p-12 mb-5 text-white bg-black rounded-lg"
+          style={{
+            backgroundImage: "url('/assets/images/8021723846849_.pic.jpg')",
+            backgroundSize: "cover",
+          }}
+        >
+          <p className="text-end">
+            <a href="tel:4158511937">(415) 851-1937</a>
+          </p>
+          <div className="container-fluid md:p-20">
+            <h1 className="fw-bold text-5xl mb-3">JY Tech</h1>
             <p className="col-md-8 text-lg md:text-2xl">
-              our mission is to revolutionize the intersection of technology and
+              Our mission is to revolutionize the intersection of technology and
               commerce, delivering seamless digital experiences that drive
               growth, enhance consumer engagement, and streamline financial
               transactions.
             </p>
-            <p>Contact Us at (415) 851-1937</p>
           </div>
         </div>
 
         <div className="md:grid md:grid-cols-4 gap-6">
-          <div className="mb-2">
-            <Link isExternal href="https://dotku.us/marketing/" className="h-full">
-              <div className="h-full p-12 bg-body-tertiary border rounded">
-                <h2 className="text-2xl">Media Service</h2>
-                <p>
-                  Leveraging advanced analytics and creative strategies, we help
-                  brands tell their stories effectively, ensuring maximum reach
-                  and engagement across various digital platforms.
-                </p>
+          <Card className="mb-3">
+            <Link isExternal href="https://dotku.us/marketing/">
+              <div
+                className="w-full aspect-[16/9]"
+                style={{ height: "150px", overflowY: "hidden" }}
+              >
+                <img
+                  src="https://themediaonline.co.za/wp-content/uploads/2023/11/Kantar-MTP-24-hero-square-1.png"
+                  alt="media"
+                />
               </div>
             </Link>
-          </div>
-          <div className="mb-2">
-            <Link isExternal href="https://dotku.us/tech/" className="h-full">
-              <div className="h-full p-12 bg-body-tertiary border rounded">
-                <h2 className="text-2xl">Tech Service</h2>
-                <p>
-                  We provide tech solution to covers interanational business
-                  including AI, IoT, FinTech, EdTech and ect.
-                </p>
+            <CardHeader className="pb-0">
+              <h2 className="text-2xl">Media Service</h2>
+            </CardHeader>
+            <CardBody className="pt-0 text-gray-500">
+              Leveraging advanced analytics and creative strategies, we help
+              brands tell their stories effectively, ensuring maximum reach and
+              engagement across various digital platforms.
+            </CardBody>
+          </Card>
+          <Card className="mb-3">
+            <Link isExternal href="https://dotku.us/tech/">
+              <div
+                className="w-full aspect-[16/9]"
+                style={{ height: "150px", overflowY: "hidden" }}
+              >
+                <img
+                  src="https://media.licdn.com/dms/image/D4D12AQH0VKGGvIkQag/article-cover_image-shrink_720_1280/0/1697706837353?e=2147483647&v=beta&t=Bj6BY9Mkqjc_pqMqDXBuNrdmtNXyY5xKy2k-jqCc0nM"
+                  alt="media"
+                  className="object-cover"
+                />
               </div>
             </Link>
-          </div>
-          <div className="mb-2">
-            <Link isExternal href="https://dkwholesale.us/" className="h-full">
-              <div className="h-full p-12 bg-body-tertiary border rounded">
-                <h2 className="text-2xl">E-commerce</h2>
-                <p>
-                  We provide robust, user-friendly e-commerce solutions that
-                  streamline the buying process, enhance user experience, and
-                  boost online sales.
-                </p>
+            <CardHeader className="pb-0">
+              <h2 className="text-2xl">Tech Service</h2>
+            </CardHeader>
+            <CardBody className="pt-0 text-gray-500">
+              We provide tech solution to covers interanational business
+              including AI, IoT, FinTech, EdTech and ect.
+            </CardBody>
+          </Card>
+          <Card className="mb-3">
+            <Link isExternal href="https://dkwholesale.us/">
+              <div
+                className="w-full aspect-[16/9]"
+                style={{ height: "150px", overflowY: "hidden" }}
+              >
+                <img
+                  src="https://miro.medium.com/v2/resize:fit:1400/0*U_bLFV3vJBTVOELC"
+                  alt="media"
+                  className="object-cover"
+                />
               </div>
             </Link>
-          </div>
-          <div className="mb-2">
-            <Link href="investors" className="h-full">
-              <div className="h-full p-12 bg-body-tertiary border rounded">
-                <h2 className="text-2xl">Investments</h2>
-                <p>
-                We connect global investors with innovative entrepreneurs,
-                offering financial resources and support.
-                </p>
+            <CardHeader className="pb-0">
+              <h2 className="text-2xl">E-commerce</h2>
+            </CardHeader>
+            <CardBody className="pt-0 text-gray-500">
+              We provide robust, user-friendly e-commerce solutions that
+              streamline the buying process, enhance user experience, and boost
+              online sales.
+            </CardBody>
+          </Card>
+          <Card className="mb-3">
+            <Link isExternal href="investors">
+              <div
+                className="w-full aspect-[16/9]"
+                style={{ height: "150px", overflowY: "hidden" }}
+              >
+                <img
+                  src="https://cdn.thrivent.com/dims4/default/4e2c142/2147483647/strip/true/crop/8660x5773+0+0/resize/1036x691!/quality/90/?url=http%3A%2F%2Fthrivent-brightspot.s3.amazonaws.com%2F45%2F66%2F6ca61ef44eb5b70dbb0a9a8e1d7b%2F4.12.42_What%20to%20invest%20in%20during%20a%20recession.jpg"
+                  alt="media"
+                  className="object-cover"
+                />
               </div>
             </Link>
-          </div>
+            <CardHeader className="pb-0">
+              <h2 className="text-2xl">Investments</h2>
+            </CardHeader>
+            <CardBody className="pt-0 text-gray-500">
+              We connect global investors with innovative entrepreneurs,
+              offering financial resources and support.
+            </CardBody>
+          </Card>
         </div>
       </section>
       <Script
