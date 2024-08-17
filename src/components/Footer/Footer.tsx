@@ -22,7 +22,10 @@ export default function Footer() {
             </address>
           </div>
           <div className="flex justify-center md:justify-end items-end">
-            <span>&copy;2023 JY Tech LLC, made in the US.</span>{" "}
+            <span>
+              &copy;2002 - {new Date().getFullYear()} JY Tech LLC, made in the
+              US.
+            </span>{" "}
             <span className="ps-1">v{version}</span>
           </div>
         </div>

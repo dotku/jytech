@@ -22,20 +22,22 @@ export default function InvesstorPage() {
   if (error) return <div>Something goes wrong, please try again later</div>;
 
   return Array.isArray(data) && data.length ? (
-    <>
-      <p>
-        Welcome to our Investor Directory, your go-to resource for connecting
-        with top investors in the startup ecosystem. We have meticulously
-        curated a list of approximately 800 investors, each bringing unique
-        expertise, insights, and funding opportunities. Our goal is to empower
-        startups by providing access to valuable information that can help them
-        grow and succeed. Whether you&apos;re seeking seed funding, venture
-        capital, or strategic partnerships, our directory offers a comprehensive
-        overview of potential investors who can support your entrepreneurial
-        journey. Explore, connect, and take your startup to the next level with
-        our investor directory.
-      </p>
-      <div className="grid grid-cols-4 gap-4">
+    <main className="px-6">
+      <div className="mb-5">
+        <p>
+          Welcome to our Investor Directory, your go-to resource for connecting
+          with top investors in the startup ecosystem. We have meticulously
+          curated a list of <strong>{data.length}</strong> investors, each
+          bringing unique expertise, insights, and funding opportunities. Our
+          goal is to empower startups by providing access to valuable
+          information that can help them grow and succeed. Whether you&apos;re
+          seeking seed funding, venture capital, or strategic partnerships, our
+          directory offers a comprehensive overview of potential investors who
+          can support your entrepreneurial journey. Explore, connect, and take
+          your startup to the next level with our investor directory.
+        </p>
+      </div>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {data.map((item, idx) => (
           <Card key={idx}>
             <CardHeader>{item}</CardHeader>
@@ -51,7 +53,7 @@ export default function InvesstorPage() {
           </Card>
         ))}
       </div>
-    </>
+    </main>
   ) : (
     <>{JSON.stringify(data)}</>
   );
