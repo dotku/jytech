@@ -44,7 +44,7 @@ export default function BusinessCards() {
         </CardBody>
       </Card>
       <Card className="mb-3">
-        <Link isExternal href="https://dotku.us/tech/">
+        <Link href="/tech">
           <div
             className="w-full aspect-[16/9]"
             style={{ height: "150px", overflowY: "hidden" }}

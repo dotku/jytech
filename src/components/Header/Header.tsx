@@ -28,7 +28,7 @@ export default function Header() {
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
-          <Link color="foreground" href="https://dotku.us/marketing" target="_blank" isExternal showAnchorIcon>
+          <Link color="foreground" href="https://dotku.us/marketing" isExternal showAnchorIcon>
             Marketing
           </Link>
         </NavbarItem>
@@ -38,7 +38,7 @@ export default function Header() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="https://dkwholesale.us" target="_blank" isExternal showAnchorIcon>
+          <Link color="foreground" href="https://dkwholesale.us" isExternal showAnchorIcon>
             E-commerce
           </Link>
         </NavbarItem>
