@@ -1,6 +1,9 @@
+"use client"
+
 import useFetch from "@/hooks/useFetch";
 import { Card, CardBody, CardHeader, Link, Spinner } from "@nextui-org/react";
 import { useMemo } from "react";
+import SkeletonCard from "../SkeletonCard";
 
 export default function BusinessCards() {
   const { data: investorsRsp, ifLoading } = useFetch({ url: "/api/investors" });
@@ -9,8 +12,11 @@ export default function BusinessCards() {
 
   if (ifLoading)
     return (
-      <div className="flex flex-grow justify-center items-center">
-        <Spinner className="mx-auto" />
+      <div className="md:grid md:grid-cols-4 gap-6 justify-between  h-80">
+        <SkeletonCard />
+        <SkeletonCard />
+        <SkeletonCard />
+        <SkeletonCard />
       </div>
     );
   return (

@@ -1,6 +1,9 @@
+import { Button, Link, Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@nextui-org/react";
+
 export default function Header() {
   return (
-    <header className="pb-3 p-5 border-bottom">
+    <Navbar className="pb-3 p-5 border-bottom" maxWidth="2xl">
+      <NavbarBrand>
       <a
         href="/"
         className="align-items-center text-body-emphasis text-decoration-none d-inline inline-block"
@@ -22,6 +25,36 @@ export default function Header() {
           ></path>
         </svg>
       </a>
-    </header>
+      </NavbarBrand>
+      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+        <NavbarItem>
+          <Link color="foreground" href="https://dotku.us/marketing" target="_blank" isExternal showAnchorIcon>
+            Marketing
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link color="foreground" href="/tech">
+            Technologies
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link color="foreground" href="https://dkwholesale.us" target="_blank" isExternal showAnchorIcon>
+            E-commerce
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link color="foreground" href="/investors">
+            Investment
+          </Link>
+        </NavbarItem>
+      </NavbarContent>
+      <NavbarContent justify="end">
+        <NavbarItem>
+          <Button as={Link} color="primary" href="/contact-us" variant="bordered">
+            Contact us
+          </Button>
+        </NavbarItem>
+      </NavbarContent>
+    </Navbar>
   );
 }

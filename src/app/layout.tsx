@@ -69,11 +69,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#712cf9" />
       </Head>
       <body>
-        <div className="container mx-auto min-h-full flex flex-col justify-between">
-          <Header />
-          {children}
-          <Footer />
-        </div>
+        {children}
       </body>
     </html>
   );

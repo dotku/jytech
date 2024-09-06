@@ -13,6 +13,15 @@ const rows = [
 - Multilingual Support
 - Third-Party Integrations
 - Cloud and Hosting Solutions
+
+## Cases
+
+- 5 to 6 pages (Design and Development) $800
+- 6 to 10 pages (Design and Development) $1200 
+- eCommerce Website $1800+
+- Blockchain/Crypto $2000+
+- AI based Websites would be based on User requirements
+- Mobile Apps for Android and Apple based on User requirements
       `,
   },
   {

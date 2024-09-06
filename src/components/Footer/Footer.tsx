@@ -1,9 +1,4 @@
-import getConfig from "next/config";
-
-const { publicRuntimeConfig } = getConfig();
-const version = publicRuntimeConfig?.version;
-
-export default function Footer() {
+export default function Footer({version=""}) {
   return (
     <footer>
       <div className="p-6 my-4 text-sm">
@@ -26,7 +21,7 @@ export default function Footer() {
               &copy;2002 - {new Date().getFullYear()} JY Tech LLC, made in the
               US.
             </span>{" "}
-            <span className="ps-1">v{version}</span>
+            {version ? <span className="ps-1">v{version}</span> : null}
           </div>
         </div>
       </div>

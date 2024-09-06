@@ -18,6 +18,10 @@ const ReactMarkdownWrapper = styled.div`
     list-style-type: disc;
     padding-left: 40px;
   }
+  h2 {
+    margin: 0.5rem 0;
+    font-weight: bold;
+  }
 `;
 
 export default function PricingServicePlans() {
@@ -35,7 +39,7 @@ export default function PricingServicePlans() {
             </CardHeader>
             <Divider />
             <CardBody>
-              <div className="my-2">
+              <div className="m-2">
                 <ReactMarkdownWrapper>
                   <ReactMarkdown>{row.description}</ReactMarkdown>
                 </ReactMarkdownWrapper>
