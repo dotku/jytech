@@ -1,7 +1,9 @@
+import GeneralLayout from "@/components/Layouts/GeneralLayout";
+
 export default function PricingLayout({ children }) {
   return (
-    <>
-      <div className="container mx-auto p-5">{children}</div>
-    </>
+      <GeneralLayout>
+        <div className="px-6">{children}</div>
+      </GeneralLayout>
   );
 }

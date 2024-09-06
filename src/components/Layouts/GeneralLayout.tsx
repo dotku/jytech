@@ -1,4 +1,5 @@
-import dynamic from "next/dynamic";
+"use server"
+
 import Header from "../Header";
 import Footer from "../Footer";
 
@@ -10,15 +11,17 @@ const version = publicRuntimeConfig?.version;
 
 // const Footer = dynamic(() => import("../Footer"), { ssr: true });
 
-export default function GeneralLayout({
+export default async function GeneralLayout({
   children,
-  style
+  style,
+  className
 }: Readonly<{
   children: React.ReactNode;
-  style?: React.CSSProperties
+  style?: React.CSSProperties;
+  className?: string
 }>) {
   return (
-    <div style={style}>
+    <div style={style} className={className}>
       <Header />
       <div className="container mx-auto min-h-full flex flex-col justify-between" style={style}>
         {children}

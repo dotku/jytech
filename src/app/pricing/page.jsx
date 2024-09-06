@@ -1,13 +1,5 @@
 "use client";
 
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableColumn,
-  TableHeader,
-  TableRow,
-} from "@nextui-org/react";
 import PricingDemoProjectCards from "../../components/Cards/PricingDemoProjectCards";
 import PricingServicePlanCards from "../../components/Cards/PricingServicePlanCards";
 
@@ -45,6 +37,6 @@ export default function PricingPage() {
     <>
       <PricingServicePlanCards />
       <PricingDemoProjectCards />
-    </>
+      </>
   );
 }
