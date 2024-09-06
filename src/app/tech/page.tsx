@@ -8,7 +8,7 @@ import { Image } from "@nextui-org/react";
 export default function TechPage() {
   return (
     <GeneralLayout>
-        <Image alt="tech banner" src="https://apptechhub.com/assets/images/bg/home1-banner.png" />
+        <Image alt="jytech tech page banner" src="https://apptechhub.com/assets/images/bg/home1-banner.png" />
         <PricingServicePlanCards />
         <PricingDemoProjectCards />
     </GeneralLayout>

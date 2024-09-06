@@ -1,5 +1,6 @@
 "use client";
 
+import { Image } from "@nextui-org/react";
 import PricingDemoProjectCards from "../../components/Cards/PricingDemoProjectCards";
 import PricingServicePlanCards from "../../components/Cards/PricingServicePlanCards";
 
@@ -35,8 +36,9 @@ export default function PricingPage() {
 
   return (
     <>
+      <Image src="https://apptechhub.com/assets/images/Footer%20banner.png" alt="jytech pricing banner" />
       <PricingServicePlanCards />
       <PricingDemoProjectCards />
-      </>
+    </>
   );
 }
