@@ -16,6 +16,7 @@ const rows = [
 
 ## Cases
 
+- Single landiang page $500
 - 5 to 6 pages (Design and Development) $800
 - 6 to 10 pages (Design and Development) $1200 
 - eCommerce Website $1800+
