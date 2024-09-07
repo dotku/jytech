@@ -42,7 +42,7 @@ export default function BusinessPage() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-3">
         {data.map(({ name, summary, url }, idx) => (
           <Card key={idx}>
-            <CardHeader className="font-bold pt-6 px-6 text-xl">
+            <CardHeader className="font-bold pt-6 px-6 text-2xl">
               {name}
             </CardHeader>
             <CardBody className="px-6">

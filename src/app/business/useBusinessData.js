@@ -6,7 +6,7 @@ import { useMemo } from "react";
 
 const data = [
   {
-    name: "EB-5 immigratn investor program",
+    name: "EB-5 investor immigration",
     summary:
       "The EB-5 Immigrant Investor Program is a U.S. immigration initiative aimed at fostering economic growth by attracting foreign investment. In exchange for meeting specific investment thresholds, typically in targeted employment areas, qualified **investors and their immediate family members** are eligible to obtain U.S. permanent residency **(green card)**. This program not only supports U.S. job creation but also offers a streamlined pathway for investors to establish roots in the United States.",
     url: "/business/eb-5",
