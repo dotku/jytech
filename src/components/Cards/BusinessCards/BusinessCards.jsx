@@ -19,6 +19,7 @@ export default function BusinessCards() {
         <SkeletonCard />
       </div>
     );
+
   return (
     <div className="md:grid md:grid-cols-4 gap-6">
       <Card className="mb-3">
@@ -34,10 +35,10 @@ export default function BusinessCards() {
             />
           </div>
         </Link>
-        <CardHeader className="pb-0">
+        <CardHeader className="pb-0 px-6">
           <h2 className="text-2xl">Media Service</h2>
         </CardHeader>
-        <CardBody className="pt-0 text-gray-500">
+        <CardBody className="pt-0 text-gray-500 px-6 pb-6">
           Leveraging advanced analytics and creative strategies, we help brands
           tell their stories effectively, ensuring maximum reach and engagement
           across various digital platforms.
@@ -56,10 +57,10 @@ export default function BusinessCards() {
             />
           </div>
         </Link>
-        <CardHeader className="pb-0">
+        <CardHeader className="pb-0 px-6">
           <h2 className="text-2xl">Tech Service</h2>
         </CardHeader>
-        <CardBody className="pt-0 text-gray-500">
+        <CardBody className="pt-0 text-gray-500 px-6 pb-6">
           We provide tech solution to covers interanational business including
           AI, IoT, FinTech, EdTech and ect.
         </CardBody>
@@ -77,10 +78,10 @@ export default function BusinessCards() {
             />
           </div>
         </Link>
-        <CardHeader className="pb-0">
+        <CardHeader className="pb-0 px-6">
           <h2 className="text-2xl">E-commerce</h2>
         </CardHeader>
-        <CardBody className="pt-0 text-gray-500">
+        <CardBody className="pt-0 text-gray-500 px-6 pb-6">
           We provide robust, user-friendly e-commerce solutions that streamline
           the buying process, enhance user experience, and boost online sales.
         </CardBody>
@@ -98,10 +99,10 @@ export default function BusinessCards() {
             />
           </div>
         </Link>
-        <CardHeader className="pb-0">
+        <CardHeader className="pb-0 px-6">
           <h2 className="text-2xl">Business</h2>
         </CardHeader>
-        <CardBody className="pt-0 text-gray-500 block">
+        <CardBody className="pt-0 text-gray-500 block px-6 pb-6">
           We help global businesses grow by connecting with over 1,000
           organizations and partners worldwide, successfully handling more than
           100 cases each year.
