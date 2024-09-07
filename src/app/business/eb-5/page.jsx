@@ -1,7 +1,6 @@
 "use client";
 
 import {
-  Avatar,
   Button,
   Card,
   CardBody,
@@ -77,7 +76,12 @@ export default function EB5() {
             Want to learn more about the steps on process the EB-5?
           </p>
           <div>
-            <Button variant="bordered" color="primary" href="tel:5103783479">
+            <Button
+              variant="bordered"
+              color="primary"
+              as={Link}
+              href="tel:5103783479"
+            >
               Contact Lawyer Meng
             </Button>
             <Button

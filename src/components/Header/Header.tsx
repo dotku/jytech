@@ -53,7 +53,7 @@ export default function Header() {
   );
 
   return (
-    <Navbar className="pb-3 p-5 border-bottom" maxWidth="2xl">
+    <Navbar className="pb-3 mb-3 p-5 border-bottom" maxWidth="2xl">
       <NavbarBrand>
         <a
           href="/"
