@@ -28,7 +28,7 @@ export default function BusinessPage() {
           <h2 className="text-3xl mb-3 w-full">
             Welcome to JYTech Business Center!
           </h2>
-          <div className="text-gray-600">
+          <div className="text-gray-600 w-full">
             <p className="text-xl">
               We help global business grow, we connected with golbal 1,000+
               organization and partners, and successful handle over 100 cases

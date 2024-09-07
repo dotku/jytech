@@ -86,7 +86,7 @@ export default function BusinessCards() {
         </CardBody>
       </Card>
       <Card className="mb-3">
-        <Link isExternal href="/business/investors">
+        <Link isExternal href="/business">
           <div
             className="w-full aspect-[16/9]"
             style={{ height: "150px", overflowY: "hidden" }}
@@ -99,7 +99,7 @@ export default function BusinessCards() {
           </div>
         </Link>
         <CardHeader className="pb-0">
-          <h2 className="text-2xl">Investment</h2>
+          <h2 className="text-2xl">Business</h2>
         </CardHeader>
         <CardBody className="pt-0 text-gray-500 block">
           We connect global <strong>{investors.length}</strong> investors with
