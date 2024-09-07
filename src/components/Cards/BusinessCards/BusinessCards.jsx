@@ -10,9 +10,9 @@ export default function BusinessCards() {
 
   const investors = useMemo(() => investorsRsp?.data, [investorsRsp]);
 
-  if (ifLoading)
+  if (!ifLoading)
     return (
-      <div className="md:grid md:grid-cols-4 gap-6 justify-between  h-80">
+      <div className="md:grid md:grid-cols-4 gap-6 justify-between min-h-80">
         <SkeletonCard />
         <SkeletonCard />
         <SkeletonCard />
