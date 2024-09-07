@@ -25,7 +25,7 @@ export default function EB5() {
       <StyledCard className="max-w-3xl p-7 mx-auto">
         <CardHeader className="flex-col sm:flex-row text-2xl">
           <Button
-            href="tel:(510)378-3479"
+            href="tel:5103783479"
             isIconOnly
             size="lg"
             className="h-24 w-24 sm:h-12 sm:w-12 mr-3 rounded-full"
