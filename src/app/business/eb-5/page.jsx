@@ -24,11 +24,12 @@ export default function EB5() {
   return (
     <>
       <StyledCard className="max-w-3xl p-7 mx-auto">
-        <CardHeader className="text-2xl">
+        <CardHeader className="flex-col sm:flex-row text-2xl">
           <Button
             href="tel:(510)378-3479"
             isIconOnly
-            className="mr-3 rounded-full"
+            size="lg"
+            className="h-24 w-24 sm:h-12 sm:w-12 mr-3 rounded-full"
           >
             <Image
               alt="avatar of jessica meng"
