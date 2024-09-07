@@ -18,7 +18,7 @@ export default function BusinessPage() {
 
   return (
     <>
-      <Card>
+      <Card className="mt-3">
         <Image
           alt="business center"
           src="/assets/images/business/business-banner.webp"
