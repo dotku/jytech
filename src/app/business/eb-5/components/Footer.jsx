@@ -2,14 +2,20 @@ import { Link } from "@nextui-org/react";
 
 export default function Footer() {
   return (
-    <div className="flex justify-between w-full sm:flex-col">
+    <div className="flex justify-between w-full flex-col">
       <div>
         <div>LAW OFFICE OF JESSICA Y. MENG</div>
         <div>4677 Old Ironsides Dr., Suite 350</div>
         <div>Santa Clara, CA 95054</div>
-        <div>Mobile: (510) 378-3479</div>
-        <div>Telephone: (408) 986-9202</div>
-        <div>Facsimile: (408) 986-9206</div>
+        <div>
+          Mobile: <Link href="tel:5103783479">(510) 378-3479</Link>
+        </div>
+        <div>
+          Telephone: <Link href="tel:4089869202">(408) 986-9202</Link>
+        </div>
+        <div>
+          Facsimile: <Link href="tel:4089869206">(408) 986-9206</Link>
+        </div>
         <div>
           <Link
             href="https://www.immigrationmeng.com"

@@ -86,7 +86,7 @@ export default function EB5() {
               isExternal
               showAnchorIcon
               variant="bordered"
-              className="ml-1"
+              className="sm:ml-1 mt-1 sm:mt-0"
               color="primary"
             >
               try Laywer Meng GPT
