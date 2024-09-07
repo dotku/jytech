@@ -102,8 +102,9 @@ export default function BusinessCards() {
           <h2 className="text-2xl">Business</h2>
         </CardHeader>
         <CardBody className="pt-0 text-gray-500 block">
-          We connect global <strong>{investors.length}</strong> investors with
-          innovative entrepreneurs, offering financial resources and support.
+          We help global businesses grow by connecting with over 1,000
+          organizations and partners worldwide, successfully handling more than
+          100 cases each year.
         </CardBody>
       </Card>
     </div>
