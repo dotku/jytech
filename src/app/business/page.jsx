@@ -17,11 +17,11 @@ export default function BusinessPage() {
   const { data } = useBusinessData();
 
   return (
-    <div className="max-w-5xl mx-auto">
+    <div className="max-w-7xl mx-auto">
       <Card className="mt-3">
         <Image
           alt="business center"
-          src="/assets/images/business/jytech-global-business-banner.png"
+          src="/assets/images/business/jytech-global-business-banner-bold.png"
           className="rounded-none"
         />
         <CardFooter className="flex-col bg-white/90 border-white/20 overflow-hidden h-full w-full justify-center md:h-auto shadow-small z-10">
