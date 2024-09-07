@@ -40,13 +40,13 @@ export default function BusinessPage() {
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 mt-3">
         {data.map(({ name, summary, url }, idx) => (
           <Card key={idx}>
-            <CardHeader className="font-bold">{name}</CardHeader>
-            <CardBody>
+            <CardHeader className="font-bold pt-6 px-6">{name}</CardHeader>
+            <CardBody className="px-6">
               <ReactMarkdownWrapper>
                 <Markdown>{summary}</Markdown>
               </ReactMarkdownWrapper>
             </CardBody>
-            <CardFooter className="justify-end">
+            <CardFooter className="justify-end px-6">
               <Link
                 isExternal={!url}
                 showAnchorIcon={!url}
