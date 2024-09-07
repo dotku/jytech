@@ -87,7 +87,7 @@ export default function Header() {
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
-        <NavbarMenu id="navbar-menu" className="mt-12">
+        <NavbarMenu id="navbar-menu" className="mt-10">
           {MenuItems}
           <Divider className="my-3" />
           <NavbarMenuItem>
