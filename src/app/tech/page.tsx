@@ -7,10 +7,15 @@ import { Image } from "@nextui-org/react";
 
 export default function TechPage() {
   return (
-    <GeneralLayout className="px-6">
-        <Image alt="jytech tech page banner" src="https://apptechhub.com/assets/images/bg/home1-banner.png" />
+    <GeneralLayout>
+      <div className="px-6">
+        <Image
+          alt="jytech tech page banner"
+          src="https://apptechhub.com/assets/images/bg/home1-banner.png"
+        />
         <PricingServicePlanCards />
         <PricingDemoProjectCards />
+      </div>
     </GeneralLayout>
   );
 }

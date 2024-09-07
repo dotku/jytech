@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   Button,
@@ -83,13 +83,13 @@ export default function Header() {
         </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end" className="sm:hidden">
-      <NavbarMenuToggle
+        <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
-        <NavbarMenu>
+        <NavbarMenu id="navbar-menu" className="mt-12">
           {MenuItems}
-          <Divider className="my-3"/>
+          <Divider className="my-3" />
           <NavbarMenuItem>
             <Button
               as={Link}
@@ -100,7 +100,7 @@ export default function Header() {
               Contact us
             </Button>
           </NavbarMenuItem>
-          </NavbarMenu>
+        </NavbarMenu>
       </NavbarContent>
     </Navbar>
   );
