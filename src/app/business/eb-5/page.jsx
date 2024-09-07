@@ -44,8 +44,9 @@ export default function EB5() {
         </CardHeader>
         <CardBody>
           <Image
-            src="/assets/images/business/eb-5-process-workflow.png"
+            src="/assets/images/business/eb-5-process-workflow-copyrights.png"
             className="rounded mb-3"
+            alt="jessica meng eb-5 process workflow flyer"
           />
           <p>
             The EB-5 Immigrant Investor Program is a U.S. immigration program
