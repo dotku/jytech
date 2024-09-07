@@ -8,13 +8,13 @@ const data = [
   {
     name: "EB-5 immigratn investor program",
     summary:
-      "The EB-5 Immigrant Investor Program is a U.S. immigration program designed to attract foreign investment in exchange for U.S. permanent residency (a green card).",
+      "The EB-5 Immigrant Investor Program is a U.S. immigration initiative aimed at fostering economic growth by attracting foreign investment. In exchange for meeting specific investment thresholds, typically in targeted employment areas, qualified investors and their immediate family members are eligible to obtain U.S. permanent residency (green card). This program not only supports U.S. job creation but also offers a streamlined pathway for investors to establish roots in the United States.",
     url: "/business/eb-5",
   },
   {
     name: "Tech investors",
     summary:
-      "We connected with over {{investor_number}} global investors focusing on tech",
+      "We’ve successfully established connections with over {{investor_number}} global investors, all with a shared focus on technology-driven ventures. Our expansive network spans various industries and geographies, reinforcing our commitment to fostering innovation. By actively engaging with this diverse group of stakeholders, we’ve built a strong foundation for collaboration, enabling us to stay at the forefront of emerging tech trends and investment opportunities in the global market.",
     url: "/business/investors",
   },
   {
