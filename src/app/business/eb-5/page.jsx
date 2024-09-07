@@ -1,10 +1,44 @@
-import { Card, CardBody } from "@nextui-org/react";
+"use client";
+
+import {
+  Avatar,
+  Button,
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader,
+  Image,
+  Link,
+} from "@nextui-org/react";
 import Footer from "./components/Footer";
+import styled from "styled-components";
+
+const StyledCard = styled(Card)`
+  p {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+`;
 
 export default function EB5() {
   return (
     <>
-      <Card className="max-w-7xl p-7">
+      <StyledCard className="max-w-3xl p-7 mx-auto">
+        <CardHeader className="text-2xl">
+          <Button
+            href="tel:(510)378-3479"
+            isIconOnly
+            className="mr-3 rounded-full"
+          >
+            <Image
+              alt="avatar of jessica meng"
+              size="lg"
+              name="Jesscia Meng"
+              src="/assets/images/profiles/jessica-meng.png"
+            />
+          </Button>
+          Fast and Convenient Green Card Application: EB-5 Investor Visa
+        </CardHeader>
         <CardBody>
           <p>
             The EB-5 Immigrant Investor Program is a U.S. immigration program
@@ -38,9 +72,30 @@ export default function EB5() {
             The program is especially popular for foreign nationals looking for
             a path to U.S. residency through economic contribution.
           </p>
+          <p className="w-full font-bold">
+            Want to learn more about the steps on process the EB-5?
+          </p>
+          <div>
+            <Button variant="bordered" color="primary" href="tel:(510)378-3479">
+              Contact Lawyer Meng
+            </Button>
+            <Button
+              href="https://chatgpt.com/g/g-RyuivvSV7-law-office-of-jessica-y-meng"
+              as={Link}
+              isExternal
+              showAnchorIcon
+              variant="bordered"
+              className="ml-1"
+              color="primary"
+            >
+              try Laywer Meng GPT
+            </Button>
+          </div>
         </CardBody>
-      </Card>
-      <Footer />
+        <CardFooter className="flex-col">
+          <Footer />
+        </CardFooter>
+      </StyledCard>
     </>
   );
 }
