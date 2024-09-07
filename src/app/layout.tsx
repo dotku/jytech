@@ -1,12 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-import Script from "next/script";
 import Head from "next/head";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-
-const inter = Inter({ subsets: ["latin"] });
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
   title:
@@ -70,6 +65,7 @@ export default function RootLayout({
       </Head>
       <body>
         {children}
+        <Analytics />
       </body>
     </html>
   );
