@@ -21,7 +21,7 @@ export default function BusinessPage() {
       <Card className="mt-3">
         <Image
           alt="business center"
-          src="/assets/images/business/jytech-global-business-banner-bold.png"
+          src="/assets/images/business/jytech-global-business-banner-transparent.png"
           className="rounded-none"
         />
         <CardFooter className="flex-col bg-white/90 border-white/20 overflow-hidden h-full w-full justify-center md:h-auto shadow-small p-6">
