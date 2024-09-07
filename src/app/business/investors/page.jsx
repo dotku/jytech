@@ -8,7 +8,7 @@ import {
   Link,
   Spinner,
 } from "@nextui-org/react";
-import useFetch from "../../hooks/useFetch";
+import useFetch from "@/hooks/useFetch";
 import { useMemo, useState } from "react";
 
 export default function InvesstorPage() {

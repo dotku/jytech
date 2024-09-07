@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import useFetch from "@/hooks/useFetch";
 import { Card, CardBody, CardHeader, Link, Spinner } from "@nextui-org/react";
@@ -86,7 +86,7 @@ export default function BusinessCards() {
         </CardBody>
       </Card>
       <Card className="mb-3">
-        <Link isExternal href="investors">
+        <Link isExternal href="/business/investors">
           <div
             className="w-full aspect-[16/9]"
             style={{ height: "150px", overflowY: "hidden" }}

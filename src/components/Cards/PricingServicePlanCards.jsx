@@ -13,8 +13,9 @@ import ReactMarkdown from "react-markdown";
 import PricingServicePlandCardsData from "./PricingServicePlanCardsData";
 import styled from "styled-components";
 
-const ReactMarkdownWrapper = styled.div`
+export const ReactMarkdownWrapper = styled.div`
   ul {
+    margin: 1rem auto;
     list-style-type: disc;
     padding-left: 40px;
   }
