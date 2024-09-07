@@ -9,6 +9,7 @@ const data = [
     name: "EB-5 immigratn investor program",
     summary:
       "The EB-5 Immigrant Investor Program is a U.S. immigration program designed to attract foreign investment in exchange for U.S. permanent residency (a green card).",
+    url: "/business/eb-5",
   },
   {
     name: "Tech investors",

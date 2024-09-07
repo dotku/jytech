@@ -29,8 +29,8 @@ export default function Header() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="/business/investors">
-            Investment
+          <Link color="foreground" href="/business">
+            Business
           </Link>
         </NavbarItem>
       </NavbarContent>
