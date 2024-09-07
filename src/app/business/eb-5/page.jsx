@@ -43,7 +43,7 @@ export default function EB5() {
           <p>
             The EB-5 Immigrant Investor Program is a U.S. immigration program
             designed to attract foreign investment in exchange for U.S.
-            permanent residency (a green card). Here's how it works:
+            permanent residency (a green card). Here&apos;s how it works:
           </p>
           <p>
             Investment Requirement: Investors must make a significant financial
@@ -54,8 +54,8 @@ export default function EB5() {
           </p>
           <p>
             Job Creation: The investment must create or preserve at least 10
-            full-time jobs for U.S. workers within two years of the investor's
-            admission to the U.S.
+            full-time jobs for U.S. workers within two years of the
+            investor&apos;s admission to the U.S.
           </p>
           <p>
             Green Card: In return for their investment, the investor and their
@@ -92,7 +92,7 @@ export default function EB5() {
             </Button>
           </div>
         </CardBody>
-        <CardFooter className="flex-col">
+        <CardFooter className="flex-col text-base">
           <Footer />
         </CardFooter>
       </StyledCard>
