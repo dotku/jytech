@@ -17,14 +17,14 @@ export default function BusinessPage() {
   const { data } = useBusinessData();
 
   return (
-    <>
+    <div className="max-w-5xl mx-auto">
       <Card className="mt-3">
         <Image
           alt="business center"
-          src="/assets/images/business/business-banner.webp"
+          src="/assets/images/business/jytech-global-business-banner.png"
           className="rounded-none"
         />
-        <CardFooter className="flex-col bg-white/90 border-white/20 overflow-hidden absolute h-full w-full justify-center md:h-auto md:bottom-1 md:w-[calc(100%_-_8px)] shadow-small md:ml-1 z-10">
+        <CardFooter className="flex-col bg-white/90 border-white/20 overflow-hidden h-full w-full justify-center md:h-auto shadow-small z-10">
           <h2 className="text-2xl md:text-3xl mb-3 w-full">
             Welcome to JYTech Business Center!
           </h2>
@@ -37,7 +37,7 @@ export default function BusinessPage() {
           </div>
         </CardFooter>
       </Card>
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 mt-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-3">
         {data.map(({ name, summary, url }, idx) => (
           <Card key={idx}>
             <CardHeader className="font-bold pt-6 px-6">{name}</CardHeader>
@@ -58,6 +58,6 @@ export default function BusinessPage() {
           </Card>
         ))}
       </div>
-    </>
+    </div>
   );
 }

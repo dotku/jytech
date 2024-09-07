@@ -22,8 +22,8 @@ const StyledCard = styled(Card)`
 export default function EB5() {
   return (
     <>
-      <StyledCard className="max-w-3xl p-7 mx-auto">
-        <CardHeader className="flex-col sm:flex-row text-2xl">
+      <StyledCard className="max-w-5xl p-7 mx-auto">
+        <CardHeader className="flex-col sm:flex-row ">
           <Button
             as={Link}
             href="tel:5103783479"
@@ -38,9 +38,15 @@ export default function EB5() {
               src="/assets/images/profiles/jessica-meng.png"
             />
           </Button>
-          Fast and Convenient Green Card Application: EB-5 Investor Visa
+          <h2 className="text-3xl">
+            Fast and Convenient Green Card Application: EB-5 Investor Visa
+          </h2>
         </CardHeader>
         <CardBody>
+          <Image
+            src="/assets/images/business/eb-5-process-workflow.png"
+            className="rounded mb-3"
+          />
           <p>
             The EB-5 Immigrant Investor Program is a U.S. immigration program
             designed to attract foreign investment in exchange for U.S.
