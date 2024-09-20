@@ -1,50 +1,54 @@
-"use client";
-
-import ReactMarkdown from "react-markdown";
-import { useEffect, useState } from "react";
-import remarkGfm from "remark-gfm";
+import { readFile } from "node:fs/promises";
+import path from "path";
+// import { useState, useEffect } from "react";
+// import { MDXRemote } from "next-mdx-remote/rsc";
 import MarkdownComponents from "@/components/MarkdownComponents";
+// import { Spinner } from "@nextui-org/react";
+// import ReactMarkdown from "react-markdown";
+import { MDXProvider, useMDXComponents } from "@mdx-js/react";
+// import Products from "./Product.mdx";
+import remarkGfm from "remark-gfm";
+import { compile, evaluate } from "@mdx-js/mdx";
+import remarkFrontmatter from "remark-frontmatter";
+import remarkMdxFrontmatter from "remark-mdx-frontmatter";
+import * as runtime from "react/jsx-runtime";
+import "./MarkdownStyles.css";
 
-// export function MarkdownComponent({ content }) {
-//   const [htmlContent, setHtmlContent] = useState("");
+// const components = {
+//   ...MarkdownComponents,
+//   wrapper: ({ children }) => (
+//     <ReactMarkdown remarkPlugins={[remarkGfm]}>{children}</ReactMarkdown>
+//   ),
+// };
 
-//   useEffect(() => {
-//     markdownToHtml(content).then(setHtmlContent);
-//   }, [content]);
+export default async function DoryPowerPage() {
+  const mdxFilePath = path.join(
+    process.cwd(),
+    "src/app/business/oppotunities/dory-power",
+    "Product.mdx"
+  );
+  const source = await readFile(mdxFilePath, "utf8");
+  const { default: Content } = await evaluate(source, {
+    ...runtime,
+    remarkPlugins: [remarkGfm],
+  });
+  // const [MDXContent, setMDXContent] = useState("");
+  // const MarkdownComponents = useMDXComponents(components);
 
-//   console.log("htmlContent", htmlContent);
-
-//   return <div dangerouslySetInnerHTML={{ __html: htmlContent }} />;
-// }
-
-export default function DoryPowerPage() {
-  const [error, setError] = useState(null);
-  const [content, setContent] = useState(null);
-
-  useEffect(() => {
-    async function loadMDX() {
-      try {
-        const content = await fetch("/assets/content/Product.mdx").then((rsp) =>
-          rsp.text()
-        );
-        setContent(content);
-      } catch (err) {
-        console.error("Error loading MDX:", err);
-        setError(err.message);
-      }
-    }
-    loadMDX();
-  }, []);
-
-  if (error)
-    return (
-      <div className="text-danger-300">Error loading content: {error}</div>
-    );
-  if (!content) return <div>Loading...</div>;
+  // useEffect(() => {
+  //   fetch("/assets/content/Product.mdx")
+  //     .then((response) => response.text())
+  //     .then((text) => setMDXContent(text));
+  // }, []);
 
   return (
-    <ReactMarkdown remarkPlugins={[remarkGfm]} components={MarkdownComponents}>
-      {content}
-    </ReactMarkdown>
+    <div className="mdx-content">
+      <Content />
+    </div>
   );
+  // <MDXProvider components={MarkdownComponents}>
+  //   {/* <ReactMarkdown remarkPlugins={[remarkGfm]}> */}
+  //   <Products />
+  //   {/* </ReactMarkdown> */}
+  // </MDXProvider>
 }

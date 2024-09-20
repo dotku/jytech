@@ -1,12 +1,17 @@
 /** @type {import('next').NextConfig} */
-const { version } = require("./package.json");
-const withMDX = require("@next/mdx")({
+// import packageJson from "./package.json" assert { type: "json" };
+import remarkGfm from "remark-gfm";
+// import { createRequire } from "module";
+
+// const require = createRequire(import.meta.url);
+// const { version } = require("./package.json");
+import createMDX from "@next/mdx";
+
+const withMDX = createMDX({
   extension: /\.mdx?$/,
-  options: async () => {
-    const remarkGfm = await import("remark-gfm");
-    return {
-      remarkPlugins: [remarkGfm.default],
-    };
+  options: {
+    remarkPlugins: [remarkGfm],
+    rehypePlugins: [],
   },
 });
 // ({
@@ -39,13 +44,16 @@ const nextConfig = {
     ];
   },
   publicRuntimeConfig: {
-    version,
+    // version,
   },
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   // output: "export", don't use due to dynamic routes
+  experimental: {
+    mdxRs: true,
+  },
 };
 
 // Merge MDX config with Next.js config
 // export default withMDX(nextConfig)
 
-module.exports = withMDX(nextConfig);
+export default withMDX(nextConfig);

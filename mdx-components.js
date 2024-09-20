@@ -1,4 +1,8 @@
-const MarkdownComponents = {
+import { MDXProvider } from "@mdx-js/react";
+import remarkGfm from "remark-gfm";
+import { ReactMarkdown } from "react-markdown";
+
+export const markdonwComponents = {
   h1: ({ node, ...props }) => (
     <h1 className="text-4xl font-bold mb-4" {...props} />
   ),
@@ -50,4 +54,12 @@ const MarkdownComponents = {
     ),
 };
 
-export default MarkdownComponents;
+export function useMDXComponents(components) {
+  return {
+    ...markdonwComponents,
+    // wrapper: ({ children }) => (
+    //   <ReactMarkdown remarkPlugins={[remarkGfm]}>{children}</ReactMarkdown>
+    // ),
+    ...components,
+  };
+}
