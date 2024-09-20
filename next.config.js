@@ -5,7 +5,7 @@
 
 // const require = createRequire(import.meta.url);
 // const { version } = require("./package.json");
-import createMDX from "@next/mdx";
+const createMDX = require("@next/mdx");
 
 const withMDX = createMDX({
   extension: /\.mdx?$/,
