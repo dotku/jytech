@@ -1,12 +1,6 @@
 "use client";
 
-import { markdownToHtml } from "@/utils/markdownToHtml";
 import ReactMarkdown from "react-markdown";
-import Product from "./Product.mdx";
-import { MDXProvider } from "@mdx-js/react";
-import SampleTable from "./SampleTable.mdx";
-import { MDXRemote } from "next-mdx-remote";
-import { serialize } from "next-mdx-remote/serialize";
 import { useEffect, useState } from "react";
 import remarkGfm from "remark-gfm";
 import MarkdownComponents from "@/components/MarkdownComponents";
