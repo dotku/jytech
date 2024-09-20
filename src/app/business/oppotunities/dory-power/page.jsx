@@ -11,17 +11,17 @@ import { useEffect, useState } from "react";
 import remarkGfm from "remark-gfm";
 import MarkdownComponents from "@/components/MarkdownComponents";
 
-export function MarkdownComponent({ content }) {
-  const [htmlContent, setHtmlContent] = useState("");
+// export function MarkdownComponent({ content }) {
+//   const [htmlContent, setHtmlContent] = useState("");
 
-  useEffect(() => {
-    markdownToHtml(content).then(setHtmlContent);
-  }, [content]);
+//   useEffect(() => {
+//     markdownToHtml(content).then(setHtmlContent);
+//   }, [content]);
 
-  console.log("htmlContent", htmlContent);
+//   console.log("htmlContent", htmlContent);
 
-  return <div dangerouslySetInnerHTML={{ __html: htmlContent }} />;
-}
+//   return <div dangerouslySetInnerHTML={{ __html: htmlContent }} />;
+// }
 
 export default function DoryPowerPage() {
   const [mdxSource, setMdxSource] = useState(null);
