@@ -18,7 +18,6 @@ import MarkdownComponents from "@/components/MarkdownComponents";
 // }
 
 export default function DoryPowerPage() {
-  const [mdxSource, setMdxSource] = useState(null);
   const [error, setError] = useState(null);
   const [content, setContent] = useState(null);
 
@@ -41,7 +40,7 @@ export default function DoryPowerPage() {
     return (
       <div className="text-danger-300">Error loading content: {error}</div>
     );
-  if (!mdxSource) return <div>Loading...</div>;
+  if (!content) return <div>Loading...</div>;
 
   return (
     <ReactMarkdown remarkPlugins={[remarkGfm]} components={MarkdownComponents}>
