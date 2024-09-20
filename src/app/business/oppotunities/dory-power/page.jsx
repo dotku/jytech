@@ -25,15 +25,10 @@ export default function DoryPowerPage() {
   useEffect(() => {
     async function loadMDX() {
       try {
-        console.log("Loading MDX content...");
         const content = await fetch("/assets/content/Product.mdx").then((rsp) =>
           rsp.text()
         );
-        console.log("MDX content:", content);
         setContent(content);
-        const serialized = await serialize(content);
-        console.log("Serialized content:", serialized);
-        setMdxSource(serialized);
       } catch (err) {
         console.error("Error loading MDX:", err);
         setError(err.message);
@@ -42,7 +37,10 @@ export default function DoryPowerPage() {
     loadMDX();
   }, []);
 
-  if (error) return <div>Error loading content: {error}</div>;
+  if (error)
+    return (
+      <div className="text-danger-300">Error loading content: {error}</div>
+    );
   if (!mdxSource) return <div>Loading...</div>;
 
   return (
