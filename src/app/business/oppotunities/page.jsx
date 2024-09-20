@@ -10,7 +10,7 @@ import {
 export default function Oppotunties() {
   return (
     <>
-      <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight mb-3">
+      <h2 className="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight mb-3">
         Oppotutnities
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
