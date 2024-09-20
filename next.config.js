@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 // import packageJson from "./package.json" assert { type: "json" };
-import remarkGfm from "remark-gfm";
+// import remarkGfm from "remark-gfm";
 // import { createRequire } from "module";
 
 // const require = createRequire(import.meta.url);
@@ -10,7 +10,6 @@ import createMDX from "@next/mdx";
 const withMDX = createMDX({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [remarkGfm],
     rehypePlugins: [],
   },
 });
