@@ -68,14 +68,12 @@ export default function DistributorDoryPower() {
         <ul className="my-3">
           <li> 订单小于 10 台，全款, 销售价格 x 40% = 佣金</li>
           <li>
-            {" "}
             订单 10~19 台，销售价格 9 折(10% off), 总销售价格 x 36% = 佣金
           </li>
           <li>
             订单 20~49 台，销售价格 8.5 折(15% off), 总销售价格 x 34% = 佣金
           </li>
           <li>
-            {" "}
             订单 50~99 台，销售价格 8 折(20% off), 总销售价格 x 32% = 佣金
           </li>
           <li>
@@ -86,6 +84,20 @@ export default function DistributorDoryPower() {
           </li>
           <li> 订单 500 台以上，具体商定</li>
         </ul>
+      </section>
+      <section>
+        <h3 className="text-xl my-3 font-semibold">渠道开发管理佣金</h3>
+        <h4 className="text-lg my-3">资格</h4>
+        <ol>
+          <li>
+            1、完成销售 2 件产品（Sentry Plus, Sentry Pro, Sentry Pro
+            Max）及以上的业绩的销 售代表，可升职为高级销售代表(Senior Sales
+            Representative), 可签约和领导其他销售 代表。
+          </li>
+          <li>2、签约成功且协助其领导的销售代表产生业绩即可收获管理佣金。</li>
+        </ol>
+        <h4 className="text-lg my-3">管理佣金</h4>
+        下级销售代表所产生的直接销售数量 x $150/台 = 管理佣金。
       </section>
       <section>
         <h3 className="text-xl my-3 font-semibold">渠道管理职责</h3>
