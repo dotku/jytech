@@ -55,6 +55,26 @@ export default function Oppotunties() {
             ion battery power systems for energy storage and backup power
             supply.
           </CardBody>
+          <CardFooter className="justify-end">
+            <Link href="/business/oppotunities/dory-power">Learn more</Link>
+          </CardFooter>
+        </Card>
+        <Card>
+          <Image
+            alt="Card background"
+            className="object-cover rounded-none"
+            src="https://doordash-static.s3.amazonaws.com/media/store/header/8600.jpg"
+          />
+          <CardHeader className="text-xl font-bold">
+            JY Restaurant System
+          </CardHeader>
+          <CardBody>
+            Running a successful restaurant involves juggling many moving parts,
+            from managing reservations and orders to overseeing staff and
+            inventory. With JY Restaurant System, we simplify restaurant
+            management by offering a comprehensive, user-friendly system that
+            streamlines your daily operations.
+          </CardBody>
           <CardFooter className="justify-end text-gray-300">
             Comming soon ...
           </CardFooter>
