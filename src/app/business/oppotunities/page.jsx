@@ -15,11 +15,17 @@ export default function Oppotunties() {
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
         <Card>
-          <Image
-            alt="Card background"
-            className="object-cover rounded-none"
-            src="/assets/images/business/oppotutnities/1_wvinldPNQzqnomViSsXJzA.jpg"
-          />
+          <Link
+            isExternal
+            showAnchorIcon
+            href="https://kdhciddmbip.typeform.com/to/EUgmJmTM"
+          >
+            <Image
+              alt="Card background"
+              className="object-cover rounded-none"
+              src="/assets/images/business/oppotutnities/1_wvinldPNQzqnomViSsXJzA.jpg"
+            />
+          </Link>
           <CardHeader className="text-xl font-bold">
             Micheal Limo Business
           </CardHeader>
@@ -41,11 +47,13 @@ export default function Oppotunties() {
           </CardFooter>
         </Card>
         <Card>
-          <Image
-            alt="Card background"
-            className="object-cover rounded-none"
-            src="//dorypower.com/wp-content/uploads/2022/11/A7A5924-final-scaled.jpg"
-          />
+          <Link href="/business/oppotunities/dory-power">
+            <Image
+              alt="Card background"
+              className="object-cover rounded-none"
+              src="//dorypower.com/wp-content/uploads/2022/11/A7A5924-final-scaled.jpg"
+            />
+          </Link>
           <CardHeader className="text-xl font-bold">
             Dory Power Distributor Meeting
           </CardHeader>
@@ -60,11 +68,17 @@ export default function Oppotunties() {
           </CardFooter>
         </Card>
         <Card>
-          <Image
-            alt="Card background"
-            className="object-cover rounded-none"
-            src="/assets/images/business/oppotutnities/betavee/product-image.png"
-          />
+          <Link
+            isExternal
+            showAnchorIcon
+            href="https://kdhciddmbip.typeform.com/to/D1n4jt6y"
+          >
+            <Image
+              alt="Card background"
+              className="object-cover rounded-none"
+              src="/assets/images/business/oppotutnities/betavee/product-image.png"
+            />
+          </Link>
           <CardHeader className="text-xl font-bold">
             Betavee Distributor
           </CardHeader>
