@@ -13,7 +13,7 @@ export default function Oppotunties() {
       <h2 className="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight mb-3">
         Oppotutnities
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
         <Card>
           <Image
             alt="Card background"
@@ -63,6 +63,33 @@ export default function Oppotunties() {
           <Image
             alt="Card background"
             className="object-cover rounded-none"
+            src="/assets/images/business/oppotutnities/betavee/product-image.png"
+          />
+          <CardHeader className="text-xl font-bold">
+            Betavee Distributor
+          </CardHeader>
+          <CardBody>
+            Betavee Rental Power Station operates on a highly profitable model
+            characterized by small individual costs, frequent usage, and
+            multiple orders. This approach enables high revenue generation,
+            leading to rapid returns on investment. With low costs and
+            substantial returns, the Rental Power Station represents a lucrative
+            opportunity.
+          </CardBody>
+          <CardFooter className="justify-end text-gray-300">
+            <Link
+              isExternal
+              showAnchorIcon
+              href="https://kdhciddmbip.typeform.com/to/D1n4jt6y"
+            >
+              Sign up
+            </Link>
+          </CardFooter>
+        </Card>
+        <Card>
+          <Image
+            alt="Card background"
+            className="object-cover rounded-none w-full h-full"
             src="https://doordash-static.s3.amazonaws.com/media/store/header/8600.jpg"
           />
           <CardHeader className="text-xl font-bold">
