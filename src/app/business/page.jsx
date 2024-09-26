@@ -18,6 +18,27 @@ export default function BusinessPage() {
 
   return (
     <div className="max-w-7xl mx-auto">
+      <div className="mt-3">
+        <Card>
+          <CardHeader className="font-bold pt-6 px-6 text-2xl">
+            Unlock New Business Opportunities
+          </CardHeader>
+          <CardBody className="px-6">
+            <ReactMarkdownWrapper>
+              <Markdown>
+                We believe that innovation and collaboration are key to
+                unlocking new potential. Whether you’re an entrepreneur looking
+                for a fresh partnership or a seasoned business professional
+                seeking to expand your portfolio, we offer a wide range of
+                opportunities to help you grow and succeed.
+              </Markdown>
+            </ReactMarkdownWrapper>
+          </CardBody>
+          <CardFooter className="justify-end px-6">
+            <Link href="/business/oppotunities">Learn more</Link>
+          </CardFooter>
+        </Card>
+      </div>
       <Card className="mt-3">
         <Image
           alt="business center"
@@ -61,27 +82,6 @@ export default function BusinessPage() {
             </CardFooter>
           </Card>
         ))}
-      </div>
-      <div className="mt-3">
-        <Card>
-          <CardHeader className="font-bold pt-6 px-6 text-2xl">
-            Unlock New Business Opportunities
-          </CardHeader>
-          <CardBody className="px-6">
-            <ReactMarkdownWrapper>
-              <Markdown>
-                we believe that innovation and collaboration are key to
-                unlocking new potential. Whether you’re an entrepreneur looking
-                for a fresh partnership or a seasoned business professional
-                seeking to expand your portfolio, we offer a wide range of
-                opportunities to help you grow and succeed.
-              </Markdown>
-            </ReactMarkdownWrapper>
-          </CardBody>
-          <CardFooter className="justify-end px-6">
-            <Link href="/business/oppotunities">Learn more</Link>
-          </CardFooter>
-        </Card>
       </div>
     </div>
   );

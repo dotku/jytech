@@ -13,13 +13,9 @@ export default function Oppotunties() {
       <h2 className="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight mb-3">
         Oppotutnities
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
         <Card>
-          <Link
-            isExternal
-            showAnchorIcon
-            href="https://kdhciddmbip.typeform.com/to/EUgmJmTM"
-          >
+          <Link isExternal href="https://kdhciddmbip.typeform.com/to/EUgmJmTM">
             <Image
               alt="Card background"
               className="object-cover rounded-none"
@@ -68,11 +64,7 @@ export default function Oppotunties() {
           </CardFooter>
         </Card>
         <Card>
-          <Link
-            isExternal
-            showAnchorIcon
-            href="https://kdhciddmbip.typeform.com/to/D1n4jt6y"
-          >
+          <Link isExternal href="https://kdhciddmbip.typeform.com/to/D1n4jt6y">
             <Image
               alt="Card background"
               className="object-cover rounded-none"
@@ -115,6 +107,25 @@ export default function Oppotunties() {
             inventory. With JY Restaurant System, we simplify restaurant
             management by offering a comprehensive, user-friendly system that
             streamlines your daily operations.
+          </CardBody>
+          <CardFooter className="justify-end text-gray-300">
+            Comming soon ...
+          </CardFooter>
+        </Card>
+        <Card>
+          <Image
+            alt="Card background"
+            className="object-cover rounded-none w-full h-full"
+            src="https://cdn.prod.website-files.com/620ec747459e13c7cf12a39e/625b10a58137b364b18df2ea_iStock-94179607.jpg"
+          />
+          <CardHeader className="text-xl font-bold">Real Estate</CardHeader>
+          <CardBody>
+            Running a successful real estate business involves juggling many
+            moving parts, from managing property listings and client
+            interactions to overseeing staff and contracts. With JY Real Estate
+            System, we simplify real estate management by offering a
+            comprehensive, user-friendly system that streamlines your daily
+            operations.
           </CardBody>
           <CardFooter className="justify-end text-gray-300">
             Comming soon ...
