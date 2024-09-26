@@ -35,7 +35,7 @@ export default function BusinessPage() {
             </ReactMarkdownWrapper>
           </CardBody>
           <CardFooter className="justify-end px-6">
-            <Link href="/business/oppotunities">Learn more</Link>
+            <Link href="/business/opportunities">Learn more</Link>
           </CardFooter>
         </Card>
       </div>
