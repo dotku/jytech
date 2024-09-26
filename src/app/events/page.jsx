@@ -139,9 +139,10 @@ export default function Events() {
               label="location"
             />
             <Input
+              isRequired
               onChange={(e) => setEvent({ ...event, url: e.target.value })}
               className="mb-3"
-              label="event URL"
+              label="RSVP URL"
             />
             <div className="text-center">
               <Button type="submit">Create</Button>
