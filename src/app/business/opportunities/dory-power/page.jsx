@@ -24,7 +24,7 @@ import "./MarkdownStyles.css";
 export default async function DoryPowerPage() {
   const mdxFilePath = path.join(
     process.cwd(),
-    "src/app/business/oppotunities/dory-power",
+    "src/app/business/opportunities/dory-power",
     "Product.mdx"
   );
   const source = await readFile(mdxFilePath, "utf8");

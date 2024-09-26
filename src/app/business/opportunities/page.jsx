@@ -43,7 +43,7 @@ export default function Oppotunties() {
           </CardFooter>
         </Card>
         <Card>
-          <Link href="/business/oppotunities/dory-power">
+          <Link href="/business/opportunities/dory-power">
             <Image
               alt="Card background"
               className="object-cover rounded-none"
@@ -60,7 +60,7 @@ export default function Oppotunties() {
             supply.
           </CardBody>
           <CardFooter className="justify-end">
-            <Link href="/business/oppotunities/dory-power">Learn more</Link>
+            <Link href="/business/opportunities/dory-power">Learn more</Link>
           </CardFooter>
         </Card>
         <Card>
