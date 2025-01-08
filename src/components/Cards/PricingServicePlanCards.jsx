@@ -19,9 +19,18 @@ export const ReactMarkdownWrapper = styled.div`
     list-style-type: disc;
     padding-left: 40px;
   }
+  h1 {
+    font-size: 24px;
+  }
   h2 {
-    margin: 0.5rem 0;
+    margin: 1rem 0;
     font-weight: bold;
+  }
+  p {
+    margin: 8px 0;
+  }
+  p strong {
+    margin: 16px 0;
   }
 `;
 
