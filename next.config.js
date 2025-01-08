@@ -6,6 +6,7 @@
 // const require = createRequire(import.meta.url);
 // const { version } = require("./package.json");
 const createMDX = require("@next/mdx");
+const { config } = require('process');
 
 const withMDX = createMDX({
   extension: /\.mdx?$/,
@@ -49,6 +50,13 @@ const nextConfig = {
   // output: "export", don't use due to dynamic routes
   experimental: {
     mdxRs: true,
+  },
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      require('./src/scripts/generateSitemap');
+    }
+
+    return config;
   },
 };
 
