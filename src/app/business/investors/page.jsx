@@ -51,6 +51,12 @@ export default function InvesstorPage() {
                 to the next level with our investor directory.
               </p>
             </div>
+            <blockquote
+              style={{ marginTop: 16, color: "gray", fontSize: "small" }}
+            >
+              ** Join as investor you must be earn over $200K ($300K with
+              spouse) yearly or have a net worth over $1M, excluding your home.
+            </blockquote>
           </CardBody>
         </Card>
       </div>
