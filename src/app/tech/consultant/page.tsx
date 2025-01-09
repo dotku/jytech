@@ -124,9 +124,6 @@ export default function ConsultantPage() {
                         style={{ minHeight: "80px" }}
                       />
                     </div>
-                    <p className="text-center font-semibold text-sm">
-                      {partner.name}
-                    </p>
                   </CardBody>
                 </Card>
               </Link>
