@@ -75,7 +75,7 @@ export default function Footer({ version }) {
     <>
       <footer>
         <div className="p-6 my-4 text-sm">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 justify-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 justify-stretch">
             <div>
               <address>
                 <label className="text-lg">Address</label>
@@ -88,6 +88,17 @@ export default function Footer({ version }) {
                   United States
                 </div>
               </address>
+            </div>
+            <div>
+              <label className="text-lg">Links</label>
+              <div className="mt-2">
+                <a
+                  href="/career"
+                  className="hover:text-blue-600 transition-colors"
+                >
+                  Career
+                </a>
+              </div>
             </div>
             <div>
               <CustomForm url={url} />
