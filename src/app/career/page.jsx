@@ -12,10 +12,12 @@ export default function CareerPage() {
         <h2 className="text-xl font-semibold mb-4">Open Positions</h2>
 
         <div className="mb-8">
-          <h3 className="text-lg font-semibold mb-2">Full Stack Engineer</h3>
+          <h3 className="text-lg font-semibold mb-2">
+            Full Stack Engineer Intern
+          </h3>
           <p className="mb-4 text-gray-600">
-            We&apos;re looking for an experienced Full Stack Engineer to join
-            our team and help build modern web applications.
+            We&apos;re looking for an Full Stack Engineer Intern to join our
+            team and help build modern web applications.
           </p>
 
           <div className="mb-4">
@@ -31,19 +33,19 @@ export default function CareerPage() {
         </div>
         <div className="mb-8">
           <h3 className="text-lg font-semibold mb-2">
-            Digital Marketing Specialist
+            Digital Marketing Specialist Intern
           </h3>
           <p className="mb-4 text-gray-600">
             We&apos;re seeking a creative and data-driven Digital Marketing
-            Specialist to grow our brand presence and connect with potential
-            clients in the food and travel industries.
+            Specialist Intern to grow our brand presence and connect with
+            potential clients in the food and travel industries.
           </p>
           <div className="mb-4">
             <h4 className="font-medium mb-2">Requirements:</h4>
             <ul className="list-disc list-inside text-gray-600 space-y-1">
               <li>
-                Proven experience in social media management (LinkedIn,
-                X/Twitter, Instagram)
+                Has experience in social media management (LinkedIn, X/Twitter,
+                Instagram)
               </li>
               <li>Strong content creation and copywriting skills</li>
               <li>
