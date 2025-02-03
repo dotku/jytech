@@ -55,19 +55,18 @@ export default function CareerPage() {
             </ul>
           </div>
         </div>
-        <h2 className="text-xl font-semibold mb-4">Recruiters</h2>
-        <p className="mb-4">
-          Are you a recruiter looking to connect with top tech talent? Register
-          with Huntly to get started.
-        </p>
-        <a
-          href="https://app.huntly.ai/auth/register/recruiter?referral_code=1e053f2d-c257-413d-ba84-c356234c2c4b"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors"
-        >
-          Register as a Recruiter
-        </a>
+        <div className="mt-8 pt-6 border-t">
+          <p className="text-gray-600">
+            Are you a recruiter? Visit our{" "}
+            <a
+              href="/career/recruiters"
+              className="text-blue-600 hover:text-blue-700 underline"
+            >
+              recruiters page
+            </a>{" "}
+            to learn more about working with us.
+          </p>
+        </div>
       </div>
     </div>
   );
