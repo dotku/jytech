@@ -6,7 +6,7 @@
 // const require = createRequire(import.meta.url);
 // const { version } = require("./package.json");
 const createMDX = require("@next/mdx");
-const { config } = require('process');
+const { config } = require("process");
 
 const withMDX = createMDX({
   extension: /\.mdx?$/,
@@ -43,6 +43,9 @@ const nextConfig = {
       },
     ];
   },
+  images: {
+    domains: ["images.unsplash.com", "www.nvidia.com"],
+  },
   publicRuntimeConfig: {
     // version,
   },
@@ -53,7 +56,7 @@ const nextConfig = {
   },
   webpack: (config, { isServer }) => {
     if (isServer) {
-      require('./src/scripts/generateSitemap');
+      require("./src/scripts/generateSitemap");
     }
 
     return config;
