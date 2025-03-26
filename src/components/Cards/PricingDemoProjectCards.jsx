@@ -9,6 +9,7 @@ import {
   Link,
 } from "@nextui-org/react";
 import { useSearchParams } from "next/navigation";
+import { Suspense } from 'react';
 
 const projectDataRows = [
   {
@@ -94,7 +95,7 @@ const projectDataRows = [
   },
 ];
 
-export default function PricingDemoProjectCards() {
+function PricingDemoProjectCardsContent() {
   const searchParams = useSearchParams();
   const region = searchParams.get("region")?.toLowerCase() || "us";
   const lang = region === "cn" ? "cn" : "en";
@@ -133,5 +134,13 @@ export default function PricingDemoProjectCards() {
         </Card>
       ))}
     </div>
+  );
+}
+
+export default function PricingDemoProjectCards() {
+  return (
+    <Suspense fallback={<div>Loading demo projects...</div>}>
+      <PricingDemoProjectCardsContent />
+    </Suspense>
   );
 }

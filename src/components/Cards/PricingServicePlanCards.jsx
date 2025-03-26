@@ -13,6 +13,7 @@ import ReactMarkdown from "react-markdown";
 import PricingServicePlandCardsData from "./PricingServicePlanCardsData";
 import styled from "styled-components";
 import { useSearchParams } from "next/navigation";
+import { Suspense } from 'react';
 
 export const ReactMarkdownWrapper = styled.div`
   ul {
@@ -35,7 +36,7 @@ export const ReactMarkdownWrapper = styled.div`
   }
 `;
 
-export default function PricingServicePlans() {
+function PricingServicePlansContent() {
   const searchParams = useSearchParams();
   const region = searchParams.get('region') || 'us';
   const lang = region === 'cn' ? 'cn' : 'us';
@@ -80,5 +81,13 @@ export default function PricingServicePlans() {
         ))}
       </div>
     </>
+  );
+}
+
+export default function PricingServicePlans() {
+  return (
+    <Suspense fallback={<div>Loading pricing plans...</div>}>
+      <PricingServicePlansContent />
+    </Suspense>
   );
 }
