@@ -129,3 +129,98 @@ export const products = [
     ],
   },
 ];
+
+export const hostingSolutions = [
+  {
+    id: 1,
+    name: "GitHub Pages",
+    difficulty: "★★☆☆☆",
+    yearlyFee: "¥0",
+    initialLaborCost: "¥200",
+    estimatedYearlyCost: "¥200",
+    suitableScenarios: "技术博客/作品集",
+  },
+  {
+    id: 2,
+    name: "Cloudflare Pages",
+    difficulty: "★★☆☆☆",
+    yearlyFee: "¥0",
+    initialLaborCost: "¥200",
+    estimatedYearlyCost: "¥200",
+    suitableScenarios: "小型网站/国外客户访问",
+  },
+  {
+    id: 3,
+    name: "Coding Pages",
+    difficulty: "★☆☆☆☆",
+    yearlyFee: "¥0–¥20",
+    initialLaborCost: "¥100",
+    estimatedYearlyCost: "¥100–¥120",
+    suitableScenarios: "国内展示类/官网",
+  },
+  {
+    id: 4,
+    name: "阿里云 OSS + CDN",
+    difficulty: "★★★☆☆",
+    yearlyFee: "¥50–¥100",
+    initialLaborCost: "¥300",
+    estimatedYearlyCost: "¥350–¥400",
+    suitableScenarios: "商业类官网/文件托管",
+  },
+  {
+    id: 5,
+    name: "腾讯云 COS + CDN",
+    difficulty: "★★★☆☆",
+    yearlyFee: "¥50–¥100",
+    initialLaborCost: "¥300",
+    estimatedYearlyCost: "¥350–¥400",
+    suitableScenarios: "适合与微信生态联动",
+  },
+  {
+    id: 6,
+    name: "Vercel + 国内加速",
+    difficulty: "★★★★☆",
+    yearlyFee: "¥0",
+    initialLaborCost: "¥300–¥500",
+    estimatedYearlyCost: "¥300–¥500",
+    suitableScenarios: "海外为主、需要自动部署",
+  },
+];
+
+export const outsourcingSolutions = [
+  {
+    id: 1,
+    name: "WordPress 构建",
+    oneTimeCost: "¥500–¥2000+",
+    maintenanceCost: "更新维护 ¥100/月起",
+  },
+  {
+    id: 2,
+    name: "静态网站开发",
+    oneTimeCost: "¥500–¥1500 起",
+    maintenanceCost: "后期维护低",
+  },
+  {
+    id: 3,
+    name: "建站平台（如Wix）",
+    oneTimeCost: "¥0–¥1000+",
+    maintenanceCost: "平台月租 ¥122/月起",
+  },
+];
+
+export const chinaContacts = [
+  {
+    id: 1,
+    name: "Colin Liu",
+    wechat: "xinmai002leo",
+    email: "collin.liu@sienovo.cn",
+    role: "中国区销售代表",
+  },
+  {
+    id: 2,
+    name: "Helen Lan",
+    wechat: "HELENLAN998",
+    email: "carrie.lan998@gmail.com",
+    role: "中国区销售代表",
+  },
+];
