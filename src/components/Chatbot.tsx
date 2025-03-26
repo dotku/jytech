@@ -39,7 +39,7 @@ export default function Chatbot() {
 
     const userMessage: Message = {
       role: "user",
-      content: input
+      content: input,
     };
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
@@ -57,7 +57,7 @@ export default function Chatbot() {
       const data = await response.json();
       const assistantMessage: Message = {
         role: "assistant",
-        content: data.message.content
+        content: data.message.content,
       };
       setMessages((prev) => [...prev, assistantMessage]);
     } catch (error) {
@@ -69,11 +69,20 @@ export default function Chatbot() {
 
   const markdownComponents = {
     pre: ({ node, className, children, ...props }: MarkdownComponentProps) => (
-      <pre className="bg-gray-900 text-white p-2 rounded my-2 overflow-x-auto" {...props}>
+      <pre
+        className="bg-gray-900 text-white p-2 rounded my-2 overflow-x-auto"
+        {...props}
+      >
         {children}
       </pre>
     ),
-    code: ({ node, inline, className, children, ...props }: MarkdownComponentProps) => 
+    code: ({
+      node,
+      inline,
+      className,
+      children,
+      ...props
+    }: MarkdownComponentProps) =>
       inline ? (
         <code className="bg-gray-800 text-white px-1 rounded" {...props}>
           {children}
@@ -96,79 +105,167 @@ export default function Chatbot() {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-20 right-4 w-96 h-[600px] bg-white/95 backdrop-blur-md rounded-lg shadow-xl flex flex-col border border-gray-200">
-          {/* Header */}
-          <div className="p-4 border-b border-gray-200 flex justify-between items-center bg-gray-900 text-white">
-            <h2 className="text-lg font-semibold">Chat with Us</h2>
-            <button
-              onClick={() => setIsOpen(false)}
-              className="text-gray-300 hover:text-white transition-colors"
-              aria-label="Close chat"
-            >
-              <X size={20} />
-            </button>
-          </div>
-
-          {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-white">
-            {messages.map((message, index) => (
-              <div
-                key={index}
-                className={`flex ${
-                  message.role === "user" ? "justify-end" : "justify-start"
-                }`}
-              >
-                <div
-                  className={`max-w-[80%] p-3 rounded-lg shadow-sm ${
-                    message.role === "user"
-                      ? "bg-gray-900 text-white"
-                      : "bg-gray-100 text-gray-900"
-                  }`}
-                >
-                  {message.role === "user" ? (
-                    message.content
-                  ) : (
-                    <ReactMarkdown 
-                      remarkPlugins={[remarkGfm]}
-                      className="prose prose-sm max-w-none"
-                      components={markdownComponents}
-                    >
-                      {message.content}
-                    </ReactMarkdown>
-                  )}
-                </div>
-              </div>
-            ))}
-            <div ref={messagesEndRef} />
-            {isLoading && (
-              <div className="flex justify-start">
-                <div className="bg-gray-100 text-gray-900 p-3 rounded-lg shadow-sm">
-                  Typing...
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Input Form */}
-          <form onSubmit={handleSubmit} className="p-4 border-t border-gray-200 bg-white">
-            <div className="flex gap-2">
-              <input
-                type="text"
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                placeholder="Type your message..."
-                className="flex-1 p-2 rounded bg-white text-gray-900 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-900 placeholder-gray-400"
-              />
+        <>
+          {/* Mobile Layout */}
+          <div className="sm:hidden fixed inset-0 z-[9999] flex flex-col bg-white">
+            {/* Header */}
+            <div className="p-4 border-b border-gray-200 flex justify-between items-center bg-gray-900 text-white">
+              <h2 className="text-lg font-semibold">Chat with Us</h2>
               <button
-                type="submit"
-                disabled={isLoading}
-                className="bg-gray-900 text-white p-2 rounded hover:bg-gray-800 transition-colors disabled:bg-gray-200 disabled:text-gray-400"
+                onClick={() => setIsOpen(false)}
+                className="text-gray-300 hover:text-white transition-colors"
+                aria-label="Close chat"
               >
-                <Send size={20} />
+                <X size={20} />
               </button>
             </div>
-          </form>
-        </div>
+
+            {/* Messages */}
+            <div className="flex-1 overflow-y-auto bg-white">
+              <div className="flex flex-col">
+                {messages.map((message, index) => (
+                  <div
+                    key={index}
+                    className={`flex ${
+                      message.role === "user" ? "justify-end" : "justify-start"
+                    } px-4 py-2`}
+                  >
+                    <div
+                      className={`max-w-[80%] p-3 rounded-lg shadow-sm ${
+                        message.role === "user"
+                          ? "bg-gray-900 text-white"
+                          : "bg-gray-100 text-gray-900"
+                      }`}
+                    >
+                      {message.role === "user" ? (
+                        message.content
+                      ) : (
+                        <ReactMarkdown
+                          remarkPlugins={[remarkGfm]}
+                          className="prose prose-sm max-w-none"
+                          components={markdownComponents}
+                        >
+                          {message.content}
+                        </ReactMarkdown>
+                      )}
+                    </div>
+                  </div>
+                ))}
+                <div ref={messagesEndRef} />
+                {isLoading && (
+                  <div className="flex justify-start px-4 py-2">
+                    <div className="bg-gray-100 text-gray-900 p-3 rounded-lg shadow-sm">
+                      Typing...
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Input Form */}
+            <div className="mt-auto border-t border-gray-200">
+              <form onSubmit={handleSubmit} className="p-4 bg-white">
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
+                    placeholder="Type your message..."
+                    className="flex-1 p-2 rounded bg-white text-gray-900 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-900 placeholder-gray-400"
+                    disabled={isLoading}
+                  />
+                  <button
+                    type="submit"
+                    disabled={isLoading}
+                    className="bg-gray-900 text-white p-2 rounded hover:bg-gray-800 transition-colors disabled:bg-gray-200 disabled:text-gray-400"
+                  >
+                    <Send size={20} />
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          {/* Desktop Layout */}
+          <div className="hidden sm:flex fixed bottom-0 right-0 w-96 h-[600px] bg-white/95 backdrop-blur-md rounded-lg shadow-xl flex-col border border-gray-200 z-[9999]">
+            {/* Header */}
+            <div className="p-4 border-b border-gray-200 flex justify-between items-center bg-gray-900 text-white">
+              <h2 className="text-lg font-semibold">Chat with Us</h2>
+              <button
+                onClick={() => setIsOpen(false)}
+                className="text-gray-300 hover:text-white transition-colors"
+                aria-label="Close chat"
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            {/* Messages */}
+            <div className="flex-1 overflow-y-auto bg-white">
+              <div className="flex flex-col p-4 space-y-4">
+                {messages.map((message, index) => (
+                  <div
+                    key={index}
+                    className={`flex ${
+                      message.role === "user" ? "justify-end" : "justify-start"
+                    }`}
+                  >
+                    <div
+                      className={`max-w-[80%] p-3 rounded-lg shadow-sm ${
+                        message.role === "user"
+                          ? "bg-gray-900 text-white"
+                          : "bg-gray-100 text-gray-900"
+                      }`}
+                    >
+                      {message.role === "user" ? (
+                        message.content
+                      ) : (
+                        <ReactMarkdown
+                          remarkPlugins={[remarkGfm]}
+                          className="prose prose-sm max-w-none"
+                          components={markdownComponents}
+                        >
+                          {message.content}
+                        </ReactMarkdown>
+                      )}
+                    </div>
+                  </div>
+                ))}
+                <div ref={messagesEndRef} />
+                {isLoading && (
+                  <div className="flex justify-start">
+                    <div className="bg-gray-100 text-gray-900 p-3 rounded-lg shadow-sm">
+                      Typing...
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Input Form */}
+            <div className="mt-auto border-t border-gray-200">
+              <form onSubmit={handleSubmit} className="p-4 bg-white">
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
+                    placeholder="Type your message..."
+                    className="flex-1 p-2 rounded bg-white text-gray-900 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-900 placeholder-gray-400"
+                    disabled={isLoading}
+                  />
+                  <button
+                    type="submit"
+                    disabled={isLoading}
+                    className="bg-gray-900 text-white p-2 rounded hover:bg-gray-800 transition-colors disabled:bg-gray-200 disabled:text-gray-400"
+                  >
+                    <Send size={20} />
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </>
       )}
     </>
   );

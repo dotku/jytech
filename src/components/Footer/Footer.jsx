@@ -1,13 +1,12 @@
 "use client";
 
 import { Button, Input, Link } from "@nextui-org/react";
-import { useMemo } from "react";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import { useSearchParams } from "next/navigation";
 import { FaFacebook } from "react-icons/fa";
 import dynamic from "next/dynamic";
 import { chinaContacts, usContacts } from "@/data/contacts";
-import { Suspense } from 'react';
+import { Suspense } from "react";
 
 const Chatbot = dynamic(() => import("@/components/Chatbot"), {
   loading: () => null,
@@ -24,34 +23,63 @@ const CustomForm = ({ status, message, onValidated }) => {
     });
 
   return (
-    <div>
-      <div className="flex gap-2">
+    <div className="w-full">
+      <div className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
         <Input
           ref={(node) => (email = node)}
           type="email"
-          placeholder="Your email"
+          placeholder="Enter your email"
+          size="md"
+          radius="sm"
+          variant="flat"
+          classNames={{
+            base: "max-w-full",
+            mainWrapper: "h-12",
+            input: "text-small",
+            inputWrapper: "h-12 bg-white border-1 border-gray-200 hover:border-gray-400 focus:border-gray-900"
+          }}
+          onKeyPress={(e) => {
+            if (e.key === 'Enter') {
+              submit();
+            }
+          }}
         />
-        <Button onClick={submit}>Submit</Button>
+        <Button 
+          size="lg"
+          radius="full"
+          className="bg-gray-900 text-white font-medium shadow-sm hover:bg-gray-800 h-12 sm:min-w-[120px]"
+          onClick={submit}
+        >
+          Subscribe
+        </Button>
       </div>
-      {status === "sending" && <div style={{ color: "blue" }}>sending...</div>}
-      {status === "error" && (
-        <div
-          style={{ color: "red" }}
-          dangerouslySetInnerHTML={{ __html: message }}
-        />
-      )}
-      {status === "success" && (
-        <div
-          style={{ color: "green" }}
-          dangerouslySetInnerHTML={{ __html: message }}
-        />
-      )}
+      <div className="mt-3 min-h-[24px]">
+        {status === "sending" && (
+          <p className="text-sm text-blue-600 animate-pulse">Sending...</p>
+        )}
+        {status === "error" && (
+          <p 
+            className="text-sm text-red-600"
+            dangerouslySetInnerHTML={{ __html: message }}
+          />
+        )}
+        {status === "success" && (
+          <p 
+            className="text-sm text-green-600"
+            dangerouslySetInnerHTML={{ __html: message }}
+          />
+        )}
+      </div>
     </div>
   );
 };
 
 const Newsletter = () => (
-  <div>
+  <div className="w-full max-w-xl mx-auto text-center">
+    <div className="mb-6">
+      <h3 className="text-xl font-semibold mb-2">Stay Updated</h3>
+      <p className="text-gray-600 text-sm">Subscribe to our newsletter for the latest updates and insights.</p>
+    </div>
     <MailchimpSubscribe
       url={process.env.NEXT_PUBLIC_MAILCHIMP_URL}
       render={({ subscribe, status, message }) => (
@@ -73,6 +101,7 @@ function FooterContent(props) {
 
   return (
     <footer className="bg-gray-100 py-8">
+      <Chatbot />
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Left Column: Company Info and Newsletter */}
@@ -102,7 +131,9 @@ function FooterContent(props) {
               </a>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Subscribe to Our Newsletter</h4>
+              <h4 className="font-semibold mb-4">
+                Subscribe to Our Newsletter
+              </h4>
               <Newsletter />
             </div>
           </div>
@@ -117,7 +148,10 @@ function FooterContent(props) {
                 </Link>
               </li>
               <li>
-                <Link href="mailto:info@jytech.us" className="text-gray-600 text-sm">
+                <Link
+                  href="mailto:info@jytech.us"
+                  className="text-gray-600 text-sm"
+                >
                   info@jytech.us
                 </Link>
               </li>
@@ -131,9 +165,7 @@ function FooterContent(props) {
               {usContacts.map((contact, index) => (
                 <div key={index}>
                   <div className="mb-2">
-                    <p className="font-semibold text-lg">
-                      {contact.name}
-                    </p>
+                    <p className="font-semibold text-lg">{contact.name}</p>
                     {contact.title && (
                       <p className="font-normal text-gray-600 text-sm">
                         {contact.title}
@@ -189,9 +221,7 @@ function FooterContent(props) {
                       </p>
                     )}
                     {contact.wechat && (
-                      <p className="text-gray-600">
-                        WeChat: {contact.wechat}
-                      </p>
+                      <p className="text-gray-600">WeChat: {contact.wechat}</p>
                     )}
                   </div>
                 </div>
@@ -203,11 +233,12 @@ function FooterContent(props) {
         <div className="mt-8 pt-8 border-t border-gray-200">
           <p className="text-center text-gray-500 text-sm">
             &copy; {new Date().getFullYear()} JY Tech. All rights reserved.
-            {version && <span className="text-sm text-gray-500 ml-2">v{version}</span>}
+            {version && (
+              <span className="text-sm text-gray-500 ml-2">v{version}</span>
+            )}
           </p>
         </div>
       </div>
-      <Chatbot />
     </footer>
   );
 }
