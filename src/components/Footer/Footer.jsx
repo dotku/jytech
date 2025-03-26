@@ -29,12 +29,13 @@ const SimpleForm = ({ status, message, className, style, onSubmitted }) => {
         });
       }}
     >
-      <div className="flex gap-2">
+      <div className="flex gap-2 max-w-sm">
         <Input
           ref={(node) => (input = node)}
           type="email"
           placeholder="Your email"
           required
+          className="max-w-[200px]"
         />
         <Button type="submit">Subscribe</Button>
       </div>
@@ -120,7 +121,7 @@ const Footer = ({ version }) => {
                 <h3 className="text-xl font-bold mb-4">🇺🇸 U.S. Sales</h3>
                 <div className="space-y-6">
                   {usContacts.map((contact, index) => (
-                    <div key={index} className="text-right">
+                    <div key={index}>
                       <div className="mb-2">
                         <p className="font-semibold text-lg">
                           {contact.name}
@@ -166,7 +167,7 @@ const Footer = ({ version }) => {
                 <h3 className="text-xl font-bold mb-4">🇨🇳 中国区销售</h3>
                 <div className="space-y-6">
                   {chinaContacts.map((contact, index) => (
-                    <div key={index} className="text-right">
+                    <div key={index}>
                       <div className="mb-2">
                         <p className="font-semibold text-lg">{contact.name}</p>
                         {contact.email && (

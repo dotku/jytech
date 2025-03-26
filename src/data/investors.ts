@@ -15,10 +15,10 @@ export const investors = [
   },
   {
     id: 3,
-    name: "Business Travel",
-    description: "Comprehensive travel solutions for business professionals, ensuring comfort and efficiency.",
-    image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80",
-    link: "/business/travel"
+    name: "Business",
+    description: "We help global businesses grow by connecting with over 1,000 organizations and partners worldwide, successfully handling more than 100 cases each year.",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80",
+    link: "/business"
   },
   {
     id: 4,
