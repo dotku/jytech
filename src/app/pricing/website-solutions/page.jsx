@@ -3,8 +3,9 @@ import { hostingSolutions, outsourcingSolutions, usContacts, chinaContacts } fro
 import { useSearchParams, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import PricingDemoProjectCards from "@/components/Cards/PricingDemoProjectCards";
+import { Suspense } from "react";
 
-export default function WebsiteSolutionsPage() {
+function WebsiteSolutionsContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const [currentRegion, setCurrentRegion] = useState('us');
@@ -157,7 +158,9 @@ export default function WebsiteSolutionsPage() {
           <h3 className="text-2xl font-bold tracking-tight text-gray-900 text-center mb-8">
             {currentRegion === 'cn' ? '成功案例' : 'Case Studies'}
           </h3>
-          <PricingDemoProjectCards />
+          <Suspense fallback={<div>Loading demo projects...</div>}>
+            <PricingDemoProjectCards />
+          </Suspense>
         </div>
 
         {/* Sales Contact Section */}
@@ -204,5 +207,13 @@ export default function WebsiteSolutionsPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function WebsiteSolutionsPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <WebsiteSolutionsContent />
+    </Suspense>
   );
 }

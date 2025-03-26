@@ -2,6 +2,7 @@
 
 import PricingServicePlanCards from "@/components/Cards/PricingServicePlanCards";
 import PricingDemoProjectCards from "@/components/Cards/PricingDemoProjectCards";
+import { Suspense } from "react";
 
 export default function PricingPage() {
   return (
@@ -24,13 +25,17 @@ export default function PricingPage() {
           </div>
         </div>
 
-        <PricingServicePlanCards />
+        <Suspense fallback={<div>Loading pricing plans...</div>}>
+          <PricingServicePlanCards />
+        </Suspense>
         
         <div className="mt-20">
           <h3 className="text-2xl font-bold tracking-tight text-gray-900 text-center mb-8">
             Our Past Projects
           </h3>
-          <PricingDemoProjectCards />
+          <Suspense fallback={<div>Loading demo projects...</div>}>
+            <PricingDemoProjectCards />
+          </Suspense>
         </div>
       </div>
     </div>
