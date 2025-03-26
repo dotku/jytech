@@ -1,35 +1,20 @@
-"use server"
+"use client";
 
 import Header from "../Header";
-import Footer from "../Footer";
-import ClientLayout from "./ClientLayout";
+import Footer from "../Footer/Footer";
+import { PropsWithChildren } from "react";
+import packageInfo from '../../../package.json';
 
-import getConfig from "next/config";
-
-// Fetch server-side data (like version) here
-const { publicRuntimeConfig } = getConfig();
-const version = publicRuntimeConfig?.version;
-
-// const Footer = dynamic(() => import("../Footer"), { ssr: true });
-
-export default async function GeneralLayout({
-  children,
-  style,
-  className
-}: Readonly<{
-  children: React.ReactNode;
-  style?: React.CSSProperties;
-  className?: string
-}>) {
+export default function GeneralLayout({ children }: PropsWithChildren) {
   return (
-    <ClientLayout>
-      <div style={style} className={className}>
-        <Header />
-        <div className="container mx-auto min-h-full flex flex-col justify-between" style={style}>
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-grow">
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {children}
-          <Footer version={version}/>
         </div>
-      </div>
-    </ClientLayout>
+      </main>
+      <Footer version={packageInfo.version} />
+    </div>
   );
 }

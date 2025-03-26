@@ -1,160 +1,210 @@
 "use client";
 
 import { Button, Input } from "@nextui-org/react";
-import { useEffect, useMemo } from "react";
+import { useMemo } from "react";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
-import { chinaContacts, usContacts } from "@/data/products";
+import { useSearchParams } from "next/navigation";
+import { FaFacebook } from "react-icons/fa";
+import dynamic from "next/dynamic";
+import { chinaContacts, usContacts } from "@/data/contacts";
+
+const Chatbot = dynamic(() => import("@/components/Chatbot"), {
+  loading: () => null,
+  ssr: false
+});
 
 const url =
-  "https://jytech.us14.list-manage.com/subscribe/post?u=8911a369423d71b73d12ceef6&amp;id=9aa574bde6&amp;f_id=0061b0e5f0";
+  "https://jytech.us12.list-manage.com/subscribe/post?u=YOUR_U&id=YOUR_ID";
 
 const SimpleForm = ({ status, message, className, style, onSubmitted }) => {
   let input;
-  const submit = () =>
-    input &&
-    input.value.indexOf("@") > -1 &&
-    onSubmitted({
-      EMAIL: input.value,
-    });
   return (
-    <div className={className} style={style}>
-      {status === "sending" && (
-        <div className="m-1" style={{ color: "blue" }}>
-          sending...
-        </div>
-      )}
-      {status === "error" && (
-        <div className="m-1" style={{ color: "red" }}>
-          {message}
-        </div>
-      )}
-      {status === "success" && (
-        <div className="m-1" style={{ color: "green" }}>
-          {message}
-        </div>
-      )}
-      <div className="flex flex-row gap-3">
+    <form
+      className={className}
+      style={style}
+      onSubmit={(e) => {
+        e.preventDefault();
+        onSubmitted({
+          EMAIL: input.value,
+        });
+      }}
+    >
+      <div className="flex gap-2">
         <Input
-          className="max-w-52"
           ref={(node) => (input = node)}
           type="email"
           placeholder="Your email"
+          required
         />
-        <Button onClick={submit} variant="bordered">
-          Subscribe
-        </Button>
+        <Button type="submit">Subscribe</Button>
       </div>
-    </div>
+    </form>
   );
 };
 
-const CustomForm = () => (
-  <MailchimpSubscribe
-    url={url}
-    render={({ subscribe, status, message }) => (
-      <div>
-        <SimpleForm onSubmitted={(formData) => subscribe(formData)} />
-        {status === "sending" && (
-          <div style={{ color: "blue" }}>sending...</div>
-        )}
-        {status === "error" && (
-          <div
-            style={{ color: "red" }}
-            dangerouslySetInnerHTML={{ __html: message }}
-          />
-        )}
-        {status === "success" && (
-          <div style={{ color: "green" }}>Subscribed !</div>
-        )}
-      </div>
+const CustomForm = ({ status, message, onSubmitted }) => (
+  <div>
+    <SimpleForm onSubmitted={onSubmitted} />
+    {status === "sending" && (
+      <div className="mt-2 text-blue-600">Sending...</div>
     )}
-  />
+    {status === "error" && (
+      <div
+        className="mt-2 text-red-600"
+        dangerouslySetInnerHTML={{ __html: message }}
+      />
+    )}
+    {status === "success" && (
+      <div className="mt-2 text-green-600">Subscribed!</div>
+    )}
+  </div>
 );
 
-export default function Footer({ version }) {
+const Footer = ({ version }) => {
+  const searchParams = useSearchParams();
+  const region = searchParams.get("region") || "us";
+  const lang = region === "cn" ? "cn" : "us";
+
   return (
-    <>
-      <footer>
-        <div className="p-6 my-4 text-sm">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 justify-stretch">
-            <div>
-              <address>
-                <label className="text-lg">Address</label>
-                <div>
-                  <span className="font-bold">JY Tech LLC</span>
+    <footer className="py-8">
+      <div className="container mx-auto px-4">
+        <div className="grid md:grid-cols-2 gap-8">
+          {/* Left Column: Company Info and Newsletter */}
+          <div>
+            <div className="mb-8">
+              <address className="not-italic">
+                <div className="font-bold">JY Tech LLC</div>
+                <div className="mt-2 text-sm">
+                  1846 E. Innovation Park Dr. Ste 100
                   <br />
-                  1846 E. Innovation Park Dr. Ste 100 <br />
-                  ORO VALLEY <br />
-                  Pima, AZ 85755 <br />
+                  ORO VALLEY
+                  <br />
+                  Pima, AZ 85755
+                  <br />
                   United States
                 </div>
               </address>
-            </div>
-            <div>
-              <label className="text-lg">Links</label>
-              <div className="mt-2">
+              <div className="mt-4">
+                <h4 className="font-semibold mb-2">Follow Us</h4>
                 <a
-                  href="/career"
-                  className="hover:text-blue-600 transition-colors"
+                  href="https://www.facebook.com/jytech.us/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors"
                 >
-                  Career
+                  <FaFacebook className="mr-2" />
+                  Facebook
                 </a>
               </div>
             </div>
-            <div className="md:col-span-2">
-              <label className="text-lg">Sales Contacts</label>
-              <div className="mt-2 grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* China Sales */}
-                <div>
-                  <h4 className="font-medium mb-2">🇨🇳 中国区销售</h4>
-                  <div className="space-y-3">
-                    {chinaContacts.map((contact) => (
-                      <div key={contact.id} className="space-y-1">
-                        <div className="font-medium">{contact.name}</div>
-                        <div className="text-sm text-gray-600">WeChat: {contact.wechat}</div>
+            <div>
+              <h4 className="font-semibold mb-4">Subscribe to Our Newsletter</h4>
+              <MailchimpSubscribe
+                url={url}
+                render={({ subscribe, status, message }) => (
+                  <CustomForm
+                    status={status}
+                    message={message}
+                    onSubmitted={(formData) => subscribe(formData)}
+                  />
+                )}
+              />
+            </div>
+          </div>
+
+          {/* Right Column: Sales Contacts */}
+          <div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* US Sales */}
+              <div>
+                <h3 className="text-xl font-bold mb-4">🇺🇸 U.S. Sales</h3>
+                <div className="space-y-6">
+                  {usContacts.map((contact, index) => (
+                    <div key={index} className="text-right">
+                      <div className="mb-2">
+                        <p className="font-semibold text-lg">
+                          {contact.name}
+                        </p>
+                        {contact.title && (
+                          <p className="font-normal text-gray-600 text-sm">
+                            {contact.title}
+                          </p>
+                        )}
                         {contact.email && (
-                          <div className="text-sm">
-                            <a href={`mailto:${contact.email}`} className="text-blue-600 hover:text-blue-800">
+                          <p>
+                            <a
+                              href={`mailto:${contact.email}`}
+                              className="text-blue-600 hover:text-blue-800"
+                            >
                               {contact.email}
                             </a>
-                          </div>
+                          </p>
+                        )}
+                        {contact.phone && (
+                          <p>
+                            <a
+                              href={`tel:${contact.phone}`}
+                              className="text-blue-600 hover:text-blue-800"
+                            >
+                              {contact.phone}
+                            </a>
+                          </p>
                         )}
                       </div>
-                    ))}
-                  </div>
+                      {contact.address && (
+                        <address className="not-italic text-gray-600 text-sm">
+                          {contact.address}
+                        </address>
+                      )}
+                    </div>
+                  ))}
                 </div>
-                {/* US Sales */}
-                <div>
-                  <h4 className="font-medium mb-2">🇺🇸 U.S. Sales</h4>
-                  <div className="space-y-3">
-                    {usContacts.map((contact) => (
-                      <div key={contact.id} className="space-y-1">
-                        <div className="font-medium">{contact.name}</div>
-                        <div className="text-sm">
-                          <a href={`mailto:${contact.email}`} className="text-blue-600 hover:text-blue-800">
-                            {contact.email}
-                          </a>
-                        </div>
-                        <div className="text-sm">
-                          <a href={`tel:${contact.phone}`} className="text-blue-600 hover:text-blue-800">
-                            {contact.phone}
-                          </a>
-                        </div>
+              </div>
+
+              {/* China Sales */}
+              <div>
+                <h3 className="text-xl font-bold mb-4">🇨🇳 中国区销售</h3>
+                <div className="space-y-6">
+                  {chinaContacts.map((contact, index) => (
+                    <div key={index} className="text-right">
+                      <div className="mb-2">
+                        <p className="font-semibold text-lg">{contact.name}</p>
+                        {contact.email && (
+                          <p>
+                            <a
+                              href={`mailto:${contact.email}`}
+                              className="text-blue-600 hover:text-blue-800"
+                            >
+                              {contact.email}
+                            </a>
+                          </p>
+                        )}
+                        {contact.wechat && (
+                          <p className="text-gray-600">
+                            WeChat: {contact.wechat}
+                          </p>
+                        )}
                       </div>
-                    ))}
-                  </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
-          <div className="text-center mt-8 text-gray-500">
-            <small>
-              &copy; {new Date().getFullYear()} JY Tech LLC. All rights reserved.
-              {version && <span> Version: {version}</span>}
-            </small>
-          </div>
         </div>
-      </footer>
-    </>
+
+        <div className="mt-8 pt-4 text-center">
+          <p>
+            &copy; {new Date().getFullYear()} JYTech. All rights reserved.
+            {version && (
+              <span className="text-sm text-gray-500 ml-2">v{version}</span>
+            )}
+          </p>
+        </div>
+      </div>
+      <Chatbot />
+    </footer>
   );
-}
+};
+
+export default Footer;

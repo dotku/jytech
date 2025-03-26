@@ -1,5 +1,3 @@
-"use client";
-
 import GeneralLayout from "@/components/Layouts/GeneralLayout";
 import {
   PricingDemoProjectCards,
@@ -8,21 +6,21 @@ import {
 import { Image } from "@nextui-org/react";
 import { Suspense } from "react";
 
-export default function TechPage() {
+// Mark the page as a Server Component
+export default async function TechPage() {
   return (
     <GeneralLayout>
-      <div className="px-6">
-        <Image
-          alt="jytech tech page banner"
-          src="https://apptechhub.com/assets/images/bg/home1-banner.png"
-        />
-        <Suspense fallback={<div>Loading pricing plans...</div>}>
-          <PricingServicePlanCards />
-        </Suspense>
-        <Suspense fallback={<div>Loading demo projects...</div>}>
-          <PricingDemoProjectCards />
-        </Suspense>
-      </div>
+      <Image
+        alt="jytech tech page banner"
+        src="https://apptechhub.com/assets/images/bg/home1-banner.png"
+        className="w-full rounded-lg shadow-lg mb-8"
+      />
+      <Suspense fallback={<div>Loading pricing plans...</div>}>
+        <PricingServicePlanCards />
+      </Suspense>
+      <Suspense fallback={<div>Loading demo projects...</div>}>
+        <PricingDemoProjectCards />
+      </Suspense>
     </GeneralLayout>
   );
 }
