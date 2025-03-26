@@ -49,6 +49,11 @@ export default function Header() {
           Business
         </Link>
       </NavbarItem>
+      <NavbarItem>
+        <Link color="foreground" href="/pricing">
+          Pricing
+        </Link>
+      </NavbarItem>
     </>
   );
 

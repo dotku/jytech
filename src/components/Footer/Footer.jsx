@@ -3,6 +3,7 @@
 import { Button, Input } from "@nextui-org/react";
 import { useEffect, useMemo } from "react";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
+import { chinaContacts, usContacts } from "@/data/products";
 
 const url =
   "https://jytech.us14.list-manage.com/subscribe/post?u=8911a369423d71b73d12ceef6&amp;id=9aa574bde6&amp;f_id=0061b0e5f0";
@@ -75,7 +76,7 @@ export default function Footer({ version }) {
     <>
       <footer>
         <div className="p-6 my-4 text-sm">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 justify-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 justify-stretch">
             <div>
               <address>
                 <label className="text-lg">Address</label>
@@ -100,16 +101,57 @@ export default function Footer({ version }) {
                 </a>
               </div>
             </div>
-            <div>
-              <CustomForm url={url} />
+            <div className="md:col-span-2">
+              <label className="text-lg">Sales Contacts</label>
+              <div className="mt-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* China Sales */}
+                <div>
+                  <h4 className="font-medium mb-2">🇨🇳 中国区销售</h4>
+                  <div className="space-y-3">
+                    {chinaContacts.map((contact) => (
+                      <div key={contact.id} className="space-y-1">
+                        <div className="font-medium">{contact.name}</div>
+                        <div className="text-sm text-gray-600">WeChat: {contact.wechat}</div>
+                        {contact.email && (
+                          <div className="text-sm">
+                            <a href={`mailto:${contact.email}`} className="text-blue-600 hover:text-blue-800">
+                              {contact.email}
+                            </a>
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                {/* US Sales */}
+                <div>
+                  <h4 className="font-medium mb-2">🇺🇸 U.S. Sales</h4>
+                  <div className="space-y-3">
+                    {usContacts.map((contact) => (
+                      <div key={contact.id} className="space-y-1">
+                        <div className="font-medium">{contact.name}</div>
+                        <div className="text-sm">
+                          <a href={`mailto:${contact.email}`} className="text-blue-600 hover:text-blue-800">
+                            {contact.email}
+                          </a>
+                        </div>
+                        <div className="text-sm">
+                          <a href={`tel:${contact.phone}`} className="text-blue-600 hover:text-blue-800">
+                            {contact.phone}
+                          </a>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="flex justify-center md:justify-end items-end">
-            <span>
-              &copy;2002 - {new Date().getFullYear()} JY Tech LLC, made in the
-              US.
-            </span>{" "}
-            {version ? <span className="ps-1">v{version}</span> : null}
+          <div className="text-center mt-8 text-gray-500">
+            <small>
+              &copy; {new Date().getFullYear()} JY Tech LLC. All rights reserved.
+              {version && <span> Version: {version}</span>}
+            </small>
           </div>
         </div>
       </footer>

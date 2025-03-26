@@ -139,6 +139,7 @@ export const hostingSolutions = [
     initialLaborCost: "¥200",
     estimatedYearlyCost: "¥200",
     suitableScenarios: "技术博客/作品集",
+    region: "cn",
   },
   {
     id: 2,
@@ -148,6 +149,7 @@ export const hostingSolutions = [
     initialLaborCost: "¥200",
     estimatedYearlyCost: "¥200",
     suitableScenarios: "小型网站/国外客户访问",
+    region: "cn",
   },
   {
     id: 3,
@@ -157,6 +159,7 @@ export const hostingSolutions = [
     initialLaborCost: "¥100",
     estimatedYearlyCost: "¥100–¥120",
     suitableScenarios: "国内展示类/官网",
+    region: "cn",
   },
   {
     id: 4,
@@ -166,6 +169,7 @@ export const hostingSolutions = [
     initialLaborCost: "¥300",
     estimatedYearlyCost: "¥350–¥400",
     suitableScenarios: "商业类官网/文件托管",
+    region: "cn",
   },
   {
     id: 5,
@@ -175,6 +179,7 @@ export const hostingSolutions = [
     initialLaborCost: "¥300",
     estimatedYearlyCost: "¥350–¥400",
     suitableScenarios: "适合与微信生态联动",
+    region: "cn",
   },
   {
     id: 6,
@@ -184,6 +189,67 @@ export const hostingSolutions = [
     initialLaborCost: "¥300–¥500",
     estimatedYearlyCost: "¥300–¥500",
     suitableScenarios: "海外为主、需要自动部署",
+    region: "cn",
+  },
+  {
+    id: 7,
+    name: "GitHub Pages",
+    difficulty: "★★☆☆☆",
+    yearlyFee: "$0",
+    initialLaborCost: "$100-$200",
+    estimatedYearlyCost: "$100-$200",
+    suitableScenarios: "Portfolio / Resume Site",
+    region: "us",
+  },
+  {
+    id: 8,
+    name: "Cloudflare Pages",
+    difficulty: "★★☆☆☆",
+    yearlyFee: "$0",
+    initialLaborCost: "$100-$200",
+    estimatedYearlyCost: "$100-$200",
+    suitableScenarios: "Fast + Git-based deploy",
+    region: "us",
+  },
+  {
+    id: 9,
+    name: "Vercel (Hobby plan)",
+    difficulty: "★★★☆☆",
+    yearlyFee: "$0",
+    initialLaborCost: "$150-$300",
+    estimatedYearlyCost: "$150-$300",
+    suitableScenarios: "Best for React/Next.js",
+    region: "us",
+  },
+  {
+    id: 10,
+    name: "Netlify (Free tier)",
+    difficulty: "★★☆☆☆",
+    yearlyFee: "$0",
+    initialLaborCost: "$100-$200",
+    estimatedYearlyCost: "$100-$200",
+    suitableScenarios: "Great UX, fast setup",
+    region: "us",
+  },
+  {
+    id: 11,
+    name: "Amazon S3 + CloudFront",
+    difficulty: "★★★★☆",
+    yearlyFee: "$12-$60",
+    initialLaborCost: "$200-$300",
+    estimatedYearlyCost: "$212-$360",
+    suitableScenarios: "Best for scaling",
+    region: "us",
+  },
+  {
+    id: 12,
+    name: "DigitalOcean App Platform",
+    difficulty: "★★★☆☆",
+    yearlyFee: "$60-$120",
+    initialLaborCost: "$150-$250",
+    estimatedYearlyCost: "$210-$370",
+    suitableScenarios: "Simple, scalable",
+    region: "us",
   },
 ];
 
@@ -193,18 +259,42 @@ export const outsourcingSolutions = [
     name: "WordPress 构建",
     oneTimeCost: "¥500–¥2000+",
     maintenanceCost: "更新维护 ¥100/月起",
+    region: "cn",
   },
   {
     id: 2,
     name: "静态网站开发",
     oneTimeCost: "¥500–¥1500 起",
     maintenanceCost: "后期维护低",
+    region: "cn",
   },
   {
     id: 3,
     name: "建站平台（如Wix）",
     oneTimeCost: "¥0–¥1000+",
     maintenanceCost: "平台月租 ¥122/月起",
+    region: "cn",
+  },
+  {
+    id: 4,
+    name: "Freelancer (Upwork/Fiverr)",
+    oneTimeCost: "$200-$800",
+    maintenanceCost: "Optional hourly",
+    region: "us",
+  },
+  {
+    id: 5,
+    name: "Agency",
+    oneTimeCost: "$1000-$5000+",
+    maintenanceCost: "$50-$200/month",
+    region: "us",
+  },
+  {
+    id: 6,
+    name: "No-code with support",
+    oneTimeCost: "$300-$1000",
+    maintenanceCost: "$20-$100/month",
+    region: "us",
   },
 ];
 
@@ -223,4 +313,27 @@ export const chinaContacts = [
     email: "carrie.lan998@gmail.com",
     role: "中国区销售代表",
   },
+  {
+    id: 3,
+    name: "Mary Hsu",
+    wechat: "Mary_Hsu1007",
+    role: "中国区销售代表",
+  },
+];
+
+export const usContacts = [
+  {
+    id: 1,
+    name: "Richard Ma",
+    role: "Sales Representative",
+    email: "Richard4ma@yahoo.com",
+    phone: "(408)391-5512"
+  },
+  {
+    id: 2,
+    name: "Talia Ge",
+    role: "U.S. Sales Representative",
+    email: "Getenghuan@gmail.com",
+    phone: "+1 (415) 608-8888",
+  }
 ];

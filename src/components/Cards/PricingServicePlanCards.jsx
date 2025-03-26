@@ -12,6 +12,7 @@ import {
 import ReactMarkdown from "react-markdown";
 import PricingServicePlandCardsData from "./PricingServicePlanCardsData";
 import styled from "styled-components";
+import { useSearchParams } from "next/navigation";
 
 export const ReactMarkdownWrapper = styled.div`
   ul {
@@ -35,6 +36,10 @@ export const ReactMarkdownWrapper = styled.div`
 `;
 
 export default function PricingServicePlans() {
+  const searchParams = useSearchParams();
+  const region = searchParams.get('region') || 'us';
+  const lang = region === 'cn' ? 'cn' : 'us';
+
   return (
     <>
       <h3 className="text-xl py-5">Pricing</h3>
@@ -57,9 +62,19 @@ export default function PricingServicePlans() {
             </CardBody>
             <Divider />
             <CardFooter className="justify-center">
-              <Link href="mailto:weijingjaylin+jytech@gmail.com">
-                <Button color="primary">Contact</Button>
-              </Link>
+              {row.key === 1 ? (
+                <Link href="/pricing/website-solutions">
+                  <Button color="primary">
+                    {row.buttonText?.[lang] || "More"}
+                  </Button>
+                </Link>
+              ) : (
+                <Link href="mailto:weijingjaylin+jytech@gmail.com">
+                  <Button color="primary">
+                    {row.buttonText?.[lang] || "Contact"}
+                  </Button>
+                </Link>
+              )}
             </CardFooter>
           </Card>
         ))}

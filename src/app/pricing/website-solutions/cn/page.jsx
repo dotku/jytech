@@ -1,6 +1,10 @@
+"use client";
 import { hostingSolutions, outsourcingSolutions, chinaContacts } from '@/data/products';
 
-export default function HostingPage() {
+export default function CNHostingPage() {
+  const cnHostingSolutions = hostingSolutions.filter(solution => solution.region === 'cn');
+  const cnOutsourcingSolutions = outsourcingSolutions.filter(solution => solution.region === 'cn');
+
   return (
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -10,6 +14,11 @@ export default function HostingPage() {
           </h2>
           <p className="mt-4 text-lg leading-8 text-gray-600">
             为您提供多种网站托管解决方案，满足不同场景需求
+          </p>
+          <p className="mt-2 text-sm text-gray-500">
+            <a href="/pricing/us" className="text-blue-600 hover:text-blue-800">
+              Switch to U.S. Region Pricing →
+            </a>
           </p>
         </div>
 
@@ -27,7 +36,7 @@ export default function HostingPage() {
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200 bg-white">
-              {hostingSolutions.map((solution) => (
+              {cnHostingSolutions.map((solution) => (
                 <tr key={solution.id}>
                   <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">{solution.name}</td>
                   <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{solution.difficulty}</td>
@@ -44,7 +53,7 @@ export default function HostingPage() {
         {/* Outsourcing Solutions Section */}
         <div className="mt-20">
           <h3 className="text-2xl font-bold tracking-tight text-gray-900 text-center mb-8">
-            🔧 如果你请人搭建
+            如果你请人搭建
           </h3>
           <div className="overflow-x-auto">
             <table className="min-w-full divide-y divide-gray-300">
@@ -56,7 +65,7 @@ export default function HostingPage() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200 bg-white">
-                {outsourcingSolutions.map((solution) => (
+                {cnOutsourcingSolutions.map((solution) => (
                   <tr key={solution.id}>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">{solution.name}</td>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{solution.oneTimeCost}</td>
@@ -83,10 +92,16 @@ export default function HostingPage() {
                     <dt className="w-20 flex-shrink-0 text-gray-500">微信:</dt>
                     <dd className="text-gray-900">{contact.wechat}</dd>
                   </div>
-                  <div className="flex">
-                    <dt className="w-20 flex-shrink-0 text-gray-500">邮箱:</dt>
-                    <dd className="text-gray-900">{contact.email}</dd>
-                  </div>
+                  {contact.email && (
+                    <div className="flex">
+                      <dt className="w-20 flex-shrink-0 text-gray-500">邮箱:</dt>
+                      <dd className="text-gray-900">
+                        <a href={`mailto:${contact.email}`} className="text-blue-600 hover:text-blue-800">
+                          {contact.email}
+                        </a>
+                      </dd>
+                    </div>
+                  )}
                 </dl>
               </div>
             ))}

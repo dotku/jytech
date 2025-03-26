@@ -1,7 +1,7 @@
 const rows = [
   {
     key: 1,
-    name: "Software Development",
+    name: "Website Development",
     price: "$500+",
     description: `Customized building websites or applications according to your needs:
 
@@ -24,6 +24,10 @@ const rows = [
 - AI based Websites would be based on User requirements
 - Mobile Apps for Android and Apple based on User requirements
       `,
+    buttonText: {
+      cn: "了解更多",
+      us: "More"
+    },
   },
   {
     key: 2,
@@ -36,6 +40,10 @@ const rows = [
 - Social media integration and marketing
       `,
     price: "$300+",
+    buttonText: {
+      cn: "联系我们",
+      us: "Contact"
+    },
   },
   {
     key: 3,
@@ -47,6 +55,10 @@ const rows = [
 - Affiliate Marketing
 - Consulting and Training
       `,
+    buttonText: {
+      cn: "联系我们",
+      us: "Contact"
+    },
   },
   {
     key: 4,
@@ -60,6 +72,10 @@ const rows = [
 - Final Random Inspections
 - Product Testing
       `,
+    buttonText: {
+      cn: "联系我们",
+      us: "Contact"
+    },
   },
 ];
 

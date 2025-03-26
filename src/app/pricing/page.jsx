@@ -1,44 +1,38 @@
 "use client";
 
-import { Image } from "@nextui-org/react";
-import PricingDemoProjectCards from "../../components/Cards/PricingDemoProjectCards";
-import PricingServicePlanCards from "../../components/Cards/PricingServicePlanCards";
+import PricingServicePlanCards from "@/components/Cards/PricingServicePlanCards";
+import PricingDemoProjectCards from "@/components/Cards/PricingDemoProjectCards";
 
 export default function PricingPage() {
-  const columns = [
-    {
-      key: "name",
-      label: "Name",
-    },
-    {
-      key: "price",
-      label: "Price",
-    },
-  ];
-
-  const rows = [
-    {
-      key: 1,
-      name: "Website",
-      price: "$500+",
-    },
-    {
-      key: 2,
-      name: "SEO",
-      price: "$300+",
-    },
-    {
-      key: 3,
-      name: "Advertizing",
-      price: "$100/mo or 15% of advertizing cost, whichever larger",
-    },
-  ];
-
   return (
-    <>
-      <Image src="https://apptechhub.com/assets/images/Footer%20banner.png" alt="jytech pricing banner" />
-      <PricingServicePlanCards />
-      <PricingDemoProjectCards />
-    </>
+    <div className="py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl text-center mb-16">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            Pricing & Solutions
+          </h2>
+          <p className="mt-4 text-lg leading-8 text-gray-600">
+            Explore our pricing options and past successful projects
+          </p>
+          <div className="mt-8">
+            <a
+              href="/pricing/website-solutions"
+              className="rounded-md bg-blue-600 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+            >
+              View Website Solutions
+            </a>
+          </div>
+        </div>
+
+        <PricingServicePlanCards />
+        
+        <div className="mt-20">
+          <h3 className="text-2xl font-bold tracking-tight text-gray-900 text-center mb-8">
+            Our Past Projects
+          </h3>
+          <PricingDemoProjectCards />
+        </div>
+      </div>
+    </div>
   );
 }
