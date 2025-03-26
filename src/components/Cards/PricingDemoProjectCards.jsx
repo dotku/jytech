@@ -9,7 +9,7 @@ import {
   Link,
 } from "@nextui-org/react";
 import { useSearchParams } from "next/navigation";
-import { Suspense } from 'react';
+import { Suspense } from "react";
 
 const projectDataRows = [
   {
@@ -103,13 +103,15 @@ function PricingDemoProjectCardsContent() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {projectDataRows.map((row) => (
-        <Card key={row.key} className="p-4">
+        <Card key={row.key}>
           <CardHeader>
             <div className="flex justify-between w-full items-center">
               <h3 className="text-xl">
                 {lang === "cn" ? row.name_cn : row.name}
               </h3>
-              <div className="my-2">{lang === "cn" ? row.cost_cn : row.cost}</div>
+              <div className="my-2">
+                {lang === "cn" ? row.cost_cn : row.cost}
+              </div>
             </div>
           </CardHeader>
           <Divider />

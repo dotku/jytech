@@ -28,9 +28,9 @@ export default function Header() {
   // Prevent body scroll when menu is open
   useEffect(() => {
     if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
   }, [isMenuOpen]);
 
@@ -62,14 +62,17 @@ export default function Header() {
   const isActive = (href: string) => pathname === href;
 
   return (
-    <Navbar 
+    <Navbar
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
       className="sticky top-0 z-40 bg-white p-4 sm:p-5"
       maxWidth="2xl"
     >
       {/* Mobile Layout */}
-      <NavbarContent className="sm:hidden w-full flex justify-between" justify="end">
+      <NavbarContent
+        className="sm:hidden w-full flex justify-between"
+        justify="end"
+      >
         <NavbarBrand>
           <Link
             href="/"
@@ -128,7 +131,9 @@ export default function Header() {
               href={item.href}
               isExternal={item.isExternal}
               showAnchorIcon={item.isExternal}
-              className={`text-sm transition-colors duration-200 ${isActive(item.href) ? 'font-medium' : ''}`}
+              className={`text-sm transition-colors duration-200 ${
+                isActive(item.href) ? "font-medium" : ""
+              }`}
             >
               {item.label}
             </Link>
@@ -150,9 +155,12 @@ export default function Header() {
         </NavbarItem>
       </NavbarContent>
 
-      <NavbarMenu className="pt-6 pb-6 sm:hidden">
-        <div className="fixed inset-0 bg-black/10 -z-10" onClick={() => setIsMenuOpen(false)} />
-        <div className="max-w-md mx-auto w-full px-6">
+      <NavbarMenu className="pt-6 pb-6 sm:hidden w-full" data-id="navbar-menu">
+        <div
+          className="fixed inset-0 bg-black/10 -z-10"
+          onClick={() => setIsMenuOpen(false)}
+        />
+        <div className="max-w-md mx-auto w-full">
           <div className="bg-white rounded-xl shadow-lg p-6">
             {menuItems.map((item) => (
               <NavbarMenuItem key={item.href}>
@@ -162,7 +170,9 @@ export default function Header() {
                   isExternal={item.isExternal}
                   showAnchorIcon={item.isExternal}
                   size="lg"
-                  className={`w-full py-3 transition-colors duration-200 ${isActive(item.href) ? 'font-semibold' : ''}`}
+                  className={`w-full py-3 transition-colors duration-200 ${
+                    isActive(item.href) ? "font-semibold" : ""
+                  }`}
                 >
                   {item.label}
                 </Link>

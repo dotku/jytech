@@ -110,7 +110,7 @@ export default function Chatbot() {
           <div className="sm:hidden fixed inset-0 z-[9999] flex flex-col bg-white">
             {/* Header */}
             <div className="p-4 border-b border-gray-200 flex justify-between items-center bg-gray-900 text-white">
-              <h2 className="text-lg font-semibold">Chat with Us</h2>
+              <h2 className="text-lg font-semibold">Chat with JYTech AI</h2>
               <button
                 onClick={() => setIsOpen(false)}
                 className="text-gray-300 hover:text-white transition-colors"
@@ -190,7 +190,7 @@ export default function Chatbot() {
           <div className="hidden sm:flex fixed bottom-0 right-0 w-96 h-[600px] bg-white/95 backdrop-blur-md rounded-lg shadow-xl flex-col border border-gray-200 z-[9999]">
             {/* Header */}
             <div className="p-4 border-b border-gray-200 flex justify-between items-center bg-gray-900 text-white">
-              <h2 className="text-lg font-semibold">Chat with Us</h2>
+              <h2 className="text-lg font-semibold">Chat with JYTech AI</h2>
               <button
                 onClick={() => setIsOpen(false)}
                 className="text-gray-300 hover:text-white transition-colors"
