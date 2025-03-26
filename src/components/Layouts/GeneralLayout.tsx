@@ -2,10 +2,13 @@
 
 import Header from "../Header";
 import Footer from "../Footer/Footer";
-import { PropsWithChildren } from "react";
 import packageInfo from '../../../package.json';
 
-export default function GeneralLayout({ children }: PropsWithChildren) {
+interface GeneralLayoutProps {
+  children: React.ReactNode;
+}
+
+export default function GeneralLayout({ children }: GeneralLayoutProps) {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />

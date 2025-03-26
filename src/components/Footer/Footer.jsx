@@ -11,58 +11,62 @@ import { Suspense } from 'react';
 
 const Chatbot = dynamic(() => import("@/components/Chatbot"), {
   loading: () => null,
-  ssr: false
+  ssr: false,
 });
 
-const url =
-  "https://jytech.us12.list-manage.com/subscribe/post?u=YOUR_U&id=YOUR_ID";
+const CustomForm = ({ status, message, onValidated }) => {
+  let email;
+  const submit = () =>
+    email &&
+    email.value.indexOf("@") > -1 &&
+    onValidated({
+      EMAIL: email.value,
+    });
 
-const SimpleForm = ({ status, message, className, style, onSubmitted }) => {
-  let input;
   return (
-    <form
-      className={className}
-      style={style}
-      onSubmit={(e) => {
-        e.preventDefault();
-        onSubmitted({
-          EMAIL: input.value,
-        });
-      }}
-    >
-      <div className="flex gap-2 max-w-sm">
+    <div>
+      <div className="flex gap-2">
         <Input
-          ref={(node) => (input = node)}
+          ref={(node) => (email = node)}
           type="email"
           placeholder="Your email"
-          required
-          className="max-w-[200px]"
         />
-        <Button type="submit">Subscribe</Button>
+        <Button onClick={submit}>Submit</Button>
       </div>
-    </form>
+      {status === "sending" && <div style={{ color: "blue" }}>sending...</div>}
+      {status === "error" && (
+        <div
+          style={{ color: "red" }}
+          dangerouslySetInnerHTML={{ __html: message }}
+        />
+      )}
+      {status === "success" && (
+        <div
+          style={{ color: "green" }}
+          dangerouslySetInnerHTML={{ __html: message }}
+        />
+      )}
+    </div>
   );
 };
 
-const CustomForm = ({ status, message, onSubmitted }) => (
+const Newsletter = () => (
   <div>
-    <SimpleForm onSubmitted={onSubmitted} />
-    {status === "sending" && (
-      <div className="mt-2 text-blue-600">Sending...</div>
-    )}
-    {status === "error" && (
-      <div
-        className="mt-2 text-red-600"
-        dangerouslySetInnerHTML={{ __html: message }}
-      />
-    )}
-    {status === "success" && (
-      <div className="mt-2 text-green-600">Subscribed!</div>
-    )}
+    <MailchimpSubscribe
+      url={process.env.NEXT_PUBLIC_MAILCHIMP_URL}
+      render={({ subscribe, status, message }) => (
+        <CustomForm
+          status={status}
+          message={message}
+          onValidated={(formData) => subscribe(formData)}
+        />
+      )}
+    />
   </div>
 );
 
-function FooterContent() {
+function FooterContent(props) {
+  const { version } = props;
   const searchParams = useSearchParams();
   const region = searchParams.get("region") || "us";
   const lang = region === "cn" ? "cn" : "us";
@@ -73,7 +77,6 @@ function FooterContent() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Left Column: Company Info and Newsletter */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">JY Tech</h3>
             <address className="not-italic">
               <div className="font-bold">JY Tech LLC</div>
               <div className="mt-2 text-sm">
@@ -100,16 +103,7 @@ function FooterContent() {
             </div>
             <div>
               <h4 className="font-semibold mb-4">Subscribe to Our Newsletter</h4>
-              <MailchimpSubscribe
-                url={url}
-                render={({ subscribe, status, message }) => (
-                  <CustomForm
-                    status={status}
-                    message={message}
-                    onSubmitted={(formData) => subscribe(formData)}
-                  />
-                )}
-              />
+              <Newsletter />
             </div>
           </div>
 
@@ -209,6 +203,7 @@ function FooterContent() {
         <div className="mt-8 pt-8 border-t border-gray-200">
           <p className="text-center text-gray-500 text-sm">
             &copy; {new Date().getFullYear()} JY Tech. All rights reserved.
+            {version && <span className="text-sm text-gray-500 ml-2">v{version}</span>}
           </p>
         </div>
       </div>
@@ -217,10 +212,11 @@ function FooterContent() {
   );
 }
 
-export default function Footer() {
+export default function Footer(props) {
+  const { version } = props;
   return (
     <Suspense fallback={<div>Loading footer...</div>}>
-      <FooterContent />
+      <FooterContent version={version} />
     </Suspense>
   );
 }
