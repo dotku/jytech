@@ -1,5 +1,11 @@
 export const usContacts = [
   {
+    name: "Customer Support",
+    title: "Support Team",
+    email: "info@jytech.us",
+    phone: "+1 (415) 851-1937"
+  },
+  {
     name: "Richard Ma",
     title: "Sales Representative",
     email: "Richard4ma@yahoo.com",

@@ -76,10 +76,6 @@ const CustomForm = ({ status, message, onValidated }) => {
 
 const Newsletter = () => (
   <div className="w-full max-w-xl mx-auto text-center">
-    <div className="mb-6">
-      <h3 className="text-xl font-semibold mb-2">Stay Updated</h3>
-      <p className="text-gray-600 text-sm">Subscribe to our newsletter for the latest updates and insights.</p>
-    </div>
     <MailchimpSubscribe
       url={process.env.NEXT_PUBLIC_MAILCHIMP_URL}
       render={({ subscribe, status, message }) => (
@@ -138,66 +134,48 @@ function FooterContent(props) {
             </div>
           </div>
 
-          {/* Right Column: Sales Contacts */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Contact</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="tel:4158511937" className="text-gray-600 text-sm">
-                  (415) 851-1937
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="mailto:info@jytech.us"
-                  className="text-gray-600 text-sm"
-                >
-                  info@jytech.us
-                </Link>
-              </li>
-            </ul>
-          </div>
-
           {/* US Sales */}
           <div>
             <h3 className="text-lg font-semibold mb-4">🇺🇸 U.S. Sales</h3>
             <div className="space-y-6">
               {usContacts.map((contact, index) => (
-                <div key={index}>
-                  <div className="mb-2">
-                    <p className="font-semibold text-lg">{contact.name}</p>
-                    {contact.title && (
-                      <p className="font-normal text-gray-600 text-sm">
-                        {contact.title}
-                      </p>
-                    )}
-                    {contact.email && (
-                      <p>
-                        <a
-                          href={`mailto:${contact.email}`}
-                          className="text-blue-600 hover:text-blue-800"
-                        >
-                          {contact.email}
-                        </a>
-                      </p>
-                    )}
-                    {contact.phone && (
-                      <p>
-                        <a
-                          href={`tel:${contact.phone}`}
-                          className="text-blue-600 hover:text-blue-800"
-                        >
-                          {contact.phone}
-                        </a>
-                      </p>
+                contact.title?.toLowerCase().includes("sales") && (
+                  <div key={index}>
+                    <div className="mb-2">
+                      <p className="font-semibold text-lg">{contact.name}</p>
+                      {contact.title && (
+                        <p className="font-normal text-gray-600 text-sm">
+                          {contact.title}
+                        </p>
+                      )}
+                      {contact.email && (
+                        <p>
+                          <a
+                            href={`mailto:${contact.email}`}
+                            className="text-blue-600 hover:text-blue-800"
+                          >
+                            {contact.email}
+                          </a>
+                        </p>
+                      )}
+                      {contact.phone && (
+                        <p>
+                          <a
+                            href={`tel:${contact.phone}`}
+                            className="text-blue-600 hover:text-blue-800"
+                          >
+                            {contact.phone}
+                          </a>
+                        </p>
+                      )}
+                    </div>
+                    {contact.address && (
+                      <address className="not-italic text-gray-600 text-sm">
+                        {contact.address}
+                      </address>
                     )}
                   </div>
-                  {contact.address && (
-                    <address className="not-italic text-gray-600 text-sm">
-                      {contact.address}
-                    </address>
-                  )}
-                </div>
+                )
               ))}
             </div>
           </div>
@@ -221,11 +199,38 @@ function FooterContent(props) {
                       </p>
                     )}
                     {contact.wechat && (
-                      <p className="text-gray-600">WeChat: {contact.wechat}</p>
+                      <p className="text-gray-600 text-sm">
+                        WeChat: {contact.wechat}
+                      </p>
                     )}
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* Customer Support */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Customer Support</h3>
+            <div className="mb-2">
+              <p className="font-semibold text-lg">Jay Lin</p>
+              <p className="font-normal text-gray-600 text-sm">Support Team</p>
+              <p>
+                <a
+                  href="mailto:jay.lin@jytech.us"
+                  className="text-blue-600 hover:text-blue-800"
+                >
+                  jay.lin@jytech.us
+                </a>
+              </p>
+              <p>
+                <a
+                  href="tel:+14158511937"
+                  className="text-blue-600 hover:text-blue-800"
+                >
+                  +1 (415) 851-1937
+                </a>
+              </p>
             </div>
           </div>
         </div>
