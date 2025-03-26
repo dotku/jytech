@@ -4,7 +4,6 @@ import { useSearchParams, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import PricingDemoProjectCards from "@/components/Cards/PricingDemoProjectCards";
 import { Suspense } from "react";
-import GeneralLayout from "@/components/Layouts/GeneralLayout";
 
 function WebsiteSolutionsContent() {
   const searchParams = useSearchParams();
@@ -213,12 +212,8 @@ function WebsiteSolutionsContent() {
 
 export default function WebsiteSolutionsPage() {
   return (
-    <GeneralLayout>
-      <main className="flex-1">
-        <Suspense fallback={<div>Loading...</div>}>
-          <WebsiteSolutionsContent />
-        </Suspense>
-      </main>
-    </GeneralLayout>
+    <Suspense fallback={<div>Loading...</div>}>
+      <WebsiteSolutionsContent />
+    </Suspense>
   );
 }
