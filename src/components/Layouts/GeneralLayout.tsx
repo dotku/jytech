@@ -2,6 +2,7 @@
 
 import Header from "../Header";
 import Footer from "../Footer";
+import ClientLayout from "./ClientLayout";
 
 import getConfig from "next/config";
 
@@ -21,12 +22,14 @@ export default async function GeneralLayout({
   className?: string
 }>) {
   return (
-    <div style={style} className={className}>
-      <Header />
-      <div className="container mx-auto min-h-full flex flex-col justify-between" style={style}>
-        {children}
-        <Footer version={version}/>
+    <ClientLayout>
+      <div style={style} className={className}>
+        <Header />
+        <div className="container mx-auto min-h-full flex flex-col justify-between" style={style}>
+          {children}
+          <Footer version={version}/>
+        </div>
       </div>
-    </div>
+    </ClientLayout>
   );
 }

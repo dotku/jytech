@@ -47,16 +47,6 @@ Overview of all pricing options and demo projects. Features:
   - Email: [Getenghuan@gmail.com](mailto:Getenghuan@gmail.com)
   - Phone: +1 (415) 608-8888
 
-### China
-
-- 王小姐 (销售代表)
-  - 微信: jytech2023
-  - 电话: +86 136-0000-0000
-
-### International Business
-
-Visit our website or contact our team through the contact form.
-
 ### China Market (中国市场)
 
 - Colin Liu
