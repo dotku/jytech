@@ -1,4 +1,4 @@
-# JYTech (捷易科技)
+# JYTech (杰圆科技)
 
 JYTech is a technology solutions provider specializing in AI computing infrastructure and web hosting solutions. We serve both international and Chinese markets with customized solutions for businesses and individuals.
 
