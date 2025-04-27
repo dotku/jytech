@@ -8,6 +8,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "JYTech | Elevate your business with the power of media and technologies",
   description: "Unlock your business's full potential by leveraging the latest media trends and technological advancements. Enhance customer engagement with data-driven strategies, streamline operations with AI, and drive growth through personalized digital experiences.",
+  other: {
+    'facebook-domain-verification': '10t2aihqlnp5he55z18p1osrwdo98a',
+  },
 };
 
 export default function RootLayout({
