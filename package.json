@@ -37,7 +37,8 @@
     "remark-gfm": "^4.0.1",
     "remark-html": "^16.0.1",
     "remark-mdx-frontmatter": "^5.0.0",
-    "styled-components": "^6.1.12"
+    "styled-components": "^6.1.12",
+    "zod": "^3.24.0"
   },
   "devDependencies": {
     "@types/node": "^20",
