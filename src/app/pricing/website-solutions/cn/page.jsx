@@ -1,75 +1,102 @@
 "use client";
-import { hostingSolutions, outsourcingSolutions, chinaContacts } from '@/data/products';
+import { solutions, addOnServices, chinaContacts } from "@/data/products";
 
 export default function CNHostingPage() {
-  const cnHostingSolutions = hostingSolutions.filter(solution => solution.region === 'cn');
-  const cnOutsourcingSolutions = outsourcingSolutions.filter(solution => solution.region === 'cn');
+  const cnSolutions = solutions.filter((s) => s.region === "cn");
+  const cnServices = addOnServices.filter((s) => s.region === "cn");
 
   return (
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            网站托管方案
+            AI 赋能解决方案
           </h2>
           <p className="mt-4 text-lg leading-8 text-gray-600">
-            为您提供多种网站托管解决方案，满足不同场景需求
+            根据您的业务场景，提供 AI 驱动的一站式解决方案
           </p>
           <p className="mt-2 text-sm text-gray-500">
-            <a href="/pricing/us" className="text-blue-600 hover:text-blue-800">
+            <a
+              href="/pricing/us"
+              className="text-blue-600 hover:text-blue-800"
+            >
               Switch to U.S. Region Pricing →
             </a>
           </p>
         </div>
 
-        {/* Hosting Solutions Table */}
+        {/* Solutions Table */}
         <div className="mt-16 overflow-x-auto">
           <table className="min-w-full divide-y divide-gray-300">
             <thead>
               <tr className="bg-gray-50">
-                <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">方案</th>
-                <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">搭建难度</th>
-                <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">年付费成本</th>
-                <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">初始人工成本</th>
-                <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">年总成本（估）</th>
-                <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">适合场景</th>
+                <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                  场景
+                </th>
+                <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                  方案
+                </th>
+                <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                  亮点
+                </th>
+                <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                  价格
+                </th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200 bg-white">
-              {cnHostingSolutions.map((solution) => (
-                <tr key={solution.id}>
-                  <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">{solution.name}</td>
-                  <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{solution.difficulty}</td>
-                  <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{solution.yearlyFee}</td>
-                  <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{solution.initialLaborCost}</td>
-                  <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{solution.estimatedYearlyCost}</td>
-                  <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{solution.suitableScenarios}</td>
+              {cnSolutions.map((item) => (
+                <tr key={item.id}>
+                  <td className="whitespace-nowrap px-3 py-4 text-sm font-medium text-gray-900">
+                    {item.scenario}
+                  </td>
+                  <td className="px-3 py-4 text-sm text-gray-900">
+                    {item.solution}
+                  </td>
+                  <td className="px-3 py-4 text-sm text-gray-500">
+                    {item.highlights.join(" / ")}
+                  </td>
+                  <td className="whitespace-nowrap px-3 py-4 text-sm font-semibold text-gray-900">
+                    {item.price}
+                  </td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
 
-        {/* Outsourcing Solutions Section */}
+        {/* Add-On Services Section */}
         <div className="mt-20">
           <h3 className="text-2xl font-bold tracking-tight text-gray-900 text-center mb-8">
-            如果你请人搭建
+            增值服务
           </h3>
           <div className="overflow-x-auto">
             <table className="min-w-full divide-y divide-gray-300">
               <thead>
                 <tr className="bg-gray-50">
-                  <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">外包/请人搭建方式</th>
-                  <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">一次费用估算</th>
-                  <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">维护成本</th>
+                  <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                    服务
+                  </th>
+                  <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                    价格
+                  </th>
+                  <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                    说明
+                  </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200 bg-white">
-                {cnOutsourcingSolutions.map((solution) => (
-                  <tr key={solution.id}>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">{solution.name}</td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{solution.oneTimeCost}</td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{solution.maintenanceCost}</td>
+                {cnServices.map((service) => (
+                  <tr key={service.id}>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm font-medium text-gray-900">
+                      {service.name}
+                    </td>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm font-semibold text-gray-900">
+                      {service.price}
+                    </td>
+                    <td className="px-3 py-4 text-sm text-gray-500">
+                      {service.description}
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -85,18 +112,27 @@ export default function CNHostingPage() {
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:gap-12">
             {chinaContacts.map((contact) => (
               <div key={contact.id} className="rounded-lg bg-gray-50 p-6">
-                <h4 className="text-lg font-semibold text-gray-900">{contact.name}</h4>
+                <h4 className="text-lg font-semibold text-gray-900">
+                  {contact.name}
+                </h4>
                 <p className="mt-2 text-gray-600">{contact.role}</p>
                 <dl className="mt-4 space-y-2 text-sm">
                   <div className="flex">
-                    <dt className="w-20 flex-shrink-0 text-gray-500">微信:</dt>
+                    <dt className="w-20 flex-shrink-0 text-gray-500">
+                      微信:
+                    </dt>
                     <dd className="text-gray-900">{contact.wechat}</dd>
                   </div>
                   {contact.email && (
                     <div className="flex">
-                      <dt className="w-20 flex-shrink-0 text-gray-500">邮箱:</dt>
+                      <dt className="w-20 flex-shrink-0 text-gray-500">
+                        邮箱:
+                      </dt>
                       <dd className="text-gray-900">
-                        <a href={`mailto:${contact.email}`} className="text-blue-600 hover:text-blue-800">
+                        <a
+                          href={`mailto:${contact.email}`}
+                          className="text-blue-600 hover:text-blue-800"
+                        >
                           {contact.email}
                         </a>
                       </dd>

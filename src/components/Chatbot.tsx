@@ -1,15 +1,11 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
+import { useChat } from "@ai-sdk/react";
+import { DefaultChatTransport } from "ai";
 import { MessageCircle, Send, X } from "lucide-react";
-import { Button } from "@nextui-org/react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-
-interface Message {
-  role: "user" | "assistant" | "system";
-  content: string;
-}
 
 interface MarkdownComponentProps {
   node?: any;
@@ -18,12 +14,28 @@ interface MarkdownComponentProps {
   children?: React.ReactNode;
 }
 
+function getMessageText(message: any): string {
+  if (message.parts) {
+    return message.parts
+      .filter((p: any) => p.type === "text")
+      .map((p: any) => p.text)
+      .join("");
+  }
+  return message.content ?? "";
+}
+
 export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  const { messages, sendMessage, status } = useChat({
+    transport: new DefaultChatTransport({
+      api: "/api/chat",
+    }),
+  });
+
+  const isLoading = status === "submitted" || status === "streaming";
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -33,38 +45,11 @@ export default function Chatbot() {
     scrollToBottom();
   }, [messages]);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim() || isLoading) return;
-
-    const userMessage: Message = {
-      role: "user",
-      content: input,
-    };
-    setMessages((prev) => [...prev, userMessage]);
+    sendMessage({ text: input });
     setInput("");
-    setIsLoading(true);
-
-    try {
-      const response = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: [...messages, userMessage] }),
-      });
-
-      if (!response.ok) throw new Error("Failed to fetch");
-
-      const data = await response.json();
-      const assistantMessage: Message = {
-        role: "assistant",
-        content: data.message.content,
-      };
-      setMessages((prev) => [...prev, assistantMessage]);
-    } catch (error) {
-      console.error("Error:", error);
-    } finally {
-      setIsLoading(false);
-    }
   };
 
   const markdownComponents = {
@@ -123,9 +108,9 @@ export default function Chatbot() {
             {/* Messages */}
             <div className="flex-1 overflow-y-auto bg-white">
               <div className="flex flex-col">
-                {messages.map((message, index) => (
+                {messages.map((message) => (
                   <div
-                    key={index}
+                    key={message.id}
                     className={`flex ${
                       message.role === "user" ? "justify-end" : "justify-start"
                     } px-4 py-2`}
@@ -138,21 +123,21 @@ export default function Chatbot() {
                       }`}
                     >
                       {message.role === "user" ? (
-                        message.content
+                        getMessageText(message)
                       ) : (
                         <ReactMarkdown
                           remarkPlugins={[remarkGfm]}
                           className="prose prose-sm max-w-none"
                           components={markdownComponents}
                         >
-                          {message.content}
+                          {getMessageText(message)}
                         </ReactMarkdown>
                       )}
                     </div>
                   </div>
                 ))}
                 <div ref={messagesEndRef} />
-                {isLoading && (
+                {status === "submitted" && (
                   <div className="flex justify-start px-4 py-2">
                     <div className="bg-gray-100 text-gray-900 p-3 rounded-lg shadow-sm">
                       Typing...
@@ -203,9 +188,9 @@ export default function Chatbot() {
             {/* Messages */}
             <div className="flex-1 overflow-y-auto bg-white">
               <div className="flex flex-col p-4 space-y-4">
-                {messages.map((message, index) => (
+                {messages.map((message) => (
                   <div
-                    key={index}
+                    key={message.id}
                     className={`flex ${
                       message.role === "user" ? "justify-end" : "justify-start"
                     }`}
@@ -218,21 +203,21 @@ export default function Chatbot() {
                       }`}
                     >
                       {message.role === "user" ? (
-                        message.content
+                        getMessageText(message)
                       ) : (
                         <ReactMarkdown
                           remarkPlugins={[remarkGfm]}
                           className="prose prose-sm max-w-none"
                           components={markdownComponents}
                         >
-                          {message.content}
+                          {getMessageText(message)}
                         </ReactMarkdown>
                       )}
                     </div>
                   </div>
                 ))}
                 <div ref={messagesEndRef} />
-                {isLoading && (
+                {status === "submitted" && (
                   <div className="flex justify-start">
                     <div className="bg-gray-100 text-gray-900 p-3 rounded-lg shadow-sm">
                       Typing...

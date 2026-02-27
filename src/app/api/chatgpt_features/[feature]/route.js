@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { JSDOM } from "jsdom";
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(_request, { params }) {
   const { feature } = params;
 

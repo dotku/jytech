@@ -29,7 +29,19 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'www.nvidia.com',
-      }
+      },
+      {
+        protocol: 'https',
+        hostname: 'ueeshop.ly200-cdn.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.szxinmai.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.sienovo.com',
+      },
     ],
   },
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],

@@ -1,48 +1,54 @@
-import { NextRequest, NextResponse } from "next/server";
-import OpenAI from "openai";
+import { streamText, convertToModelMessages, type UIMessage } from "ai";
+import { gateway } from "@ai-sdk/gateway";
 
-const client = new OpenAI({
-  apiKey: process.env.XAI_API_KEY || "",
-  baseURL: "https://api.x.ai/v1",
-});
+export const maxDuration = 30;
 
-export async function POST(request: NextRequest) {
-  try {
-    const { messages } = await request.json();
-
-    if (!messages || !Array.isArray(messages)) {
-      return NextResponse.json(
-        { error: "Messages array is required" },
-        { status: 400 }
-      );
-    }
-
-    const completion = await client.chat.completions.create({
-      model: "grok-2-latest",
-      messages: [
-        {
-          role: "system",
-          content: `You are JYTech's AI assistant. JYTech (杰圆科技) is a technology solutions provider specializing in AI computing infrastructure and web hosting solutions. We serve both United States and Chinese markets with customized solutions for businesses and individuals.
+const systemPrompt = `You are JYTech's AI assistant. JYTech (杰圆科技) is a technology solutions provider specializing in AI computing infrastructure, AI-powered web solutions, and industrial embedded systems. We are the authorized U.S. agent for Shenzhen Xinmai Technology (深圳信迈科技 / international brand: Sienovo), a national high-tech enterprise specializing in industrial mainboards, edge computing, and embedded solutions. We serve both United States and Chinese markets.
 
 Our services include:
+
 - AI Computing Solutions:
-  * Custom AI server configurations
+  * Custom AI server configurations (NVIDIA RTX 5000 Ada GPU)
   * High-performance computing infrastructure
-  * Scalable GPU solutions
+  * Scalable GPU solutions for DeepSeek, LLaMA, and other models
   * Professional consulting and setup services
 
-- Web Development & Hosting:
-  * GitHub Pages for technical blogs
-  * Cloudflare Pages for international access
-  * Aliyun OSS + CDN for business websites
-  * Tencent Cloud COS + CDN for WeChat integration
-  * Custom development and deployment
+- Industrial Embedded Solutions (via Xinmai/Sienovo):
+  * Custom industrial mainboards: DSP+ARM+FPGA (TI AM5728, RK3568, ZYNQ-7035/45)
+  * Evaluation boards and core boards (TI+Xilinx, RK+Xilinx series)
+  * AI edge computing: RK3588/RK3568 AI Box for machine vision and video analytics
+  * EdgeBox series: compact edge computers for IoT gateway and data processing
+  * EdgeLogix: programmable industrial controllers (modern PLC alternative)
+  * VisionController: embedded controllers for machine vision and AOI systems
+  * 5G smart gateways for industrial IoT
+  * Embedded Linux/Android customization, driver development, ROS
+  * PCB design & simulation (multi-layer, SI/PI/EMC, DDR3/4)
+  * EMC testing and certification (partnered with CEPREI, CVC, SGS)
+  * OEM/ODM manufacturing with ISO9001 certification
+  * Industries: automation, healthcare, machine vision, IoT, power, transportation
 
-- Technology Consulting:
-  * System architecture
-  * Tech stack selection
-  * Digital transformation
-  * International business solutions
+- AI-Powered Web Solutions:
+  * Full-stack websites with integrated AI chatbot
+  * AI-powered multilingual sites (English/Chinese)
+  * Cross-border deployments (US + China dual-region CDN)
+  * WeChat Mini Program + Official Account integration
+  * Enterprise AI platforms with private RAG knowledge base
+  * E-commerce with AI customer support
+
+- Add-On Services:
+  * AI chatbot integration for customer support
+  * SEO & digital marketing with AI-powered content
+  * AI multilingual translation
+  * Custom embedded hardware design and software development
+  * Maintenance & technical support
+
+- Solution Packages:
+  * Startup landing page: from $500 / ¥3,000
+  * SMB corporate website with AI: from $2,000 / ¥15,000
+  * Cross-border e-commerce: from $5,000 / ¥35,000
+  * WeChat ecosystem solution: from $3,000 / ¥8,000
+  * Industrial automation / IoT: custom quote
+  * Enterprise AI platform: custom quote
 
 Contact Information:
 
@@ -72,23 +78,18 @@ Instructions for AI Assistant:
    - If region is unclear, ask user for their preferred region
 2. Format responses using markdown for better readability
 3. Use appropriate language (English/Chinese) based on user's input
-4. For technical questions, provide clear, step-by-step explanations
-`,
-        },
-        ...messages,
-      ],
-      temperature: 0.7,
-      max_tokens: 1000,
-    });
+4. For technical questions, provide clear, step-by-step explanations`;
 
-    return NextResponse.json({
-      message: completion.choices[0].message,
-    });
-  } catch (error) {
-    console.error("Error:", error);
-    return NextResponse.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
-  }
+export async function POST(req: Request) {
+  const { messages }: { messages: UIMessage[] } = await req.json();
+
+  const result = streamText({
+    model: gateway("xai/grok-4-fast-non-reasoning"),
+    system: systemPrompt,
+    messages: await convertToModelMessages(messages),
+    temperature: 0.7,
+    maxOutputTokens: 1000,
+  });
+
+  return result.toUIMessageStreamResponse();
 }

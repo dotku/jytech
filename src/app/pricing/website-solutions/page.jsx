@@ -1,7 +1,7 @@
 "use client";
 import {
-  hostingSolutions,
-  outsourcingSolutions,
+  solutions,
+  addOnServices,
   usContacts,
   chinaContacts,
 } from "@/data/products";
@@ -23,11 +23,11 @@ function WebsiteSolutionsContent() {
   }, [searchParams]);
 
   const contacts = currentRegion === "cn" ? chinaContacts : usContacts;
-  const hostingSolutionsForRegion = hostingSolutions.filter(
-    (solution) => solution.region === currentRegion
+  const solutionsForRegion = solutions.filter(
+    (s) => s.region === currentRegion
   );
-  const outsourcingSolutionsForRegion = outsourcingSolutions.filter(
-    (solution) => solution.region === currentRegion
+  const servicesForRegion = addOnServices.filter(
+    (s) => s.region === currentRegion
   );
 
   const switchRegion = (newRegion) => {
@@ -41,12 +41,14 @@ function WebsiteSolutionsContent() {
       <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Website Solutions
+            {currentRegion === "cn"
+              ? "AI 赋能解决方案"
+              : "AI-Powered Solutions"}
           </h2>
           <p className="mt-4 text-lg leading-8 text-gray-600">
             {currentRegion === "cn"
-              ? "为您提供多种网站托管解决方案，满足不同场景需求"
-              : "Comprehensive hosting and development solutions for your needs"}
+              ? "根据您的业务场景，提供 AI 驱动的一站式解决方案"
+              : "AI-driven end-to-end solutions tailored to your business scenario"}
           </p>
 
           {/* Region Selector */}
@@ -60,7 +62,7 @@ function WebsiteSolutionsContent() {
                   : "bg-white text-gray-700 border-gray-200 hover:bg-gray-50"
               }`}
             >
-              🇺🇸 U.S. Region
+              U.S. Region
             </button>
             <button
               type="button"
@@ -71,61 +73,45 @@ function WebsiteSolutionsContent() {
                   : "bg-white text-gray-700 border-gray-200 hover:bg-gray-50"
               }`}
             >
-              🇨🇳 中国区
+              中国区
             </button>
           </div>
         </div>
 
-        {/* Hosting Solutions Table */}
+        {/* Solutions Table */}
         <div className="mt-8 sm:mt-16">
           <div className="overflow-x-auto">
             <table className="min-w-full divide-y divide-gray-300">
               <thead>
                 <tr className="bg-gray-50">
                   <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                    {currentRegion === "cn" ? "方案" : "Platform"}
+                    {currentRegion === "cn" ? "场景" : "Scenario"}
                   </th>
                   <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                    {currentRegion === "cn" ? "搭建难度" : "Difficulty"}
+                    {currentRegion === "cn" ? "方案" : "Solution"}
                   </th>
                   <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                    {currentRegion === "cn" ? "年付费成本" : "Annual Cost"}
+                    {currentRegion === "cn" ? "亮点" : "Highlights"}
                   </th>
                   <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                    {currentRegion === "cn"
-                      ? "初始人工成本"
-                      : "Initial Labor Cost"}
-                  </th>
-                  <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                    {currentRegion === "cn"
-                      ? "年总成本（估）"
-                      : "Est. Total Annual Cost"}
-                  </th>
-                  <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                    {currentRegion === "cn" ? "适合场景" : "Best For"}
+                    {currentRegion === "cn" ? "价格" : "Price"}
                   </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200 bg-white">
-                {hostingSolutionsForRegion.map((solution) => (
-                  <tr key={solution.id}>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
-                      {solution.name}
+                {solutionsForRegion.map((item) => (
+                  <tr key={item.id}>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm font-medium text-gray-900">
+                      {item.scenario}
                     </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                      {solution.difficulty}
+                    <td className="px-3 py-4 text-sm text-gray-900">
+                      {item.solution}
                     </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                      {solution.yearlyFee}
+                    <td className="px-3 py-4 text-sm text-gray-500">
+                      {item.highlights.join(" / ")}
                     </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                      {solution.initialLaborCost}
-                    </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                      {solution.estimatedYearlyCost}
-                    </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                      {solution.suitableScenarios}
+                    <td className="whitespace-nowrap px-3 py-4 text-sm font-semibold text-gray-900">
+                      {item.price}
                     </td>
                   </tr>
                 ))}
@@ -134,55 +120,48 @@ function WebsiteSolutionsContent() {
           </div>
           <p className="mt-4 text-sm text-gray-500 text-center">
             {currentRegion === "cn"
-              ? "本价格方案为基础包方案，如果需要特殊需求，请联系我们的客服了解详情"
-              : "These are our base package prices. For custom requirements, please contact our sales team for details."}
+              ? "以上为基础报价，具体项目请联系我们的销售团队获取详细方案"
+              : "Prices listed are starting points. Contact our sales team for a detailed quote."}
           </p>
         </div>
 
-        {/* Outsourcing Solutions Section */}
+        {/* Add-On Services Section */}
         <div className="mt-12 sm:mt-20">
           <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-gray-900 text-center mb-4 sm:mb-8">
-            {currentRegion === "cn" ? "如果你请人搭建" : "Development Services"}
+            {currentRegion === "cn" ? "增值服务" : "Add-On Services"}
           </h3>
           <div className="overflow-x-auto">
             <table className="min-w-full divide-y divide-gray-300">
               <thead>
                 <tr className="bg-gray-50">
                   <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                    {currentRegion === "cn"
-                      ? "外包/请人搭建方式"
-                      : "Service Type"}
+                    {currentRegion === "cn" ? "服务" : "Service"}
                   </th>
                   <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                    {currentRegion === "cn" ? "一次费用估算" : "One-time Cost"}
+                    {currentRegion === "cn" ? "价格" : "Price"}
                   </th>
                   <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                    {currentRegion === "cn" ? "维护成本" : "Maintenance Cost"}
+                    {currentRegion === "cn" ? "说明" : "Description"}
                   </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200 bg-white">
-                {outsourcingSolutionsForRegion.map((solution) => (
-                  <tr key={solution.id}>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
-                      {solution.name}
+                {servicesForRegion.map((service) => (
+                  <tr key={service.id}>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm font-medium text-gray-900">
+                      {service.name}
                     </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                      {solution.oneTimeCost}
+                    <td className="whitespace-nowrap px-3 py-4 text-sm font-semibold text-gray-900">
+                      {service.price}
                     </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                      {solution.maintenanceCost}
+                    <td className="px-3 py-4 text-sm text-gray-500">
+                      {service.description}
                     </td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p className="mt-4 text-sm text-gray-500 text-center">
-            {currentRegion === "cn"
-              ? "以上价格为参考价格，具体项目报价请联系我们的销售团队"
-              : "Prices are for reference. Please contact our sales team for a detailed quote for your specific project."}
-          </p>
         </div>
 
         {/* Demo Projects Section */}
