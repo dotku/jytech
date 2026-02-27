@@ -55,14 +55,15 @@ For US Inquiries:
   * Phone: +1 (415) 608-8888
 
 For China Market:
+- Leo Liu
+  * Email: leo.liu@jytech.us
+  * WeChat: xinmai002leo
 - Colin Liu
   * WeChat: xinmai002leo
   * Email: collin.liu@sienovo.cn
 - Helen Lan
   * WeChat: HELENLAN998
   * Email: carrie.lan998@gmail.com
-- Mary Hsu
-  * WeChat: Mary_Hsu1007
 
 Instructions for AI Assistant:
 1. When users ask about sales or contact information:

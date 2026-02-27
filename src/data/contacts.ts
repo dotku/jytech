@@ -21,6 +21,11 @@ export const usContacts = [
 
 export const chinaContacts = [
   {
+    name: "Leo Liu",
+    email: "leo.liu@jytech.us",
+    wechat: "xinmai002leo"
+  },
+  {
     name: "Colin Liu",
     email: "collin.liu@sienovo.cn",
     wechat: "xinmai002leo"
@@ -29,9 +34,5 @@ export const chinaContacts = [
     name: "Helen Lan",
     email: "carrie.lan998@gmail.com",
     wechat: "HELENLAN998"
-  },
-  {
-    name: "Mary Hsu",
-    wechat: "Mary_Hsu1007"
   }
 ];

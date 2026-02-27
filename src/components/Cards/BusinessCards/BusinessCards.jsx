@@ -2,9 +2,14 @@
 
 import { Card, CardBody, CardHeader, Link } from "@nextui-org/react";
 import Image from "next/image";
-import { investors } from "@/data/investors";
+import { getInvestors } from "@/data/investors";
+import { useTranslations, useLocale } from 'next-intl';
 
 export default function BusinessCards() {
+  const locale = useLocale();
+  const t = useTranslations();
+  const investors = getInvestors(locale);
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       {investors.map((investor) => (
@@ -17,16 +22,16 @@ export default function BusinessCards() {
         >
           <Image
             src={investor.image}
-            alt={investor.name}
+            alt={t(investor.nameKey)}
             width={400}
             height={200}
             className="w-full h-48 object-cover rounded-t-2xl"
           />
           <CardHeader className="pb-0 pt-4 px-6">
-            <h2 className="text-xl font-bold text-gray-900">{investor.name}</h2>
+            <h2 className="text-xl font-bold text-gray-900">{t(investor.nameKey)}</h2>
           </CardHeader>
           <CardBody className="py-4 px-6">
-            <p className="text-gray-600 text-sm leading-relaxed">{investor.description}</p>
+            <p className="text-gray-600 text-sm leading-relaxed">{t(investor.descriptionKey)}</p>
           </CardBody>
         </Card>
       ))}

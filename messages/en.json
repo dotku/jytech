@@ -1,0 +1,48 @@
+{
+  "common": {
+    "contactUs": "Contact us",
+    "learnMore": "Learn more",
+    "phone": "(415) 851-1937"
+  },
+  "header": {
+    "marketing": "Marketing",
+    "technologies": "Technologies",
+    "ecommerce": "E-commerce",
+    "business": "Business",
+    "pricing": "Pricing",
+    "title": "Elevate Your Tech Business with the power of media and technologies",
+    "logoAlt": "JY Tech logo"
+  },
+  "home": {
+    "title": "JY Tech",
+    "mission": "Our mission is to revolutionize the intersection of technology and commerce, delivering seamless digital experiences that drive growth, enhance consumer engagement, and streamline financial transactions."
+  },
+  "business": {
+    "title": "Unlock New Business Opportunities",
+    "description": "We believe that innovation and collaboration are key to unlocking new potential. Whether you're an entrepreneur looking for a fresh partnership or a seasoned business professional seeking to expand your portfolio, we offer a wide range of opportunities to help you grow and succeed.",
+    "bannerTitle": "Welcome to the Global Business Center!",
+    "bannerDescription": "Empowering Global Business Growth! With strategic connections to over 1,000 leading organizations and partners worldwide, we manage and deliver exceptional results on more than 100 cases annually. Our expertise and expansive network enable us to drive sustainable success for businesses on a global scale."
+  },
+  "services": {
+    "technology": {
+      "name": "Technology",
+      "description": "We provide tech solutions covering international business including AI, IoT, FinTech, EdTech and etc."
+    },
+    "marketing": {
+      "name": "Marketing",
+      "description": "We help businesses grow through digital marketing, branding, and customer engagement strategies."
+    },
+    "businessService": {
+      "name": "Business",
+      "description": "We help global businesses grow by connecting with over 1,000 organizations and partners worldwide, successfully handling more than 100 cases each year."
+    },
+    "consulting": {
+      "name": "Consulting",
+      "description": "Expert guidance and solutions for your business challenges and growth opportunities."
+    }
+  },
+  "metadata": {
+    "title": "JYTech | Elevate your business with the power of media and technologies",
+    "description": "Unlock your business's full potential by leveraging the latest media trends and technological advancements. Enhance customer engagement with data-driven strategies, streamline operations with AI, and drive growth through personalized digital experiences."
+  }
+}

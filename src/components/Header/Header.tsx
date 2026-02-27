@@ -15,10 +15,14 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { IoClose, IoMenu } from "react-icons/io5";
+import { useTranslations, useLocale } from 'next-intl';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
+  const t = useTranslations();
+  const locale = useLocale();
 
   // Close menu when route changes
   useEffect(() => {
@@ -36,26 +40,26 @@ export default function Header() {
 
   const menuItems = [
     {
-      label: "Marketing",
+      label: t('header.marketing'),
       href: "https://dotku.us/marketing",
       isExternal: true,
     },
     {
-      label: "Technologies",
-      href: "/tech",
+      label: t('header.technologies'),
+      href: `/${locale}/tech`,
     },
     {
-      label: "E-commerce",
+      label: t('header.ecommerce'),
       href: "https://dkwholesale.us",
       isExternal: true,
     },
     {
-      label: "Business",
-      href: "/business",
+      label: t('header.business'),
+      href: `/${locale}/business`,
     },
     {
-      label: "Pricing",
-      href: "/pricing",
+      label: t('header.pricing'),
+      href: `/${locale}/pricing`,
     },
   ];
 
@@ -75,13 +79,13 @@ export default function Header() {
       >
         <NavbarBrand>
           <Link
-            href="/"
+            href={`/${locale}`}
             className="flex items-center"
-            title="Elevate Your Tech Business with the power of media and technologies"
+            title={t('header.title')}
           >
             <Image
               src="/assets/images/jytech-logo.png"
-              alt="JY Tech logo"
+              alt={t('header.logoAlt')}
               width={40}
               height={40}
               priority
@@ -108,13 +112,13 @@ export default function Header() {
       <NavbarContent className="hidden sm:flex" justify="start">
         <NavbarBrand>
           <Link
-            href="/"
+            href={`/${locale}`}
             className="flex items-center"
-            title="Elevate Your Tech Business with the power of media and technologies"
+            title={t('header.title')}
           >
             <Image
               src="/assets/images/jytech-logo.png"
-              alt="JY Tech logo"
+              alt={t('header.logoAlt')}
               width={40}
               height={40}
               priority
@@ -143,14 +147,15 @@ export default function Header() {
 
       <NavbarContent justify="end" className="hidden sm:flex">
         <NavbarItem>
+          <LanguageSwitcher />
           <Button
             as={Link}
             color="primary"
-            href="/contact-us"
+            href={`/${locale}/contact-us`}
             variant="bordered"
             className="text-sm"
           >
-            Contact us
+            {t('common.contactUs')}
           </Button>
         </NavbarItem>
       </NavbarContent>

@@ -301,22 +301,23 @@ export const outsourcingSolutions = [
 export const chinaContacts = [
   {
     id: 1,
+    name: "Leo Liu",
+    wechat: "xinmai002leo",
+    email: "leo.liu@jytech.us",
+    role: "中国区销售代表",
+  },
+  {
+    id: 2,
     name: "Colin Liu",
     wechat: "xinmai002leo",
     email: "collin.liu@sienovo.cn",
     role: "中国区销售代表",
   },
   {
-    id: 2,
+    id: 3,
     name: "Helen Lan",
     wechat: "HELENLAN998",
     email: "carrie.lan998@gmail.com",
-    role: "中国区销售代表",
-  },
-  {
-    id: 3,
-    name: "Mary Hsu",
-    wechat: "Mary_Hsu1007",
     role: "中国区销售代表",
   },
 ];
