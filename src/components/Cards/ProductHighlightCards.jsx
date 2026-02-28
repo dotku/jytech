@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { products } from "@/data/products";
 
 const categoryGroups = [
@@ -29,6 +30,10 @@ const categoryGroups = [
 ];
 
 export default function ProductHighlightCards() {
+  const pathname = usePathname();
+  const localeMatch = pathname.match(/^\/(en|zh)\//);
+  const basePath = localeMatch ? `/${localeMatch[1]}` : "";
+
   return (
     <div className="space-y-12">
       {categoryGroups.map((group) => {
@@ -50,7 +55,7 @@ export default function ProductHighlightCards() {
               {groupProducts.map((product) => (
                 <Link
                   key={product.id}
-                  href={`/products/${product.id}`}
+                  href={`${basePath}/products/${product.id}`}
                   className="group block bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden"
                 >
                   <div className="relative w-full h-32 sm:h-40 overflow-hidden bg-gray-100">
@@ -79,7 +84,7 @@ export default function ProductHighlightCards() {
 
       <div className="text-center pt-2">
         <Link
-          href="/products"
+          href={`${basePath}/products`}
           className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors"
         >
           View All Products
