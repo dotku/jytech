@@ -236,12 +236,17 @@ function FooterContent(props) {
         </div>
 
         <div className="mt-8 pt-8 border-t border-gray-200">
-          <p className="text-center text-gray-500 text-sm">
-            &copy; {new Date().getFullYear()} JY Tech. All rights reserved.
-            {version && (
-              <span className="text-sm text-gray-500 ml-2">v{version}</span>
-            )}
-          </p>
+          <div className="flex flex-col items-center gap-2">
+            <Link href="/privacy" className="text-sm text-gray-500 hover:text-gray-700 transition-colors">
+              Privacy Policy
+            </Link>
+            <p className="text-center text-gray-500 text-sm">
+              &copy; {new Date().getFullYear()} JY Tech. All rights reserved.
+              {version && (
+                <span className="text-sm text-gray-500 ml-2">v{version}</span>
+              )}
+            </p>
+          </div>
         </div>
       </div>
     </footer>
