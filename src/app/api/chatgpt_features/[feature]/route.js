@@ -4,7 +4,7 @@ import { JSDOM } from "jsdom";
 export const dynamic = 'force-dynamic';
 
 export async function GET(_request, { params }) {
-  const { feature } = params;
+  const { feature } = await params;
 
   switch (feature) {
     case "share":

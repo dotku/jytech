@@ -26,8 +26,8 @@ const categoryColors = {
   Custom: "from-gray-700 to-gray-900",
 };
 
-export default function ProductPage({ params }) {
-  const { locale, id } = params;
+export default async function ProductPage({ params }) {
+  const { locale, id } = await params;
   const product = products.find((p) => p.id === parseInt(id));
 
   if (!product) {

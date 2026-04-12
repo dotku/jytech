@@ -1,3 +1,5 @@
+"use client";
+
 import GeneralLayout from "@/components/Layouts/GeneralLayout";
 import { Card, CardBody, Image, Link } from "@nextui-org/react";
 

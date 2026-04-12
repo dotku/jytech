@@ -334,6 +334,23 @@ export const solutions = [
     price: "按需报价",
     region: "cn",
   },
+  // China Region - AutoClaw Enterprise
+  {
+    id: 30,
+    scenario: "外贸企业获客系统",
+    solution: "AutoClaw 企业版 (Sienovo)",
+    highlights: ["AI 客服 + RAG 知识库", "CRM + 自动化外联", "多语言官网"],
+    price: "¥1,499/月起",
+    region: "cn",
+  },
+  {
+    id: 31,
+    scenario: "外贸企业源码买断",
+    solution: "AutoClaw 企业版源码授权",
+    highlights: ["完整源码", "私有部署", "定制开发"],
+    price: "¥50,000 起",
+    region: "cn",
+  },
   // US Region
   {
     id: 8,
@@ -391,6 +408,23 @@ export const solutions = [
     price: "Custom Quote",
     region: "us",
   },
+  // US Region - AutoClaw Enterprise
+  {
+    id: 32,
+    scenario: "Foreign Trade Lead Generation",
+    solution: "AutoClaw Enterprise (Sienovo)",
+    highlights: ["AI chatbot + RAG knowledge base", "CRM + automated outreach", "Multilingual website"],
+    price: "$199/mo+",
+    region: "us",
+  },
+  {
+    id: 33,
+    scenario: "Enterprise Source Code License",
+    solution: "AutoClaw Enterprise Self-Hosted",
+    highlights: ["Full source code", "Private deployment", "Custom development"],
+    price: "$8,000+",
+    region: "us",
+  },
 ];
 
 export const addOnServices = [
@@ -437,6 +471,21 @@ export const addOnServices = [
     description: "嵌入式 Linux/Android 定制、驱动开发、ROS 机器人系统",
     region: "cn",
   },
+  // China Region - AutoClaw Enterprise
+  {
+    id: 20,
+    name: "AutoClaw 企业版 SaaS",
+    price: "¥1,499/月起",
+    description: "面向外贸企业的一站式 AI 获客系统，含官网、CRM、AI 客服、自动化外联",
+    region: "cn",
+  },
+  {
+    id: 21,
+    name: "AutoClaw 企业版源码授权",
+    price: "¥50,000 起",
+    description: "完整源码交付 + 私有部署 + 基础培训，含 RAG 知识库、CRM 集成",
+    region: "cn",
+  },
   // US Region
   {
     id: 7,
@@ -478,6 +527,21 @@ export const addOnServices = [
     name: "Industrial Software Development",
     price: "Custom Quote",
     description: "Embedded Linux/Android, driver development, ROS robotics",
+    region: "us",
+  },
+  // US Region - AutoClaw Enterprise
+  {
+    id: 22,
+    name: "AutoClaw Enterprise SaaS",
+    price: "$199/mo+",
+    description: "All-in-one AI lead generation system for trade companies: website, CRM, AI chatbot, automated outreach",
+    region: "us",
+  },
+  {
+    id: 23,
+    name: "AutoClaw Enterprise Source License",
+    price: "$8,000+",
+    description: "Full source code delivery + private deployment + training, includes RAG knowledge base & CRM integrations",
     region: "us",
   },
 ];

@@ -1,3 +1,5 @@
+"use client";
+
 import { Card, CardBody, CardHeader, Link } from "@nextui-org/react";
 
 export default function ContactUs() {

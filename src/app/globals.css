@@ -89,3 +89,33 @@ body {
 a {
   text-decoration: none
 }
+
+.styled-card p {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+}
+
+.markdown-wrapper ul {
+  margin: 0.75rem auto;
+  list-style-type: disc;
+  padding-left: 24px;
+}
+.markdown-wrapper li {
+  margin: 4px 0;
+  line-height: 1.5;
+}
+.markdown-wrapper h1 {
+  font-size: 24px;
+}
+.markdown-wrapper h2 {
+  margin: 0.75rem 0 0.25rem;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+}
+.markdown-wrapper p {
+  margin: 6px 0;
+  color: #374151;
+}

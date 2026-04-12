@@ -72,8 +72,8 @@ function ProductCard({ product, locale }) {
   );
 }
 
-export default function ProductsPage({ params }) {
-  const locale = params.locale;
+export default async function ProductsPage({ params }) {
+  const { locale } = await params;
 
   return (
     <GeneralLayout>

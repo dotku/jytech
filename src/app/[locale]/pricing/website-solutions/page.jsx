@@ -9,10 +9,12 @@ import { useSearchParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import PricingDemoProjectCards from "@/components/Cards/PricingDemoProjectCards";
 import { Suspense } from "react";
+import { useTranslations } from "next-intl";
 
 function WebsiteSolutionsContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
+  const t = useTranslations("pricing.websiteSolutions");
   const [currentRegion, setCurrentRegion] = useState("us");
 
   useEffect(() => {
@@ -41,14 +43,10 @@ function WebsiteSolutionsContent() {
       <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            {currentRegion === "cn"
-              ? "AI 赋能解决方案"
-              : "AI-Powered Solutions"}
+            {t("title")}
           </h2>
           <p className="mt-4 text-lg leading-8 text-gray-600">
-            {currentRegion === "cn"
-              ? "根据您的业务场景，提供 AI 驱动的一站式解决方案"
-              : "AI-driven end-to-end solutions tailored to your business scenario"}
+            {t("subtitle")}
           </p>
 
           {/* Region Selector */}
@@ -85,16 +83,16 @@ function WebsiteSolutionsContent() {
               <thead>
                 <tr className="bg-gray-50">
                   <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                    {currentRegion === "cn" ? "场景" : "Scenario"}
+                    {t("scenario")}
                   </th>
                   <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                    {currentRegion === "cn" ? "方案" : "Solution"}
+                    {t("solution")}
                   </th>
                   <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                    {currentRegion === "cn" ? "亮点" : "Highlights"}
+                    {t("highlights")}
                   </th>
                   <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                    {currentRegion === "cn" ? "价格" : "Price"}
+                    {t("price")}
                   </th>
                 </tr>
               </thead>
@@ -119,29 +117,27 @@ function WebsiteSolutionsContent() {
             </table>
           </div>
           <p className="mt-4 text-sm text-gray-500 text-center">
-            {currentRegion === "cn"
-              ? "以上为基础报价，具体项目请联系我们的销售团队获取详细方案"
-              : "Prices listed are starting points. Contact our sales team for a detailed quote."}
+            {t("priceNote")}
           </p>
         </div>
 
         {/* Add-On Services Section */}
         <div className="mt-12 sm:mt-20">
           <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-gray-900 text-center mb-4 sm:mb-8">
-            {currentRegion === "cn" ? "增值服务" : "Add-On Services"}
+            {t("addOnServices")}
           </h3>
           <div className="overflow-x-auto">
             <table className="min-w-full divide-y divide-gray-300">
               <thead>
                 <tr className="bg-gray-50">
                   <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                    {currentRegion === "cn" ? "服务" : "Service"}
+                    {t("service")}
                   </th>
                   <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                    {currentRegion === "cn" ? "价格" : "Price"}
+                    {t("price")}
                   </th>
                   <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                    {currentRegion === "cn" ? "说明" : "Description"}
+                    {t("description")}
                   </th>
                 </tr>
               </thead>
@@ -167,9 +163,9 @@ function WebsiteSolutionsContent() {
         {/* Demo Projects Section */}
         <div className="mt-12 sm:mt-20">
           <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-gray-900 text-center mb-4 sm:mb-8">
-            {currentRegion === "cn" ? "成功案例" : "Case Studies"}
+            {t("caseStudies")}
           </h3>
-          <Suspense fallback={<div>Loading demo projects...</div>}>
+          <Suspense fallback={<div>Loading...</div>}>
             <PricingDemoProjectCards />
           </Suspense>
         </div>
@@ -177,7 +173,7 @@ function WebsiteSolutionsContent() {
         {/* Sales Contact Section */}
         <div className="mt-12 sm:mt-20">
           <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-gray-900 text-center mb-4 sm:mb-8">
-            {currentRegion === "cn" ? "中国区销售" : "U.S. Sales Contact"}
+            {currentRegion === "cn" ? t("cnSalesContact") : t("usSalesContact")}
           </h3>
           <div className="max-w-lg mx-auto sm:px-0">
             {contacts.map((contact) => (
@@ -193,7 +189,7 @@ function WebsiteSolutionsContent() {
                   {contact.wechat && (
                     <div className="flex">
                       <dt className="w-20 flex-shrink-0 text-gray-500">
-                        WeChat:
+                        {t("wechat")}:
                       </dt>
                       <dd className="text-gray-900">{contact.wechat}</dd>
                     </div>
@@ -201,7 +197,7 @@ function WebsiteSolutionsContent() {
                   {contact.email && (
                     <div className="flex">
                       <dt className="w-20 flex-shrink-0 text-gray-500">
-                        Email:
+                        {t("email")}:
                       </dt>
                       <dd className="text-gray-900">
                         <a
@@ -216,7 +212,7 @@ function WebsiteSolutionsContent() {
                   {contact.phone && (
                     <div className="flex">
                       <dt className="w-20 flex-shrink-0 text-gray-500">
-                        Phone:
+                        {t("phone")}:
                       </dt>
                       <dd className="text-gray-900">
                         <a

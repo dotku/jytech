@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { JSDOM } from "jsdom";
 
 export async function GET(request, { params }) {
-  const { id } = params;
+  const { id } = await params;
 
   // Check if the ID is the placeholder and handle accordingly
   if (id === "placeholder-id") {

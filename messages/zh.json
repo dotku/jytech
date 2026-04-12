@@ -41,6 +41,36 @@
       "description": "为您的业务挑战和增长机会提供专家指导和解决方案。"
     }
   },
+  "pricing": {
+    "title": "价格与解决方案",
+    "subtitle": "探索我们的价格方案和过往成功项目",
+    "viewWebsiteSolutions": "查看网站解决方案",
+    "loadingPlans": "加载价格方案...",
+    "pastProjects": "过往项目",
+    "loadingProjects": "加载项目展示...",
+    "websiteSolutions": {
+      "title": "AI 赋能解决方案",
+      "subtitle": "根据您的业务场景，提供 AI 驱动的一站式解决方案",
+      "switchToUS": "Switch to U.S. Region Pricing →",
+      "switchToCN": "切换到中国区价格 →",
+      "scenario": "场景",
+      "solution": "方案",
+      "highlights": "亮点",
+      "price": "价格",
+      "priceNote": "以上为基础报价，具体项目请联系我们的销售团队获取详细方案",
+      "addOnServices": "增值服务",
+      "service": "服务",
+      "description": "说明",
+      "caseStudies": "成功案例",
+      "usSalesContact": "美国区销售联系方式",
+      "cnSalesContact": "中国区销售联系方式",
+      "email": "邮箱",
+      "phone": "电话",
+      "wechat": "微信",
+      "more": "了解更多",
+      "contact": "联系我们"
+    }
+  },
   "metadata": {
     "title": "JYTech | 用媒体和技术的力量提升您的业务",
     "description": "通过利用最新的媒体趋势和技术进步,释放您企业的全部潜力。通过数据驱动的策略增强客户参与度,使用人工智能简化运营,并通过个性化的数字体验推动增长。"

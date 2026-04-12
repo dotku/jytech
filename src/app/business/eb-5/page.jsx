@@ -10,19 +10,11 @@ import {
   Link,
 } from "@nextui-org/react";
 import Footer from "./components/Footer";
-import styled from "styled-components";
-
-const StyledCard = styled(Card)`
-  p {
-    font-size: 1.1rem;
-    margin-bottom: 16px;
-  }
-`;
 
 export default function EB5() {
   return (
     <>
-      <StyledCard className="max-w-5xl p-7 mx-auto">
+      <Card className="styled-card max-w-5xl p-7 mx-auto">
         <CardHeader className="flex-col sm:flex-row ">
           <Button
             as={Link}
@@ -111,7 +103,7 @@ export default function EB5() {
         <CardFooter className="flex-col text-base">
           <Footer />
         </CardFooter>
-      </StyledCard>
+      </Card>
     </>
   );
 }

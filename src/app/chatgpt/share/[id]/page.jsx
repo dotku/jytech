@@ -2,10 +2,11 @@
 
 import { getDomain } from "@/utils/getDomain";
 import { Card, CardBody, Spinner } from "@nextui-org/react";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { use, useCallback, useEffect, useMemo, useState } from "react";
 import Markdown from "react-markdown";
 
 export default function SharePage({ params }) {
+  const { id } = use(params);
   const domain = getDomain();
   const [data, setData] = useState(null);
   const [ifLoading, setIfLoading] = useState(true);
@@ -14,7 +15,7 @@ export default function SharePage({ params }) {
   const genShare = useCallback(async () => {
     try {
       const rsp = await fetch(
-        `${domain}/api/chatgpt/dataMapping/${params.id}`
+        `${domain}/api/chatgpt/dataMapping/${id}`
       ).then((rsp) => rsp.json());
       setData(rsp);
     } catch (e) {
@@ -22,7 +23,7 @@ export default function SharePage({ params }) {
     } finally {
       setIfLoading(false);
     }
-  }, [params.id]);
+  }, [id]);
 
   const list = useMemo(() => {
     if (!data) return [];
@@ -31,7 +32,7 @@ export default function SharePage({ params }) {
   }, [data]);
 
   useEffect(() => {
-    console.log(params.id);
+    console.log(id);
     genShare();
   }, []);
 

@@ -41,6 +41,36 @@
       "description": "Expert guidance and solutions for your business challenges and growth opportunities."
     }
   },
+  "pricing": {
+    "title": "Pricing & Solutions",
+    "subtitle": "Explore our pricing options and past successful projects",
+    "viewWebsiteSolutions": "View Website Solutions",
+    "loadingPlans": "Loading pricing plans...",
+    "pastProjects": "Our Past Projects",
+    "loadingProjects": "Loading demo projects...",
+    "websiteSolutions": {
+      "title": "AI-Powered Solutions",
+      "subtitle": "AI-driven end-to-end solutions tailored to your business scenario",
+      "switchToUS": "Switch to U.S. Region Pricing →",
+      "switchToCN": "切换到中国区价格 →",
+      "scenario": "Scenario",
+      "solution": "Solution",
+      "highlights": "Highlights",
+      "price": "Price",
+      "priceNote": "Prices listed are starting points. Contact our sales team for a detailed quote.",
+      "addOnServices": "Add-On Services",
+      "service": "Service",
+      "description": "Description",
+      "caseStudies": "Case Studies",
+      "usSalesContact": "U.S. Sales Contact",
+      "cnSalesContact": "China Sales Contact",
+      "email": "Email",
+      "phone": "Phone",
+      "wechat": "WeChat",
+      "more": "More",
+      "contact": "Contact"
+    }
+  },
   "metadata": {
     "title": "JYTech | Elevate your business with the power of media and technologies",
     "description": "Unlock your business's full potential by leveraging the latest media trends and technological advancements. Enhance customer engagement with data-driven strategies, streamline operations with AI, and drive growth through personalized digital experiences."

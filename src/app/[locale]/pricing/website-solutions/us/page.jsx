@@ -1,26 +1,29 @@
 "use client";
-import { solutions, addOnServices, chinaContacts } from "@/data/products";
+import { solutions, addOnServices, usContacts } from "@/data/products";
+import { useLocale, useTranslations } from "next-intl";
 
-export default function CNHostingPage() {
-  const cnSolutions = solutions.filter((s) => s.region === "cn");
-  const cnServices = addOnServices.filter((s) => s.region === "cn");
+export default function USHostingPage() {
+  const locale = useLocale();
+  const t = useTranslations("pricing.websiteSolutions");
+  const usSolutions = solutions.filter((s) => s.region === "us");
+  const usServices = addOnServices.filter((s) => s.region === "us");
 
   return (
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            AI 赋能解决方案
+            {t("title")}
           </h2>
           <p className="mt-4 text-lg leading-8 text-gray-600">
-            根据您的业务场景，提供 AI 驱动的一站式解决方案
+            {t("subtitle")}
           </p>
           <p className="mt-2 text-sm text-gray-500">
             <a
-              href="/pricing/us"
+              href={`/${locale}/pricing/website-solutions/cn`}
               className="text-blue-600 hover:text-blue-800"
             >
-              Switch to U.S. Region Pricing →
+              {t("switchToCN")}
             </a>
           </p>
         </div>
@@ -31,21 +34,21 @@ export default function CNHostingPage() {
             <thead>
               <tr className="bg-gray-50">
                 <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                  场景
+                  {t("scenario")}
                 </th>
                 <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                  方案
+                  {t("solution")}
                 </th>
                 <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                  亮点
+                  {t("highlights")}
                 </th>
                 <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                  价格
+                  {t("price")}
                 </th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200 bg-white">
-              {cnSolutions.map((item) => (
+              {usSolutions.map((item) => (
                 <tr key={item.id}>
                   <td className="whitespace-nowrap px-3 py-4 text-sm font-medium text-gray-900">
                     {item.scenario}
@@ -68,25 +71,25 @@ export default function CNHostingPage() {
         {/* Add-On Services Section */}
         <div className="mt-20">
           <h3 className="text-2xl font-bold tracking-tight text-gray-900 text-center mb-8">
-            增值服务
+            {t("addOnServices")}
           </h3>
           <div className="overflow-x-auto">
             <table className="min-w-full divide-y divide-gray-300">
               <thead>
                 <tr className="bg-gray-50">
                   <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                    服务
+                    {t("service")}
                   </th>
                   <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                    价格
+                    {t("price")}
                   </th>
                   <th className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                    说明
+                    {t("description")}
                   </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200 bg-white">
-                {cnServices.map((service) => (
+                {usServices.map((service) => (
                   <tr key={service.id}>
                     <td className="whitespace-nowrap px-3 py-4 text-sm font-medium text-gray-900">
                       {service.name}
@@ -104,13 +107,13 @@ export default function CNHostingPage() {
           </div>
         </div>
 
-        {/* China Sales Contact Section */}
+        {/* US Sales Contact Section */}
         <div className="mt-20">
           <h3 className="text-2xl font-bold tracking-tight text-gray-900 text-center mb-8">
-            中国区销售联系方式
+            {t("usSalesContact")}
           </h3>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:gap-12">
-            {chinaContacts.map((contact) => (
+          <div className="max-w-lg mx-auto">
+            {usContacts.map((contact) => (
               <div key={contact.id} className="rounded-lg bg-gray-50 p-6">
                 <h4 className="text-lg font-semibold text-gray-900">
                   {contact.name}
@@ -119,25 +122,30 @@ export default function CNHostingPage() {
                 <dl className="mt-4 space-y-2 text-sm">
                   <div className="flex">
                     <dt className="w-20 flex-shrink-0 text-gray-500">
-                      微信:
+                      {t("email")}:
                     </dt>
-                    <dd className="text-gray-900">{contact.wechat}</dd>
+                    <dd className="text-gray-900">
+                      <a
+                        href={`mailto:${contact.email}`}
+                        className="text-blue-600 hover:text-blue-800"
+                      >
+                        {contact.email}
+                      </a>
+                    </dd>
                   </div>
-                  {contact.email && (
-                    <div className="flex">
-                      <dt className="w-20 flex-shrink-0 text-gray-500">
-                        邮箱:
-                      </dt>
-                      <dd className="text-gray-900">
-                        <a
-                          href={`mailto:${contact.email}`}
-                          className="text-blue-600 hover:text-blue-800"
-                        >
-                          {contact.email}
-                        </a>
-                      </dd>
-                    </div>
-                  )}
+                  <div className="flex">
+                    <dt className="w-20 flex-shrink-0 text-gray-500">
+                      {t("phone")}:
+                    </dt>
+                    <dd className="text-gray-900">
+                      <a
+                        href={`tel:${contact.phone}`}
+                        className="text-blue-600 hover:text-blue-800"
+                      >
+                        {contact.phone}
+                      </a>
+                    </dd>
+                  </div>
                 </dl>
               </div>
             ))}

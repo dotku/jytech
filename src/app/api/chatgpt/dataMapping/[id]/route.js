@@ -3,7 +3,7 @@ import { getDomain } from "@/utils/getDomain";
 
 export async function GET(_request, { params }) {
   const domain = getDomain();
-  const { id } = params;
+  const { id } = await params;
 
   // Check if the ID is the placeholder and handle accordingly
   if (id === "placeholder-id") {
