@@ -10,6 +10,7 @@
     "ecommerce": "E-commerce",
     "business": "Business",
     "pricing": "Pricing",
+    "hiring": "Hiring",
     "title": "Elevate Your Tech Business with the power of media and technologies",
     "logoAlt": "JY Tech logo"
   },
@@ -70,6 +71,60 @@
       "more": "More",
       "contact": "Contact"
     }
+  },
+  "hiring": {
+    "title": "Join Our Team",
+    "subtitle": "We're looking for talented people who are passionate about technology and innovation. Start your journey with JY Tech today.",
+    "benefits": {
+      "innovation": {
+        "title": "Innovation First",
+        "description": "Work on cutting-edge projects spanning AI, IoT, FinTech, and more. We embrace new ideas and technologies."
+      },
+      "growth": {
+        "title": "Career Growth",
+        "description": "We invest in your development with mentorship, learning opportunities, and a clear path for advancement."
+      },
+      "culture": {
+        "title": "Global Culture",
+        "description": "Join a diverse, bilingual team bridging US and China markets. Collaborate across cultures and time zones."
+      }
+    },
+    "formTitle": "Apply Now",
+    "formSubtitle": "Fill out the form below and we'll get back to you within 3 business days.",
+    "fields": {
+      "name": "Full Name",
+      "email": "Email",
+      "phone": "Phone Number",
+      "position": "Position",
+      "location": "Location",
+      "resumeLink": "Resume / LinkedIn URL",
+      "message": "Tell Us About Yourself"
+    },
+    "placeholders": {
+      "name": "e.g. John Doe",
+      "email": "e.g. john@example.com",
+      "phone": "e.g. (415) 000-0000",
+      "position": "Select a position",
+      "location": "e.g. San Francisco, CA",
+      "resumeLink": "e.g. https://linkedin.com/in/yourprofile",
+      "message": "Share your experience, skills, and what excites you about joining JY Tech..."
+    },
+    "positions": {
+      "software_engineer": "Software Engineer",
+      "frontend_developer": "Frontend Developer",
+      "backend_developer": "Backend Developer",
+      "ui_ux_designer": "UI/UX Designer",
+      "product_manager": "Product Manager",
+      "marketing_specialist": "Marketing Specialist",
+      "business_development": "Business Development",
+      "data_analyst": "Data Analyst",
+      "intern": "Intern",
+      "other": "Other"
+    },
+    "submit": "Submit Application",
+    "successTitle": "Application Submitted!",
+    "successMessage": "Thank you for your interest in joining JY Tech. Our team will review your application and get back to you within 3 business days.",
+    "backToHome": "Back to Home"
   },
   "metadata": {
     "title": "JYTech | Elevate your business with the power of media and technologies",

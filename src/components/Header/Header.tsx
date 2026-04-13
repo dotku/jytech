@@ -61,6 +61,10 @@ export default function Header() {
       label: t('header.pricing'),
       href: `/${locale}/pricing`,
     },
+    {
+      label: t('header.hiring'),
+      href: `/${locale}/hiring`,
+    },
   ];
 
   const isActive = (href: string) => pathname === href;

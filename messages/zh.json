@@ -10,6 +10,7 @@
     "ecommerce": "电子商务",
     "business": "商业服务",
     "pricing": "价格",
+    "hiring": "招聘",
     "title": "用媒体和技术的力量提升您的科技业务",
     "logoAlt": "JY Tech 标志"
   },
@@ -70,6 +71,60 @@
       "more": "了解更多",
       "contact": "联系我们"
     }
+  },
+  "hiring": {
+    "title": "加入我们",
+    "subtitle": "我们正在寻找对技术和创新充满热情的优秀人才。今天就开始您在 JY Tech 的旅程。",
+    "benefits": {
+      "innovation": {
+        "title": "创新优先",
+        "description": "参与涵盖人工智能、物联网、金融科技等前沿项目。我们拥抱新想法和新技术。"
+      },
+      "growth": {
+        "title": "职业成长",
+        "description": "我们通过导师指导、学习机会和清晰的晋升路径来投资您的发展。"
+      },
+      "culture": {
+        "title": "全球化文化",
+        "description": "加入一个多元化的双语团队，连接中美两国市场。跨文化、跨时区协作。"
+      }
+    },
+    "formTitle": "立即申请",
+    "formSubtitle": "填写以下表格，我们将在 3 个工作日内与您联系。",
+    "fields": {
+      "name": "姓名",
+      "email": "邮箱",
+      "phone": "电话号码",
+      "position": "申请职位",
+      "location": "所在地",
+      "resumeLink": "简历 / LinkedIn 链接",
+      "message": "自我介绍"
+    },
+    "placeholders": {
+      "name": "例如：张三",
+      "email": "例如：zhangsan@example.com",
+      "phone": "例如：(415) 000-0000",
+      "position": "请选择职位",
+      "location": "例如：旧金山，加州",
+      "resumeLink": "例如：https://linkedin.com/in/yourprofile",
+      "message": "分享您的经验、技能，以及加入 JY Tech 让您兴奋的地方..."
+    },
+    "positions": {
+      "software_engineer": "软件工程师",
+      "frontend_developer": "前端开发工程师",
+      "backend_developer": "后端开发工程师",
+      "ui_ux_designer": "UI/UX 设计师",
+      "product_manager": "产品经理",
+      "marketing_specialist": "市场营销专员",
+      "business_development": "商务拓展",
+      "data_analyst": "数据分析师",
+      "intern": "实习生",
+      "other": "其他"
+    },
+    "submit": "提交申请",
+    "successTitle": "申请已提交！",
+    "successMessage": "感谢您对加入 JY Tech 的兴趣。我们的团队将审核您的申请，并在 3 个工作日内与您联系。",
+    "backToHome": "返回首页"
   },
   "metadata": {
     "title": "JYTech | 用媒体和技术的力量提升您的业务",
