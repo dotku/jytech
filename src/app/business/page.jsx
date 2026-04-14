@@ -7,7 +7,7 @@ import {
   CardHeader,
   Image,
   Link,
-} from "@nextui-org/react";
+} from "@heroui/react";
 
 import useBusinessData from "./useBusinessData";
 import Markdown from "react-markdown";

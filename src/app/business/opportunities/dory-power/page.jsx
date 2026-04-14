@@ -3,7 +3,7 @@ import path from "path";
 // import { useState, useEffect } from "react";
 // import { MDXRemote } from "next-mdx-remote/rsc";
 import MarkdownComponents from "@/components/MarkdownComponents";
-// import { Spinner } from "@nextui-org/react";
+// import { Spinner } from "@heroui/react";
 // import ReactMarkdown from "react-markdown";
 import { MDXProvider, useMDXComponents } from "@mdx-js/react";
 // import Products from "./Product.mdx";

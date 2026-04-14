@@ -2,7 +2,7 @@
 
 import GeneralLayout from "@/components/Layouts/GeneralLayout";
 import { investors } from "@/data/investors";
-import { Card, CardBody, CardHeader, Link } from "@nextui-org/react";
+import { Card, CardBody, CardHeader, Link } from "@heroui/react";
 import Image from "next/image";
 
 export default function InvestorsPage() {

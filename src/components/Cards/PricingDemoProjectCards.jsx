@@ -8,7 +8,7 @@ import {
   Chip,
   Divider,
   Link,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import { useLocale } from "next-intl";
 import { Suspense } from "react";
 

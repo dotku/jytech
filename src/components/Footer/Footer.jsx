@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Input, Link } from "@nextui-org/react";
+import { Button, Input, Link } from "@heroui/react";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import { useSearchParams } from "next/navigation";
 import { FaFacebook } from "react-icons/fa";

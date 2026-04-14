@@ -9,7 +9,7 @@ import {
   Image,
   Link,
   Spinner,
-} from "@nextui-org/react";
+} from "@heroui/react";
 
 export default function InvesstorPage() {
   return (

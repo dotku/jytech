@@ -7,7 +7,7 @@ import {
   CardHeader,
   Link,
   Spinner,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import useFetch from "@/hooks/useFetch";
 import { useMemo, useState } from "react";
 

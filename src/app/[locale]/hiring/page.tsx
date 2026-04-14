@@ -3,7 +3,7 @@
 import GeneralLayout from "@/components/Layouts/GeneralLayout";
 import { useTranslations, useLocale } from "next-intl";
 import { useState } from "react";
-import { Button, Input, Textarea, Select, SelectItem, Link } from "@nextui-org/react";
+import { Button, Input, Textarea, Select, SelectItem, Link } from "@heroui/react";
 import { FiBriefcase, FiMail, FiUser, FiPhone, FiFileText, FiMapPin } from "react-icons/fi";
 
 const POSITIONS = [

@@ -8,7 +8,7 @@ import {
   CardHeader,
   Image,
   Link,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import Footer from "./components/Footer";
 
 export default function EB5() {

@@ -17,7 +17,7 @@ import {
   ModalContent,
   Modal,
   useDisclosure,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
 

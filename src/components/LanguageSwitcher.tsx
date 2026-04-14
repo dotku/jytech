@@ -2,7 +2,7 @@
 
 import { usePathname, useRouter } from 'next/navigation';
 import { useLocale } from 'next-intl';
-import { Button } from '@nextui-org/react';
+import { Button } from '@heroui/react';
 import { locales } from '@/i18n';
 
 export default function LanguageSwitcher() {

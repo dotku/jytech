@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Button, Card, CardBody, Input, ScrollShadow } from "@nextui-org/react";
+import { Button, Card, CardBody, Input, ScrollShadow } from "@heroui/react";
 import { IoClose } from "react-icons/io5";
 
 interface Message {

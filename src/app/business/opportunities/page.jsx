@@ -7,7 +7,7 @@ import {
   CardHeader,
   Image,
   Link,
-} from "@nextui-org/react";
+} from "@heroui/react";
 
 export default function Oppotunties() {
   return (

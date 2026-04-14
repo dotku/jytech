@@ -1,7 +1,7 @@
 "use client";
 
 import { ReactMarkdownWrapper } from "@/components/Cards/PricingServicePlanCards";
-import { Input } from "@nextui-org/react";
+import { Input } from "@heroui/react";
 import { useState } from "react";
 import Markdown from "react-markdown";
 

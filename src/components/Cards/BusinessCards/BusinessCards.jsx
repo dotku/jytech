@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, CardBody, CardHeader, Link } from "@nextui-org/react";
+import { Card, CardBody, CardHeader, Link } from "@heroui/react";
 import Image from "next/image";
 import { getInvestors } from "@/data/investors";
 import { useTranslations, useLocale } from 'next-intl';

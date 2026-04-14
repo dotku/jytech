@@ -10,7 +10,7 @@ import {
   NavbarItem,
   NavbarMenu,
   NavbarMenuItem,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";

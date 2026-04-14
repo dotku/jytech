@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Input } from "@nextui-org/react";
+import { Button, Input } from "@heroui/react";
 import { useState, useEffect, useRef } from "react";
 import { IoClose, IoSend } from "react-icons/io5";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";

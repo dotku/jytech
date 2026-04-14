@@ -12,7 +12,7 @@ import {
   Input,
   Textarea,
   TimeInput,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import { useState } from "react";
 
 const data = [

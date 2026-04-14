@@ -1,7 +1,7 @@
 "use client";
 
 import { getDomain } from "@/utils/getDomain";
-import { Card, CardBody, Spinner } from "@nextui-org/react";
+import { Card, CardBody, Spinner } from "@heroui/react";
 import { use, useCallback, useEffect, useMemo, useState } from "react";
 import Markdown from "react-markdown";
 

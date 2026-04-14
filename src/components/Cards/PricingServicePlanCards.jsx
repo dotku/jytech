@@ -8,7 +8,7 @@ import {
   CardHeader,
   Divider,
   Link,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import ReactMarkdown from "react-markdown";
 import PricingServicePlanCardsData from "./PricingServicePlanCardsData";
 import { useLocale, useTranslations } from "next-intl";
