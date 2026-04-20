@@ -3,6 +3,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -36,6 +37,9 @@ export default async function RootLayout({
         </NextIntlClientProvider>
       </body>
       <GoogleAnalytics gaId="G-63MG20R6TG" />
+      <Script id="metricool-tracker" strategy="afterInteractive">
+        {`function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"d8cc5da40fb3426eb5ee67d511190b7c"})});`}
+      </Script>
     </html>
   );
 }
