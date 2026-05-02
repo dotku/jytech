@@ -10,6 +10,7 @@
     "ecommerce": "电子商务",
     "business": "商业服务",
     "pricing": "价格",
+    "blog": "博客",
     "hiring": "招聘",
     "title": "用媒体和技术的力量提升您的科技业务",
     "logoAlt": "JY Tech 标志"
@@ -49,6 +50,66 @@
     "loadingPlans": "加载价格方案...",
     "pastProjects": "过往项目",
     "loadingProjects": "加载项目展示...",
+    "tiers": {
+      "sectionTitle": "产品套餐与服务支持",
+      "sectionSubtitle": "免费体验我们的产品；升级即可获得邮件工单支持；如需正式立项，欢迎预约顾问。",
+      "popular": "最受欢迎",
+      "enterpriseNote": "更大规模合作（$10k–$100k/月）：定制方案，无固定报价。",
+      "enterpriseCta": "联系我们",
+      "free": {
+        "name": "免费版",
+        "tagline": "今天就能试，无需信用卡",
+        "price": "$0",
+        "priceUnit": "",
+        "features": [
+          "AutoClaw — 面向外贸企业的 AI 获客系统",
+          "XPilot — 用 AI 调度 X（Twitter）内容",
+          "产品内聊天，处理通用问题",
+          "两款产品均无注册门槛"
+        ],
+        "cta": "试用 AutoClaw",
+        "ctaSecondary": "试用 XPilot"
+      },
+      "starter": {
+        "name": "Starter",
+        "tagline": "付费客户的邮件工单支持",
+        "price": "$10",
+        "priceUnit": "/月",
+        "features": [
+          "包含「免费版」全部内容",
+          "邮件形式的工单系统",
+          "约 1 个工作日响应",
+          "每个工单都有专属编号"
+        ],
+        "cta": "提交工单"
+      },
+      "pro": {
+        "name": "Pro",
+        "tagline": "同样的支持，面向高用量场景",
+        "price": "$100",
+        "priceUnit": "/月",
+        "features": [
+          "包含「Starter」全部内容",
+          "同样的约 1 个工作日 SLA",
+          "更高的产品使用配额",
+          "复杂问题优先处理"
+        ],
+        "cta": "提交工单"
+      },
+      "consulting": {
+        "name": "顾问咨询",
+        "tagline": "有真实项目？直接约时间。",
+        "price": "按小时",
+        "priceUnit": "",
+        "features": [
+          "与团队直接沟通",
+          "网站、工具、自动化或 AI 项目立项",
+          "中英双语",
+          "通过 Calendly 预约"
+        ],
+        "cta": "在 Calendly 预约"
+      }
+    },
     "websiteSolutions": {
       "title": "AI 赋能解决方案",
       "subtitle": "根据您的业务场景，提供 AI 驱动的一站式解决方案",
@@ -125,6 +186,46 @@
     "successTitle": "申请已提交！",
     "successMessage": "感谢您对加入 JY Tech 的兴趣。我们的团队将审核您的申请，并在 3 个工作日内与您联系。",
     "backToHome": "返回首页"
+  },
+  "support": {
+    "title": "客户支持",
+    "subtitle": "提交一个工单，我们会通过邮件回复——通常一个工作日内响应。",
+    "footer": "免费用户：请在 AutoClaw 或 XPilot 内部使用聊天功能，或发送邮件至 hello@jytech.us 咨询通用问题。",
+    "fields": {
+      "name": "姓名",
+      "email": "邮箱",
+      "plan": "套餐",
+      "subject": "主题",
+      "message": "需要我们帮您处理什么？",
+      "orderRef": "订单 / 客户编号"
+    },
+    "placeholders": {
+      "orderRef": "如发票编号或 AutoClaw 账户邮箱",
+      "message": "您原本想做什么？发生了什么？希望我们接下来怎么处理？"
+    },
+    "plans": {
+      "placeholder": "请选择您的套餐",
+      "free": "免费版",
+      "starter": "Starter（$10/月）",
+      "pro": "Pro（$100/月）",
+      "other": "其他 / 不确定"
+    },
+    "submit": "提交工单",
+    "submitting": "提交中…",
+    "successTitle": "工单已收到",
+    "successMessage": "感谢——我们会很快回复您的邮箱。",
+    "ticketIdLabel": "工单号",
+    "submitAnother": "再提交一个工单"
+  },
+  "blog": {
+    "indexTitle": "JY Tech 博客",
+    "indexDescription": "JY Tech 如何与您协作——服务、支持档位，以及我们交付项目背后的笔记。",
+    "readMore": "查看详情",
+    "backToBlog": "返回博客",
+    "viewLive": "访问线上站点",
+    "ctaTitle": "也想做一个类似的项目？",
+    "ctaDescription": "JY Tech 为中美两地的初创公司和中小企业设计、上线并持续运营 Next.js + Vercel 产品。",
+    "ctaButton": "聊一聊"
   },
   "metadata": {
     "title": "JYTech | 用媒体和技术的力量提升您的业务",

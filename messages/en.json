@@ -10,6 +10,7 @@
     "ecommerce": "E-commerce",
     "business": "Business",
     "pricing": "Pricing",
+    "blog": "Blog",
     "hiring": "Hiring",
     "title": "Elevate Your Tech Business with the power of media and technologies",
     "logoAlt": "JY Tech logo"
@@ -49,6 +50,66 @@
     "loadingPlans": "Loading pricing plans...",
     "pastProjects": "Our Past Projects",
     "loadingProjects": "Loading demo projects...",
+    "tiers": {
+      "sectionTitle": "Product Plans & Support",
+      "sectionSubtitle": "Try our products free, upgrade for email-based ticket support, or book a consultant for a real project conversation.",
+      "popular": "Most popular",
+      "enterpriseNote": "Larger engagements ($10k–$100k/mo): bespoke scoping, no rate card.",
+      "enterpriseCta": "Contact us",
+      "free": {
+        "name": "Free",
+        "tagline": "Try our products today, no credit card",
+        "price": "$0",
+        "priceUnit": "",
+        "features": [
+          "AutoClaw — AI lead generation for trade companies",
+          "XPilot — schedule and run X (Twitter) content with AI",
+          "In-product chat for general questions",
+          "No signup wall on either product"
+        ],
+        "cta": "Try AutoClaw",
+        "ctaSecondary": "Try XPilot"
+      },
+      "starter": {
+        "name": "Starter",
+        "tagline": "Email ticket support for paying customers",
+        "price": "$10",
+        "priceUnit": "/mo",
+        "features": [
+          "Everything in Free",
+          "Email-based ticket system",
+          "~1 business day response",
+          "Ticket ID for every request"
+        ],
+        "cta": "Open a ticket"
+      },
+      "pro": {
+        "name": "Pro",
+        "tagline": "Same support, for higher-volume use",
+        "price": "$100",
+        "priceUnit": "/mo",
+        "features": [
+          "Everything in Starter",
+          "Same ~1 business day SLA",
+          "Higher product usage limits",
+          "Priority on edge-case requests"
+        ],
+        "cta": "Open a ticket"
+      },
+      "consulting": {
+        "name": "Consulting",
+        "tagline": "Real project? Book a call.",
+        "price": "Hourly",
+        "priceUnit": "",
+        "features": [
+          "Live conversation with our team",
+          "Scope a website, tool, automation or AI build",
+          "Bilingual (EN / 中文)",
+          "Booked via Calendly"
+        ],
+        "cta": "Book on Calendly"
+      }
+    },
     "websiteSolutions": {
       "title": "AI-Powered Solutions",
       "subtitle": "AI-driven end-to-end solutions tailored to your business scenario",
@@ -125,6 +186,46 @@
     "successTitle": "Application Submitted!",
     "successMessage": "Thank you for your interest in joining JY Tech. Our team will review your application and get back to you within 3 business days.",
     "backToHome": "Back to Home"
+  },
+  "support": {
+    "title": "Support",
+    "subtitle": "Open a ticket and our team will reply by email — usually within one business day.",
+    "footer": "Free-tier users: please use the chat inside AutoClaw or XPilot, or email hello@jytech.us for general questions.",
+    "fields": {
+      "name": "Your name",
+      "email": "Email",
+      "plan": "Plan",
+      "subject": "Subject",
+      "message": "How can we help?",
+      "orderRef": "Order / customer reference"
+    },
+    "placeholders": {
+      "orderRef": "e.g. invoice ID or AutoClaw account email",
+      "message": "What were you trying to do, what happened, and what would you like us to do next?"
+    },
+    "plans": {
+      "placeholder": "Select your plan",
+      "free": "Free",
+      "starter": "Starter ($10/mo)",
+      "pro": "Pro ($100/mo)",
+      "other": "Other / not sure"
+    },
+    "submit": "Submit ticket",
+    "submitting": "Submitting…",
+    "successTitle": "Ticket received",
+    "successMessage": "Thanks — we'll reply to your email shortly.",
+    "ticketIdLabel": "Ticket",
+    "submitAnother": "Submit another ticket"
+  },
+  "blog": {
+    "indexTitle": "From the JY Tech blog",
+    "indexDescription": "How JY Tech works with you — services, support tiers, and notes from the projects we ship.",
+    "readMore": "Read more",
+    "backToBlog": "Back to blog",
+    "viewLive": "View live site",
+    "ctaTitle": "Have a project like this?",
+    "ctaDescription": "JY Tech designs, ships, and runs Next.js + Vercel products for startups and small businesses across the US and China.",
+    "ctaButton": "Talk to us"
   },
   "metadata": {
     "title": "JYTech | Elevate your business with the power of media and technologies",

@@ -62,6 +62,10 @@ export default function Header() {
       href: `/${locale}/pricing`,
     },
     {
+      label: t('header.blog'),
+      href: `/${locale}/blog`,
+    },
+    {
       label: t('header.hiring'),
       href: `/${locale}/hiring`,
     },

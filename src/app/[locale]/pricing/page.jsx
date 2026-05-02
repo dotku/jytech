@@ -2,6 +2,7 @@
 
 import PricingServicePlanCards from "@/components/Cards/PricingServicePlanCards";
 import PricingDemoProjectCards from "@/components/Cards/PricingDemoProjectCards";
+import PricingProductTiers from "@/components/Cards/PricingProductTiers";
 import { Suspense } from "react";
 import { useLocale, useTranslations } from "next-intl";
 
@@ -10,7 +11,7 @@ export default function PricingPage() {
   const t = useTranslations("pricing");
   return (
     <div className="py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center mb-16">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             {t("title")}
@@ -27,6 +28,8 @@ export default function PricingPage() {
             </a>
           </div>
         </div>
+
+        <PricingProductTiers />
 
         <Suspense fallback={<div>{t("loadingPlans")}</div>}>
           <PricingServicePlanCards />
