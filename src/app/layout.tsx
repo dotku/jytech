@@ -37,6 +37,18 @@ export default async function RootLayout({
         </NextIntlClientProvider>
       </body>
       <GoogleAnalytics gaId="G-63MG20R6TG" />
+      <Script
+        id="google-ads-gtag"
+        src="https://www.googletagmanager.com/gtag/js?id=AW-17996694860"
+        strategy="afterInteractive"
+        async
+      />
+      <Script id="google-ads-config" strategy="afterInteractive">
+        {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'AW-17996694860');`}
+      </Script>
       <Script id="metricool-tracker" strategy="afterInteractive">
         {`function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"d8cc5da40fb3426eb5ee67d511190b7c"})});`}
       </Script>
